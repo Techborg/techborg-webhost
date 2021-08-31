@@ -177,6 +177,52 @@
 
 
 							</div>
+							<div>
+								<h3>Selecting a Database</h3>
+								<br>
+								<p>Once you establish a connection with a database server then it is required to select a particular database where your all the tables are associated.</p>
+								<p>This is required because there may be multiple databases residing on a single server and you can do work with a single database at a time.</p>
+								<br>
+								<p>PHP provides function mysql_select_db to select a database. It returns TRUE on success or FALSE on failure.</p>
+								<h4>Syntax</h4>
+								<p>bool mysql_select_db( db_name, connection );</p>
+								<table border="1px">
+									<tr >
+										<th>Sr.No</th>
+										<th>Parameter & Description</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td><h5>db_name</h5><p>Required - Database name to be selected</p></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><h5>connection</h5><p>Optional - if not specified then last opend connection by mysql_connect will be used.</p></td>
+									</tr>
+								</table>
+								<br>
+								<h4>Example</h4>
+								<h5>Here is the example showing you how to select a database. </h5>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:30360';
+									$dbuser = 'guest';
+									$dbpass = 'guest123';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									echo 'Connected successfully';
+
+									mysql_select_db( test_db' );
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
+							</div>
 					
 					</div>
 			</div>
