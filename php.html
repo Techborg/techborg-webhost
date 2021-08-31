@@ -59,12 +59,128 @@
 					<!-- heading -->
 					<h2>PHP</h2>
 					<!-- paragraph -->
-					<p>It is our belief that in order to be most efficient it requires adaptive technology and software our customers can focus on their core business.</p>
+					<p></p>
 				</div>
 			</div>
 			<!-- banner end -->
 			
-			
+			<h3>PHP Database Interface</h3>
+			<div>
+				<h3>Opening Database Connection</h3>
+				<br>
+				<p>PHP provides mysql_connect function to open a database connection.</p>
+				<p>This function takes five parameters and returns a MySQL link identifier on success, or FALSE on failure.</p>
+			<div>
+				<br>
+				<h4>Syntax</h4>
+				<p>connection mysql_connect(server,user,passwd,new_link,client_flag);</p>
+				<div>
+					<table border="1px">
+						<tr >
+							<th>Sr.No</th>
+							<th>Parameter & Description</th>
+						</tr>
+						<tr>
+							<td>1</td>
+							<td><h5>server</h5><p>Optional - The host name running database server. If not specified then default value is Localhost:3306.</p></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><h5>user</h5><p>Optional - The username accessing the database. If not specified then default is the name of the user that owns the server process.</p></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><h5>passwd</h5><p>Optional - The password of the user accessing the database. If not specified then default is an empty password.</p></td>
+						</tr>
+					</table>
+				</div>
+
+					<h3>Closing Database Connection</h3>
+					<br>
+					<p>Its simplest function mysql_close PHP provide to close a database connection. This function takes connection resource returned by mysql_connect function. It returns TRUE on success or FALSE on failure.</p>
+					<div>
+						<br>
+						<h4>Syntax</h4>
+						<p>bool mysql_close( resource $link_identifier);</p>
+						<br>
+						<p>If a resource is not specified then last opend database is closed.</p>
+						<br>
+						<h4>Example</h4>
+						<h5>Try out following example to open and close a database connection - </h5>
+						<pre><code>
+							&lt;?php
+
+								$dbhost = 'localhost:3036';
+								$dbuser = 'guest';
+								$dbpass = 'guest123';
+								$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+								if( ! $conn ) {
+									die ( 'Could not connect:' . mysql_error() );
+								}
+
+								echo 'connected successfully';
+								mysql_close ($conn);
+							?&gt;
+							</code></pre>
+							<div>
+								<h3>Creating a Database</h3>
+								<br>
+								<p>To create and delete a database you should have admin privillage. Its very easy to create a new MySQL database.</p>
+								<p>PHP uses mysql_query function to create a MySQL database. This function takes two parameters and returns TRUE on success or FALSE on failure.</p>
+								<br>
+								<h4>Syntax</h4>
+								<p>bool mysql_query( sql, connection );</p>
+								<table border="1px">
+									<tr >
+										<th>Sr.No</th>
+										<th>Parameter & Description</th>
+									</tr>
+									<tr>
+										<td>1</td>
+										<td><h5>sql</h5><p>Required - SQL query to create a database</p></td>
+									</tr>
+									<tr>
+										<td>2</td>
+										<td><h5>connection</h5><p>Optional - if not specified then last opend connection by mysql_connect will be used.</p></td>
+									</tr>
+								</table>
+								<br>
+								<h4>Example</h4>
+								<h5>Try out following example to create a database- </h5>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:30360';
+									$dbuser = 'root';
+									$dbpass = 'rootpassword';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									echo 'Connected successfully';
+
+									$sql = 'CREATE Database test_db';
+									$retval = mysql_query ( $sql, $conn);
+
+									if(! $retval ) {
+										die('Could not create database:' . mysql_error());										
+									}
+
+									echo "Database test_db created successfully\n";
+									mysql_close($conn);
+								?&gt;
+								</code></pre>
+
+
+
+							</div>
+					
+					</div>
+			</div>
+			</div>
 		
 		
 			
