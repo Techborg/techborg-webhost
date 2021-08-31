@@ -151,7 +151,7 @@
 								<pre><code>
 								&lt;?php
 
-									$dbhost = 'localhost:30360';
+									$dbhost = 'localhost:3036';
 									$dbuser = 'root';
 									$dbpass = 'rootpassword';
 									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
@@ -206,7 +206,7 @@
 								<pre><code>
 								&lt;?php
 
-									$dbhost = 'localhost:30360';
+									$dbhost = 'localhost:3036';
 									$dbuser = 'guest';
 									$dbpass = 'guest123';
 									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
@@ -223,6 +223,94 @@
 								?&gt;
 								</code></pre>
 							</div>
+							<div>
+								<h3>Creating Database Tables</h3>
+								<br>
+								<p>To create tables in the new database you need to do the same thing as creating the database.</p>
+								<p>First create the SQL query to create the tables then execute the query using mysql_query() function.</p>
+								<br>
+								<h4>Example</h4>
+								<h5>Try out following example to create a table-</h5>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:3036';
+									$dbuser = 'guest';
+									$dbpass = 'guest123';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									echo 'Connected successfully';
+
+									$sql = 'CREATE TABLE employee( '.
+										'emp_id INT NOT NULL AUTO_INCREMENT, ' . 
+										'emp_name VARCHAR (20) NOT NULL, ' .
+										'emp_address VARCHAR (20) NOT NULL, ' .
+										'emp_salary INT NOT NULL, ' .
+										'join_date timestamp(14) NOT NULL'
+										'primary key ( emp_id ))';
+									mysql_select_db('test_db');
+									$retval = mysql_query( $sql, $conn );
+
+									if(! $retval ) {
+										die('Could not create table: ' . mysql_error());
+									}
+
+									echo "Table employee created successfully\n";
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
+							</div>
+							<div>
+								<h5>To create tables in the new database you need to do the same thing as creating the database.</h5>
+								<h5>First create the SQL query to create the tables then execute the query using mysql_query() function.</h5>
+								
+								<h5>Consider the following content in sql_query.txt file</h5>
+								<p>CREATE TABLE employee(
+									<br>emp_id INT NOT NULL AUTO_INCREMENT,
+									<br>emp_name VARCHAR (20) NOT NULL,
+									<br>emp_address VARCHAR (20) NOT NULL,
+									<br>emp_salary INT NOT NULL,
+									<br>join_date timestamp (14) NOT NULL,
+									<br>primary key ( emp_id ));
+								</p>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:3036';
+									$dbuser = 'root';
+									$dbpass = 'rootpassword';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error() );
+									}
+
+									$query_file = 'sql_query.txt';
+									
+									$fp = fopen($query_file, 'r');
+									$sql = fread($fp, filesize($query_file));
+									fclose($fp); 
+										
+
+									mysql_select_db('test_db');
+									$retval = mysql_query( $sql, $conn );
+
+									if(! $retval ) {
+										die('Could not create table: ' . mysql_error());
+									}
+
+									echo "Table employee created successfully\n";
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
+							</div>
+
 					
 					</div>
 			</div>
