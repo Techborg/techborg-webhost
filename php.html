@@ -226,8 +226,7 @@
 							<div>
 								<h3>Creating Database Tables</h3>
 								<br>
-								<p>To create tables in the new database you need to do the same thing as creating the database.</p>
-								<p>First create the SQL query to create the tables then execute the query using mysql_query() function.</p>
+								<p>To create tables in the new database you need to do the same thing as creating the database. First create the SQL query to create the tables then execute the query using mysql_query() function.</p>
 								<br>
 								<h4>Example</h4>
 								<h5>Try out following example to create a table-</h5>
@@ -310,9 +309,361 @@
 								?&gt;
 								</code></pre>
 							</div>
+							<div>
+								<h3>Deleting a Database</h3>
+								<br>
+								<p>If a database is no longer required then it can be deleted forever. You can use pass an SQL command to mysql_query to delete a database.</p>
+								<br>
+								<h4>Example</h4>
+								<h5>Try out following example to drop a database.</h5>
+								<pre><code>
+								&lt;?php
 
-					
+									$dbhost = 'localhost:3036';
+									$dbuser = 'root';
+									$dbpass = 'rootpassword';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									
+									$sql = 'DROP DATABASE test_db';
+									$retval = mysql_query( $sql, $conn );
+
+									if(! $retval ) {
+										die('Could not delete database db_test: ' . mysql_error());
+									}
+
+									echo "Database deleted successfully\n";
+									
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
+								<h4>WARNING - </h4><P>its very dangerous to delete a database and any table. So before deleting any table or database you should make sure you are doing everything intentionally.</p>
+							</div>
+							<div>
+								<h3>Deleting a Table</h3>
+								<br>
+								<p>Its again a matter of issuing one SQL command through mysql_query function to delete any database table.
+									But be very careful while using this command because by doing so any database table. But be very careful
+									while using this command because by doing so you can delete some important information you have in your table.
+								</p>
+								<br>
+								<h4>Example</h4>
+								<h5>Try out following example to drop a table -</h5>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:3036';
+									$dbuser = 'root';
+									$dbpass = 'rootpassword';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									
+									$sql = 'DROP TABLE employee';
+									$retval = mysql_query( $sql, $conn );
+
+									if(! $retval ) {
+										die('Could not delete table employee: ' . mysql_error());
+									}
+
+									echo "Table deleted successfully\n";
+									
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
 					</div>
+					<div>
+						<p>Data can be entered into MySQL tables by executing SQL INSERT statement through PHP function mysql_query.
+							below a simple example to insert a record into employee table.</p>
+								<br>
+								<h4>Example</h4>
+								<h5>Try out following example to insert record into employee table.</h5>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:3036';
+									$dbuser = 'root';
+									$dbpass = 'rootpassword';
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									
+									$sql = ' INSERT INTO employee '.
+										'(emp_name,emp_address,emp_salary, join_date)' . 
+										'VALUES ("guest", "XYZ", 2000, NOW() )';
+
+									mysql_select_db('test_db');
+									$retval = mysql_query( $sql, $conn );
+
+									if(! $retval ) {
+										die('Could not delete database db_test: ' . mysql_error());
+									}
+
+									echo "Entered data successfully\n";
+									
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
+					</div>
+					<div>
+						<p>In real application, all the values will be taken using HTML form and then those values
+							will be captured using PHP script and finally they will be inserted into MySQL tables.
+
+							Data can be fetched from MySQL tables by executing SQL SELECT statement through PHP function
+							mysql_query. You have several options to fetch data from MySQL.
+
+							The most frequently used option is to use function mysql_fetch_array(). This function returns 
+							row as an associative array, a numeric array, or both. This function returns FALSE if there are
+							no more rows.
+
+							Below is a simple example to fetch records from employee table.</p>
+								<br>
+								<h4>Example</h4>
+								<h5>Try out following example to display all the records from employee table.</h5>
+								<pre><code>
+								&lt;?php
+
+									$dbhost = 'localhost:3036';
+									$dbuser = 'root';
+									$dbpass = 'rootpassword';
+
+									$conn = mysql_connect ($dbhost, $dbuser, $dbpass);
+
+									if( ! $conn ) {
+										die ('Could not connect:' . mysql_error());
+									}
+
+									
+									$sql = 'SELECT emp_id, emp_name, emp_salary FROM employee';
+									mysql_select_db('test_db');
+									$retval = mysql_query( $sql, $conn );
+
+									if(! $retval ) {
+										die('Could not delete database db_test: ' . mysql_error());
+									}
+
+									
+									mysql_close ($conn);
+
+								?&gt;
+								</code></pre>
+					</div>
+					<div>
+						<h2>Web Hosting</h2>
+						<br>
+						<p><b>Web hosting</b> is a service of providing online space of storage of web pages.</p><p>These web pages are made available via <b>World Wide Web.</b> The companies which offer	website hosting are known as <b>Web hosts.</b></p>
+						<br>
+						<p>The servers on which web site is hosted remain switched on 24x7.</p><p>These servers are run by web hosting companies.</p><p>Each server has its own IP address.</p><p> Since IP addresses are difficult to remember therefore, webmaster points their domain name to the IP address of the server their website is stored on.</p>
+						<br>
+						<p>It is not possible to host your website on your local computer, to do so you would have to leave your computer on 24 hours a day.</p><p> This is not practical and cheaper as well.</p><p>This is where web hosting companies comes in.</p>
+						<br>
+						<h3>Types of Hosting</h3>
+						<br>
+						<P>The following table describes different types of hosting that can be availed as per the need:</P>
+						<br>
+						<table border="1px">
+							<tr >
+								<th>S.N.</th>
+								<th>Hosting Description</th>
+							</tr>
+							<tr>
+								<td>1.</td>
+								<td><h5>Shared Hosting</h5>
+									<p>In shared hosting, the hosting company puts thousand of website on the same physical server.</p>
+									<p>Each customer has their own allocation of physical web space and a set of bandwidth limit.</p>
+									<p>As all websites share same physical memory, MYSQL server and Apache server, one website on</p>
+									<p>the server experiencing high traffic load will affect performance of all websites on the server.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>2.</td>
+								<td><h5>Virtual Private Server (VPS)</h5>
+								<p>It is also known as Virtual Dedicated Server. It is a server which is partitioned into smaller servers.</p>
+								<p>In this customer is given their own partition, which is installed with its own operating system.</p>
+								<p>Unlike shared hosting, VPS doesn't share memory or processor time rather it allocates certain amount
+									of memory and CPU to use which means that any problem on a VPS partition on the same drive will not
+									affect other VPS customers.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>3.</td>
+								<td><h5>Dedicated Server</h5>
+									<p>In this kind of hosting, single dedicated server is setup for just one customer.</p>
+									<p>It is commonly used by the businesses that need the power, control and security 
+										that a dedicated server offers.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>4.</td>
+								<td><h5>Reseller Hosting</h5>
+								<p>A reseller acts as a middle man and sells hosting space of someone else's server.</p>
+								</td>
+							</tr>
+							<tr>
+								<td>5.</td>
+								<td><h5>Grid Hosting</h5>
+								<p>Instead of utilizing one server, Grid Hosting spreads resources over a large number of servers.</p>
+								<p>It is quite stable and flexible. The servers can be added or taken away from the grid without 
+									crashing the system.</p>
+								</td>
+							</tr>
+						</table>
+						<br>
+						<h3>Web Hosting Companies</h3>
+						<br>
+						<P>Following are the several companies offering web hosting service:</P>
+						<br>
+						<table border="1px">
+							<tr >
+								<th>S.N.</th>
+								<th>Hosting Company</th>
+							</tr>
+							<tr>
+								<td>1.</td>
+								<td><p>Blue Host</p></td>
+							</tr>
+							<tr>
+								<td>2.</td>
+								<td><p>Go Daddy</p></td>
+							</tr>
+							<tr>
+								<td>3.</td>
+								<td><p>Host Gator</p></td>
+							</tr>
+							<tr>
+								<td>4.</td>
+								<td><p>just Host</p></td>
+							</tr>
+							<tr>
+								<td>5.</td>
+								<td><p>Laughing Squid</p></td>
+							</tr>
+							<tr>
+								<td>6.</td>
+								<td><p>Hivelocity</p></td>
+							</tr>
+							<tr>
+								<td>7.</td>
+								<td><p>liquid Web</p></td>
+							</tr>
+							<tr>
+								<td>8.</td>
+								<td><p>Media TempleServlnt</p></td>
+							</tr>
+							<tr>
+								<td>9.</td>
+								<td><p>Wired Tree</p></td>
+							</tr>
+							<tr>
+								<td>10.</td>
+								<td><p>Wild West Domains</p></td>
+							</tr>
+							<tr>
+								<td>11.</td>
+								<td><p>Wix</p></td>
+							</tr>
+							<tr>
+								<td>12.</td>
+								<td><p>WIPL</p></td>
+							</tr>
+							<tr>
+								<td>13.</td>
+								<td><p>Big Rock</p></td>
+							</tr>
+						</table>
+					</div>
+					<div>
+						<h3><b>Domain Name Registration</b></h3>
+						<br>
+						<p>Web Hosting and Domain Registration are two elements of running a websites. But it's important to understand the difference and use cases.</p> 
+						<br>
+						<p><i>Web Hosting</i> is an account on a computer (aka server) that can store and serve website files via the Internet.</p>
+						<br>
+						<p><b>Domain Registration</b> is leasing a human-readable word (e.g., amazon.com) that directs people to specific website files via a browser.</p>
+						<br>
+						<p>As an analogy, a domanin is an "address" on the Internet. Hosting is the "land" or space where your website files live.</p>
+						<br>
+						<p>Internet addresses are technically "IP Addresses." IP addresses are a long series of numbers that make no sense to humans.</p>
+						<br>
+						<p>So instead of typing in 192.168.0.1.1 to access a website owner can register a domain that will route to that specific IP address.</p>
+						<br>
+						<p>When you register a domain name, you are leasing it from <b>the Internet Corporation for Names and Numbers (ICANN)</b>. ICANN provides domains via approved registers.</p>
+						<br>
+						<p>A domain does not do anything on its own. Registration provides you the right to "point" your domain wherever you want.</p>
+						<br>
+						<p>You can tell it to redirect to another website - But usually, you'll want it to direct browsers to your website...on your hosting account.</p>
+						<br>
+						<h3><b>Content Management System (CMS)</b></h3>
+						<br>
+						<p>Content Management System (CMS) Platforms are applications which allow to create and run your website. You will get an Admin Panel, which is an interface where you can create and update pages, posts and other type of content (images, videos, etc.) and arrange the content the way you need.</p>
+						<br>
+						<p>You will also be able to change the design of the site through the admin panel by installing themes (design templates) and changing them. All the actions are done simply by clicking on various buttons. You don't have to write codes or scripts in most cases, so you can manage your content easily.</p>
+						<br>
+						<p>The most prominent CMS platforms are <b>WordPress, Joomla</b> and <b>Drupal.</b> They are free and open source CMS engines. That means their source code is open to the public. You can use, edit and customize the code files of the engine on your site and if you discover a great way to improve the platform, you can pitch it to the developers and help in making their engine even better in their next update.</p>
+						<br>
+						<p><b>WordPress</b> is an open source CMS. More than 50 % of the webpages are by that platform. It is getting more comprehensive, intuitive and popular with each new update release. WordPress has a committed community, which has <b>tonnes of free extensions and the easiest-to-use interface.</b></p>
+						<br>
+						<p>Managing your content with WordPress is perfectly simple: you create a page, add it to the menu, post something on it and see your content on the front-end of your site. All that adds up to a pre-eminent CMS platform. The official webpage is https://wordpress.com/.</p>
+						<br>
+						<p><b>Joomla</b> has balance between customization possibilities and user-friendliness, yet it is much more complex than WordPress. If you have never worked with this engine before, you will need some time to get used to modifying it. Assigning plugins to modules, positioning modules on different pages, configuring layouts and other necessary manipulations can be a bit hard on a beginner developer.</p>
+						<br>
+						<p>On the other hand, Joomla extension developers and community have come up with many inspired solutions for coomon web design problems that are hard to resolve within WordPress. If we take any Joomla slider extension as an example, you can set its location on the page, the duration for showing each slide, the sliding effect and the type of pagination. </p>
+						<br>
+						<p>Its official webpage is https://www.joomla.org/.</p>
+						<br>
+						<p><b>Drupal</b> is for huge websites and organizations that can afford full-time administrators. You can do almost anything with Drupal. I am often fascinated by how many options the engine contains out of the box. Lots of things which in WordPress or Joomla would require custom coding have readymade solutions by default in Drupal. It can be enhanced even more with third-party extensions. But, I will be honest with you - learning to operate it, is the real challenge. It takes a lot of work and patience to master.</p>
+						<br>
+						<p>Its official website is https://www.drupal.org/.</p>
+						<br>
+						<h3><b>Joomla - Content Management System</b></h3>
+						<br>
+						<p>Joomla is an open source <b>Content Management System (CMS), which is used to build websites and online applications. It is free and extendable which is separated into front-end and back-end templates (administrator). Joomla is developed using PHP, Object Oriented Programming, software design patterns and MySQL (used for storing the data).</b></p>
+						<br>
+						<p>The following diagram shows the architecture of Joomla.</p>
+						<img src="img/joomla_archetecture.jpg" alt="Joomla architecture">
+						<br>
+						<p>The architecture of Joomla contains following layers -</p>
+						<br>
+						<ul>
+							<li>Database</li>
+							<li>Joomla Framework</li>
+							<li>Components</li>
+							<li>Modules</li>
+							<li>Plugin</li>
+							<li>Templates</li>
+							<li>Web Server</li>
+						</ul>
+						<br>
+						<p><b>Database - Database is a collection of data and can be stored, manipulated and organized in a particular manner. The database stores the user information, content and many more required data of the site. Using Joomla database layer, it ensures maximum flexibility and compatibility for extension.</b></p>
+						<br>
+						<p><b>Joomla Framework - Framework is a collection of open source software, where the Joomla CMS is built. It is developed for more flexibility and breaks the framework into single modular packages which helps each package to deveolp more easily.</b></p>
+						<br>
+						<p><b>Components - Components are considered as mini applications. It consists of two parts i.e. Administrator and Site. Whenever a page gets loaded, component is been called to render the body of main page. The Administrator part manages different aspects of the component and the site part helps in rendering the pages when request is made by site visitor. Components are main functional unit of Joomla.</b></p>
+						<br>
+						<p><b>Modules - Modules is an extension which is used to render the pages in Joomla. It is also used to display the new data from the component. It frequently looks like boxes such as login module. In Joomla administrator the modules are managed by the module manager. It displays the new content and images when module is linked to Joomla components.</b></p>
+						<br>
+						<p><b>Plugin - This is also a kind of Joomla extension, it is very flexible and powerful for extending the framework. It contains a bit of codes that is used to execute the particular event trigger. It is commonly used to format the output of a component or module when a page is built. The plugin function which are associated with event are executed in a sequence when a particular event occurs.</b></p>
+						<br>
+						<p><b>Templates - Template determines the look of the Joomla website. There are two types of templates used i.e. <b>Front-end</b> and <b>Back-end.</b> The Back-end template is used to control the functions by the administrator where-as the Front-end template is a way to present the website to users. Templates are easy to build or customize your site. It provides maximum flexibility to style your site.</p>
+						<br>
+						<p><b>Web Browser - It is a server where the user interacts. It delivers the web pages to the client. The HTTP (Hyper Text Transfer Protocol) is used to communicate between the client and the server.</b></p>
+						<br>
+					</div>
+					
+
 			</div>
 			</div>
 		
@@ -331,7 +682,6 @@
 						<a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
 						<a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
 						<a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
-						<a href="#"><i class="fa fa-google-plus"></i></a>
 					</div>
 					<!-- copy right -->
 					<!-- This theme comes under Creative Commons Attribution 4.0 Unported. So don't remove below link back -->
