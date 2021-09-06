@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TechBorg - C++</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="Your description">
+		<meta name="keywords" content="Your,Keywords">
+		<meta name="" content="">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="../css/font-awesome.min.css" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="../css/style.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/logo.png">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6306201853171537"
+     crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+	
+		<div class="wrapper">
+		
+			<!-- header -->
+			<header>
+				<!-- navigation -->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							
+							<a class="navbar-brand" href="../index.html"><h1>TECHBORG</h1></a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="../registration.html">Signup</a></li>
+								<li><a href="../login.html">Login</a></li>
+								<li><a href="../index.html">Home</a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</header>
+			
+			<!-- banner -->
+			<div class="banner">
+				<div class="container">
+					<!-- heading -->
+					<h2>C++</h2>
+					<!-- paragraph -->
+					<p></p>
+				</div>
+			</div>
+			<!-- banner end -->
+
+<article id="post-520" class="post-520 page type-page status-publish hentry">
+
+	
+	<div class="entry-inner">
+
+		<header class="entry-header">
+			<h1 class="entry-title">Setting up C++ Development Environment</h1>					</header><!-- .entry-header -->
+
+		<div class="entry-content">
+			<p>C++ is a general-purpose programming language and widely used nowadays for competitive programming. It has imperative, object-oriented and generic programming features.<br />
+C++ runs on lots of platform like Windows, Linux, Unix, Mac, etc. Before we start programming with C++. We will need an environment to be set-up on our local computer to compile and run our C++ programs successfully. If you do not want to set up a local environment you can also use online IDEs for compiling your program.</p>
+<p><strong>Using online IDE</strong>: IDE stands for integrated development environment. IDE is a software application that provides facilities to a computer programmer for developing software. There are many online IDEs available which you can use to compile and run your programs easily without setting up a local development environment.</p>
+<p>&nbsp;</p>
+<div id="AP_G4GR_5"></div>
+<p>&nbsp;</p>
+<div class="code-block">
+<div class="code-gutter">
+<div class="editor-buttons-container">
+<div class="editor-buttons">
+<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+</div>
+</div>
+</div>
+</div>
+<div class="code-container">
+<div id="highlighter_823277" class="syntaxhighlighter nogutter  ">
+<table border="0" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td class="code">
+<div class="container">
+<div class="line number1 index0 alt2"><code class="preprocessor">#include&lt;iostream&gt; </code></div>
+<div class="line number2 index1 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+<div class="line number3 index2 alt2"><code class="plain">main() </code></div>
+<div class="line number4 index3 alt1"><code class="plain">{ </code></div>
+<div class="line number5 index4 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Learning C++ at GeekforGeeks"</code><code class="plain">; </code></div>
+<div class="line number6 index5 alt1"><code class="plain">} </code></div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p align="center"><strong>Setting up local environment</strong></p>
+<p>For setting up your own personal development environment on your local machine you need to install two important softwares:</p>
+<ol>
+<li><strong>Text Editor</strong>: Text Editors are type of programs used to edit or write texts. We will use text-editors to type our C++ programs. The normal extension of a text file is (.txt) but a text file containing C++ program should be saved with ‘.CPP’ or ‘.C’ extension. Files ending with the extension ‘.CPP’ and ‘.C’ are called source code files and they are supposed to contain source code written in C++ programming language. These extension helps the compiler to identify that the file contains a C++ program.<br />
+Before beginning programming with C++, one must have a text-editor installed to write programs.</li>
+<li><strong>C++ Compiler</strong>: Once you have installed text-editor and typed and save your program in a file with ‘.CPP’ extension, you will need a C++ compiler to compile this file. A compiler is a computer program which converts high-level language into machine understandable low-level language. In other words, we can say that it converts the source code written in a programming language into another computer language which the computer understands. For compiling a C++ program we will need a C++ compiler which will convert the source code written in C++ into machine codes. Below are the details about setting up compiler on different platforms.
+<ul>
+<li><strong>Linux Installation</strong>: We will install the GNU GCC compiler on Linux. To install and work with the GCC compiler on your Linux machine, proceed according to below steps:
+<ul>
+<li>You have to first run the below two commands from your Linux terminal window:
+<pre>sudo apt-get update
+sudo apt-get install GCC
+</pre>
+<p>This command will install the GCC compiler on your system. You may also run the below command:</p>
+<pre>sudo apt-get install build-essential
+</pre>
+<p>This command will install all the libraries which are required to compile and run a C++ program.</li>
+<li>After completing the above step, you should check whether the GCC compiler is installed in your system correctly or not. To do this you have to run the below-given command from Linux terminal:
+<pre>g++ --version
+</pre>
+</li>
+<li>If you have completed the above two steps without any errors, then your Linux environment is set up and ready to be used to compile C++ programs. In further steps, we will learn how to compile and run a C++ program on Linux using GCC compiler.</li>
+<li>Write your program in a text file and save it with any file name and.CPP extension. We have written a program to display “Hello World” and saved it in a file with the filename “helloworld.cpp” on desktop.</li>
+<li>Now you have to open the Linux terminal and move to the directory where you have saved your file. Then you have to run the below command to compile your file:
+<pre>g++ <em>filename.cpp</em> -o <em>any-name</em>
+</pre>
+<p><em>filename.cpp</em> is the name of your source code file. In our case, the name is “helloworld.cpp” and <em>any-name</em> can be any name of your choice. This name will be assigned to the executable file which is created by the compiler after compilation. In our case, we choose <em>any-name</em> to be “hello”.<br />
+We will run the above command as:</p>
+<pre>g++ helloworld.cpp -o hello
+</pre>
+</li>
+<li>After executing the above command, you will see a new file is created automatically in the same directory where you have saved the source file and the name of this file is the name you chose as <em>any-name</em>.<br />
+Now to run your program you have to run the below command:</p>
+<pre>./hello
+</pre>
+<p>This command will run your program in the terminal window.</li>
+</ul>
+</li>
+<li><strong>Windows Installation</strong>: There are lots of IDE available for windows operating system which you can use to work easily with C++ programming language. One of the popular IDE is <strong>Code::Blocks</strong>. To download Code::Blocks you may visit <a href="http://www.codeblocks.org/downloads/26">this</a> link. Once you have downloaded the setup file of Code::Blocks from the given link open it and follow the instruction to install.
+<ul>
+<li>After successfully installing Code::Blocks, go to <em>File</em> menu -&gt; Select <em>New</em> and <em>create an Empty</em> file.</li>
+<li>Now write your C++ program in this empty file and save the file with a ‘.cpp’ extension.</li>
+<li>After saving the file with ‘.cpp’ extension, go to <em>Build</em> menu and choose the <em>Build and Run</em> option.</li>
+</ul>
+</li>
+<li><strong>Mac OS X Installation</strong>: If you are a Mac user,you have to download Xcode. To download Xcode you have to visit the apple website or you can search it on apple app store. You may follow the link developer.apple.com/technologies/tools/ to download Xcode. You will find all the necessary install instructions there.
+<ul>
+<li>After successfully installing Xcode, open the Xcode application.</li>
+<li>To create a new project. Go to File menu -&gt; select New -&gt; select Project. This will create a new project for you.</li>
+<li>Now in the next window you have to choose a template for your project. To choose a C++ template choose <em>Application</em> option which is under the <em>OS X</em> section on the left side bar. Now choose <em>command-line tools</em> from available options and hit <em>Next </em>button.</li>
+<li>On the next window provide all the necessary details like ‘name of organisation’, ‘Product Name’ etc. But make sure to choose the language as C++ . After filling the details hit the next button to proceed to further steps.</li>
+<li>Choose the location where you want to save your project. After this choose the <em>main.cpp</em> file from the directory list on the left side-bar.</li>
+<li>Now after opening the main.cpp file, you will see a pre written c++ program or template is provided. You may change this program as per your requirement. To run your C++ program you have to go to <em>Product</em> menu and choose the <em>Run</em> option from the dropdown.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+	</div><!-- .entry-inner -->
+</article><!-- #post-## -->
+			
+<!-- footer -->
+			<footer>
+				<div class="container">
+					<p><a href="../index.html">Home</a> | <a href="../works.html">works</a> | <a href="../team.html">Team</a> | <a href="../contact.html">Contact</a></p>
+					<div class="social">
+						<a href="https://www.facebook.com/techborgfb/"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/tech_borg/"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/techborg_/"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/company/techborglearning/"><i class="fa fa-linkedin"></i></a>
+						<a href="https://www.youtube.com/c/TechBorg"><i class="fa fa-youtube"></i></a>
+					</div>
+				
+					<p class="copy-right">Copyright &copy; 2018-2021 |  All rights reserved. </p>
+				</div>
+			</footer>
+
+		</div>
+		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="../js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="../js/bootstrap.min.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="../js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="../js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="../js/custom.js"></script>
+	</body>	
+</html>
