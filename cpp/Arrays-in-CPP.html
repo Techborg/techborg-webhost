@@ -61,6 +61,402 @@
 				</div>
 			</div>
 			<!-- banner end -->
+            <article id="post-532" class="post-532 page type-page status-publish hentry">
+
+	
+                <div class="entry-inner">
+            
+                    <header class="entry-header">
+                        <h1 class="entry-title">Arrays in C/C++</h1>					</header><!-- .entry-header -->
+            
+                    <div class="entry-content">
+                        <p>An array in C or C++ is a collection of items stored at contiguous memory locations and elements can be accessed randomly using indices of an array. They are used to store similar type of elements as in the data type must be the same for all elements. They can be used to store collection of primitive data types such as int, float, double, char, etc of any particular type. To add to it, an array in C or C++ can store derived data types such as the structures, pointers etc. Given below is the picturesque representation of an array.</p>
+            <p><a href="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2015/05/Arrays.png"><img class="aligncenter size-full wp-image-28052" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2015/05/Arrays.png" alt="arrays" /></a></p>
+            <p><strong>Why do we need arrays?</strong><br />
+            We can use normal variables (v1, v2, v3, ..) when we have a small number of objects, but if we want to store a large number of instances, it becomes difficult to manage them with normal variables. The idea of an array is to represent many instances in one variable.</p>
+            <p>&nbsp;</p>
+            <div id="AP_G4GR_5"></div>
+            <p>&nbsp;</p>
+            <p><strong>Array declaration in C/C++:</strong><br />
+            <img class="aligncenter size-full wp-image-256995" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Array-Declaration-In-C.png" alt="" /></p>
+            <p>&nbsp;</p>
+            <div id="AP_G4GR_5"></div>
+            <p>&nbsp;</p>
+            <p>There are various ways in which we can declare an array. It can be done by specifying its type and size, by initializing it or both.</p>
+            <ol>
+            <li><b>Array declaration by specifying size</b>
+            <div class="noIdeBtnDiv">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_945319" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="comments">// Array declaration by specifying size </code></div>
+            <div class="line number2 index1 alt1"><code class="color1 bold">int</code> <code class="plain">arr1[10]; </code></div>
+            <div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+            <div class="line number4 index3 alt1"><code class="comments">// With recent C/C++ versions, we can also </code></div>
+            <div class="line number5 index4 alt2"><code class="comments">// declare an array of user specified size </code></div>
+            <div class="line number6 index5 alt1"><code class="color1 bold">int</code> <code class="plain">n = 10; </code></div>
+            <div class="line number7 index6 alt2"><code class="color1 bold">int</code> <code class="plain">arr2[n]; </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </li>
+            <li><b>Array declaration by initializing elements</b>
+            <div class="noIdeBtnDiv">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_411476" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="comments">// Array declaration by initializing elements </code></div>
+            <div class="line number2 index1 alt1"><code class="color1 bold">int</code> <code class="plain">arr[] = { 10, 20, 30, 40 } </code></div>
+            <div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+            <div class="line number4 index3 alt1"><code class="comments">// Compiler creates an array of size 4. </code></div>
+            <div class="line number5 index4 alt2"><code class="comments">// above is same as  "int arr[4] = {10, 20, 30, 40}" </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </li>
+            <li><b>Array declaration by specifying size and initializing elements</b>
+            <div class="noIdeBtnDiv">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_437393" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="comments">// Array declaration by specifying size and initializing </code></div>
+            <div class="line number2 index1 alt1"><code class="comments">// elements </code></div>
+            <div class="line number3 index2 alt2"><code class="color1 bold">int</code> <code class="plain">arr[6] = { 10, 20, 30, 40 } </code></div>
+            <div class="line number4 index3 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number5 index4 alt2"><code class="comments">// Compiler creates an array of size 6, initializes first </code></div>
+            <div class="line number6 index5 alt1"><code class="comments">// 4 elements as specified by user and rest two elements as 0. </code></div>
+            <div class="line number7 index6 alt2"><code class="comments">// above is same as  "int arr[] = {10, 20, 30, 40, 0, 0}" </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </li>
+            </ol>
+            <p><strong>Advantages of an Array in C/C++:</strong></p>
+            <ol>
+            <li>Random access of elements using array index.</li>
+            <li>Use of less line of code as it creates a single array of multiple elements.</li>
+            <li>Easy access to all the elements.</li>
+            <li>Traversal through the array becomes easy using a single loop.</li>
+            <li>Sorting becomes easy as it can be accomplished by writing less line of code.</li>
+            </ol>
+            <p><strong>Disadvantages of an Array in C/C++:</strong></p>
+            <ol>
+            <li>Allows a fixed number of elements to be entered which is decided at the time of declaration. Unlike a linked list, an array in C is not dynamic.</li>
+            <li>Insertion and deletion of elements can be costly since the elements are needed to be managed in accordance with the new memory allocation.</li>
+            </ol>
+            <p><strong>Facts about Array in C/C++:</strong></p>
+            <ul>
+            <li><strong>Accessing Array Elements:</strong><br />
+            Array elements are accessed by using an integer index. Array index starts with 0 and goes till size of array minus 1.<br />
+            <img class="aligncenter size-full wp-image-256988" src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/Array-In-C.png" alt="" /><strong>Example:</strong></p>
+            <div class="responsive-tabs-wrapper">
+            <div class="responsive-tabs responsive-tabs--enabled">
+            <ul class="responsive-tabs__list" role="tablist">
+            <li id="tablist1-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+            <li id="tablist1-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+            </ul>
+            <div id="tablist1-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist1-tab1">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+            <p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+            <p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_311501" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+            <div class="line number2 index1 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number3 index2 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+            <div class="line number4 index3 alt1"><code class="plain">{ </code></div>
+            <div class="line number5 index4 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">arr[5]; </code></div>
+            <div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="plain">arr[0] = 5; </code></div>
+            <div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">arr[2] = -10; </code></div>
+            <div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="plain">arr[3 / 2] = 2; </code><code class="comments">// this is same as arr[1] = 2 </code></div>
+            <div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="plain">arr[3] = arr[0]; </code></div>
+            <div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d %d %d %d"</code><code class="plain">, arr[0], arr[1], arr[2], arr[3]); </code></div>
+            <div class="line number12 index11 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+            <div class="line number14 index13 alt1"><code class="plain">} </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="outputDiv"><b>Output:</b></p>
+            <pre>5 2 -10 5
+            </pre>
+            </div>
+            </li>
+            <li><strong>No Index Out of bound Checking:</strong><br />
+            There is no index out of bounds checking in C/C++, for example, the following program compiles fine but may produce unexpected output when run.</p>
+            <div class="responsive-tabs-wrapper">
+            <div class="responsive-tabs responsive-tabs--enabled">
+            <ul class="responsive-tabs__list" role="tablist">
+            <li id="tablist2-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+            <li id="tablist2-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+            </ul>
+            <div id="tablist2-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist2-tab1">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+            <p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+            <p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_580974" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="comments">// This C program compiles fine </code></div>
+            <div class="line number2 index1 alt1"><code class="comments">// as index out of bound </code></div>
+            <div class="line number3 index2 alt2"><code class="comments">// is not checked in C. </code></div>
+            <div class="line number4 index3 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number5 index4 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+            <div class="line number6 index5 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number7 index6 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+            <div class="line number8 index7 alt1"><code class="plain">{ </code></div>
+            <div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">arr[2]; </code></div>
+            <div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d "</code><code class="plain">, arr[3]); </code></div>
+            <div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d "</code><code class="plain">, arr[-2]); </code></div>
+            <div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+            <div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+            <div class="line number15 index14 alt2"><code class="plain">} </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="outputDiv"><b>Output:</b></p>
+            <div id="AP_G4GR_6"></div>
+            <pre>2008101287 4195777
+            </pre>
+            </div>
+            </li>
+            <li>In C, it is not compiler error to initialize an array with more elements than the specified size. For example, the below program compiles fine and shows just Warning.
+            <div class="noIdeBtnDiv">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_645224" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+            <div class="line number2 index1 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+            <div class="line number3 index2 alt2"><code class="plain">{ </code></div>
+            <div class="line number4 index3 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number5 index4 alt2"><code class="undefined spaces">    </code><code class="comments">// Array declaration by initializing it with more </code></div>
+            <div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="comments">// elements than specified size. </code></div>
+            <div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">arr[2] = { 10, 20, 30, 40, 50 }; </code></div>
+            <div class="line number8 index7 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+            <div class="line number10 index9 alt1"><code class="plain">} </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            <p><strong>Warnings:</strong></p>
+            <pre>prog.c: In function 'main':
+            prog.c:7:25: warning: excess elements in array initializer
+              int arr[2] = { 10, 20, 30, 40, 50 };
+                                     ^
+            prog.c:7:25: note: (near initialization for 'arr')
+            prog.c:7:29: warning: excess elements in array initializer
+              int arr[2] = { 10, 20, 30, 40, 50 };
+                                         ^
+            prog.c:7:29: note: (near initialization for 'arr')
+            prog.c:7:33: warning: excess elements in array initializer
+              int arr[2] = { 10, 20, 30, 40, 50 };
+                                             ^
+            prog.c:7:33: note: (near initialization for 'arr')
+            </pre>
+            <p><strong>Note:</strong> The program won’t compile in C++. If we save the above program as a .cpp, the program generates compiler error <em>“error: too many initializers for ‘int [2]&#8217;”</em>.</li>
+            <li><strong>The elements are stored at contiguous memory locations</strong><br />
+            <strong>Example:</strong></p>
+            <div class="responsive-tabs-wrapper">
+            <div class="responsive-tabs responsive-tabs--enabled">
+            <ul class="responsive-tabs__list" role="tablist">
+            <li id="tablist3-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+            <li id="tablist3-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+            </ul>
+            <div id="tablist3-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist3-tab1">
+            <div class="code-block">
+            <div class="code-gutter">
+            <div class="editor-buttons-container">
+            <div class="editor-buttons">
+            <div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+            <p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+            <p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="code-container">
+            <div id="highlighter_5424" class="syntaxhighlighter nogutter  ">
+            <table border="0" cellspacing="0" cellpadding="0">
+            <tbody>
+            <tr>
+            <td class="code">
+            <div class="container">
+            <div class="line number1 index0 alt2"><code class="comments">// C program to demonstrate that array elements are stored </code></div>
+            <div class="line number2 index1 alt1"><code class="comments">// contiguous locations </code></div>
+            <div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+            <div class="line number4 index3 alt1"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+            <div class="line number5 index4 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+            <div class="line number6 index5 alt1"><code class="plain">{ </code></div>
+            <div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="comments">// an array of 10 integers.  If arr[0] is stored at </code></div>
+            <div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="comments">// address x, then arr[1] is stored at x + sizeof(int) </code></div>
+            <div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="comments">// arr[2] is stored at x + sizeof(int) + sizeof(int) </code></div>
+            <div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="comments">// and so on. </code></div>
+            <div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">arr[5], i; </code></div>
+            <div class="line number12 index11 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Size of integer in this compiler is %lu\n"</code><code class="plain">, </code><code class="keyword bold">sizeof</code><code class="plain">(</code><code class="color1 bold">int</code><code class="plain">)); </code></div>
+            <div class="line number14 index13 alt1"><code class="undefined spaces"> </code></div>
+            <div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(i = 0; i &lt; 5; i++) </code></div>
+            <div class="line number16 index15 alt1"><code class="undefined spaces">        </code><code class="comments">// The use of '&amp;' before a variable name, yields </code></div>
+            <div class="line number17 index16 alt2"><code class="undefined spaces">        </code><code class="comments">// address of variable. </code></div>
+            <div class="line number18 index17 alt1"><code class="undefined spaces">        </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Address arr[%d] is %p\n"</code><code class="plain">, i, &amp;arr[i]); </code></div>
+            <div class="line number19 index18 alt2"><code class="undefined spaces"> </code></div>
+            <div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+            <div class="line number21 index20 alt2"><code class="plain">} </code></div>
+            </div>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="outputDiv"><b>Output:</b></p>
+            <pre>Size of integer in this compiler is 4
+            Address arr[0] is 0x7ffd636b4260
+            Address arr[1] is 0x7ffd636b4264
+            Address arr[2] is 0x7ffd636b4268
+            Address arr[3] is 0x7ffd636b426c
+            Address arr[4] is 0x7ffd636b4270
+            </pre>
+            </div>
+            </li>
+            </ul>
+            <p><strong>Array vs Pointers</strong><br />
+            Arrays and pointer are two different things (we can check by applying sizeof). The confusion happens because array name indicates the address of first element and arrays are always passed as pointers (even if we use square bracket). Please see Difference between pointer and array in C? for more details.</p>
+            <p><strong>What is vector in C++?</strong><br />
+            Vector in C++ is a class in STL that represents an array. The advantages of vector over normal arrays are,</p>
+            <ul>
+            <li>We do not need pass size as an extra parameter when we declare a vector i.e, Vectors support dynamic sizes (we do not have to initially specify size of a vector). We can also resize a vector.</li>
+            <li>Vectors have many in-built function like, removing an element, etc.</li>
+            <li></li>
+            <li>To know more about functionalities provided by vector, please refer vector in C++ for more details.</li>
+            </ul>
+           
+            
+                </div><!-- .entry-inner -->
+            </article><!-- #post-## -->
 			
 			
 			<!-- footer -->
