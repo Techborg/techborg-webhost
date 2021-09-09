@@ -61,6 +61,475 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-538" class="post-538 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">Pointers in C/C++ with Examples</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>Pointers are symbolic representation of addresses. They enable programs to simulate call-by-reference as well as to create and manipulate dynamic data structures. It’s general declaration in C/C++ has the format:</p>
+			<p><strong>Syntax:</strong></p>
+			<pre>datatype *var_name; 
+			int *ptr;   //ptr can point to an address which holds int data
+			</pre>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>&nbsp;</p>
+			<p><strong>How to use a pointer?</strong></p>
+			<ul>
+			<li>Define a pointer variable</li>
+			<li>Assigning the address of a variable to a pointer using unary operator (&amp;) which returns the address of that variable.</li>
+			<li>Accessing the value stored in the address using unary operator (*) which returns the value of the variable located at the address specified by its operand.</li>
+			</ul>
+			<p>The reason we associate data type to a pointer is <strong>that it knows how many bytes the data is stored in</strong>. When we increment a pointer, we increase the pointer by the size of data type to which it points.</p>
+			<div class="responsive-tabs-wrapper">
+			<div class="responsive-tabs responsive-tabs--enabled">
+			<ul class="responsive-tabs__list" role="tablist">
+			<li id="tablist1-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+			<li id="tablist1-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+			</ul>
+			<div id="tablist1-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist1-tab1">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_883540" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to illustrate Pointers in C++ </code></div>
+			<div class="line number2 index1 alt1"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">void</code> <code class="plain">geeks() </code></div>
+			<div class="line number5 index4 alt2"><code class="plain">{ </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">var = 20;  </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="comments">// declare pointer variable     </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">*ptr;  </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="comments">// note that data type of ptr and var must be same </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="plain">ptr = &amp;var;     </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="comments">// assign the address of a variable to a pointer </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Value at ptr = %p \n"</code><code class="plain">,ptr); </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Value at var = %d \n"</code><code class="plain">,var); </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Value at *ptr = %d \n"</code><code class="plain">, *ptr);      </code></div>
+			<div class="line number18 index17 alt1"><code class="plain">} </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number20 index19 alt1"><code class="comments">// Driver program </code></div>
+			<div class="line number21 index20 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number22 index21 alt1"><code class="plain">{ </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="plain">geeks(); </code></div>
+			<div class="line number24 index23 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output:</strong></p>
+			<pre>Value at ptr = 0x7ffcb9e9ea4c
+			Value at var = 20
+			Value at *ptr = 20
+			</pre>
+			<p><strong>References and Pointers</strong></p>
+			<p>There are 3 ways to pass C++ arguments to a function:</p>
+			<ul>
+			<li>call-by-value</li>
+			<li>call-by-reference with pointer argument</li>
+			<li>call-by-reference with reference argument</li>
+			</ul>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_698062" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to illustrate call-by-methods in C++ </code></div>
+			<div class="line number2 index1 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;bits/stdc++.h&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="comments">//Pass-by-Value </code></div>
+			<div class="line number6 index5 alt1"><code class="color1 bold">int</code> <code class="plain">square1(</code><code class="color1 bold">int</code> <code class="plain">n) </code></div>
+			<div class="line number7 index6 alt2"><code class="plain">{ </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="comments">//Address of n in square1() is not the same as n1 in main() </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"address of n1 in square1(): "</code> <code class="plain">&lt;&lt; &amp;n &lt;&lt; </code><code class="string">"\n"</code><code class="plain">;   </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="comments">// clone modified inside the function </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="plain">n *= n; </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">n; </code></div>
+			<div class="line number14 index13 alt1"><code class="plain">} </code></div>
+			<div class="line number15 index14 alt2"><code class="comments">//Pass-by-Reference with Pointer Arguments </code></div>
+			<div class="line number16 index15 alt1"><code class="keyword bold">void</code> <code class="plain">square2(</code><code class="color1 bold">int</code> <code class="plain">*n) </code></div>
+			<div class="line number17 index16 alt2"><code class="plain">{ </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">    </code><code class="comments">//Address of n in square2() is the same as n2 in main() </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"address of n2 in square2(): "</code> <code class="plain">&lt;&lt; n &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="comments">// Explicit de-referencing to get the value pointed-to </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="plain">*n *= *n; </code></div>
+			<div class="line number23 index22 alt2"><code class="plain">} </code></div>
+			<div class="line number24 index23 alt1"><code class="comments">//Pass-by-Reference with Reference Arguments </code></div>
+			<div class="line number25 index24 alt2"><code class="keyword bold">void</code> <code class="plain">square3(</code><code class="color1 bold">int</code> <code class="plain">&amp;n) </code></div>
+			<div class="line number26 index25 alt1"><code class="plain">{ </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">    </code><code class="comments">//Address of n in square3() is the same as n3 in main() </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"address of n3 in square3(): "</code> <code class="plain">&lt;&lt; &amp;n &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number29 index28 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">    </code><code class="comments">// Implicit de-referencing (without '*') </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">    </code><code class="plain">n *= n; </code></div>
+			<div class="line number32 index31 alt1"><code class="plain">} </code></div>
+			<div class="line number33 index32 alt2"><code class="keyword bold">void</code> <code class="plain">geeks() </code></div>
+			<div class="line number34 index33 alt1"><code class="plain">{ </code></div>
+			<div class="line number35 index34 alt2"><code class="undefined spaces">    </code><code class="comments">//Call-by-Value </code></div>
+			<div class="line number36 index35 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">n1=8; </code></div>
+			<div class="line number37 index36 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"address of n1 in main(): "</code> <code class="plain">&lt;&lt; &amp;n1 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number38 index37 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Square of n1: "</code> <code class="plain">&lt;&lt; square1(n1) &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number39 index38 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"No change in n1: "</code> <code class="plain">&lt;&lt; n1 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number40 index39 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number41 index40 alt2"><code class="undefined spaces">    </code><code class="comments">//Call-by-Reference with Pointer Arguments </code></div>
+			<div class="line number42 index41 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">n2=8; </code></div>
+			<div class="line number43 index42 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"address of n2 in main(): "</code> <code class="plain">&lt;&lt; &amp;n2 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number44 index43 alt1"><code class="undefined spaces">    </code><code class="plain">square2(&amp;n2); </code></div>
+			<div class="line number45 index44 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Square of n2: "</code> <code class="plain">&lt;&lt; n2 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number46 index45 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Change reflected in n2: "</code> <code class="plain">&lt;&lt; n2 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number47 index46 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number48 index47 alt1"><code class="undefined spaces">    </code><code class="comments">//Call-by-Reference with Reference Arguments </code></div>
+			<div class="line number49 index48 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">n3=8; </code></div>
+			<div class="line number50 index49 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"address of n3 in main(): "</code> <code class="plain">&lt;&lt; &amp;n3 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number51 index50 alt2"><code class="undefined spaces">    </code><code class="plain">square3(n3); </code></div>
+			<div class="line number52 index51 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Square of n3: "</code> <code class="plain">&lt;&lt; n3 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number53 index52 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Change reflected in n3: "</code> <code class="plain">&lt;&lt; n3 &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number54 index53 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number55 index54 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number56 index55 alt1"><code class="plain">} </code></div>
+			<div class="line number57 index56 alt2"><code class="comments">//Driver program </code></div>
+			<div class="line number58 index57 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number59 index58 alt2"><code class="plain">{ </code></div>
+			<div class="line number60 index59 alt1"><code class="undefined spaces">    </code><code class="plain">geeks(); </code></div>
+			<div class="line number61 index60 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>address of n1 in main(): 0x7ffcdb2b4a44
+			address of n1 in square1(): 0x7ffcdb2b4a2c
+			Square of n1: 64
+			No change in n1: 8
+			address of n2 in main(): 0x7ffcdb2b4a48
+			address of n2 in square2(): 0x7ffcdb2b4a48
+			Square of n2: 64
+			Change reflected in n2: 64
+			address of n3 in main(): 0x7ffcdb2b4a4c
+			address of n3 in square3(): 0x7ffcdb2b4a4c
+			Square of n3: 64
+			Change reflected in n3: 64</pre>
+			<p>In C++, by default arguments are passed by value and the changes made in the called function will not reflect in the passed variable. The changes are made into a clone made by the called function.<br />
+			If wish to modify the original copy directly (especially in passing huge object or array) and/or avoid the overhead of cloning, we use pass-by-reference. Pass-by-Reference with Reference Arguments does not require any clumsy syntax for referencing and dereferencing.</p>
+			<ul>
+			<li>Function pointers in C</li>
+			<li>Pointer to a function</li>
+			</ul>
+			<p><strong>Array Name as Pointers</strong></p>
+			<p>An array name contains the address of first element of the array which acts like constant pointer. It means, the address stored in array name can’t be changed.<br />
+			For example, if we have an array named val then <strong>val</strong> and <strong>&amp;val[0]</strong> can be used interchangeably.</p>
+			<div class="responsive-tabs-wrapper">
+			<div class="responsive-tabs responsive-tabs--enabled">
+			<ul class="responsive-tabs__list" role="tablist">
+			<li id="tablist2-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+			<li id="tablist2-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+			</ul>
+			<div id="tablist2-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist2-tab1">
+			<div id="AP_G4GR_6"></div>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_861737" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C program to illustrate call-by-methods </code></div>
+			<div class="line number2 index1 alt1"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">void</code> <code class="plain">geeks()  </code></div>
+			<div class="line number5 index4 alt2"><code class="plain">{  </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="comments">//Declare an array  </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">val[3] = { 5, 10, 20 };  </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="comments">//declare pointer variable  </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">*ptr;  </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="comments">//Assign the address of val[0] to ptr  </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="comments">// We can use ptr=&amp;val[0];(both are same)  </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="plain">ptr = val ;  </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Elements of the array are: "</code><code class="plain">);  </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d %d %d"</code><code class="plain">, ptr[0], ptr[1], ptr[2]);  </code></div>
+			<div class="line number17 index16 alt2"><code class="plain">}  </code></div>
+			<div class="line number18 index17 alt1"><code class="comments">//Driver program  </code></div>
+			<div class="line number19 index18 alt2"><code class="color1 bold">int</code> <code class="plain">main()  </code></div>
+			<div class="line number20 index19 alt1"><code class="plain">{  </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="plain">geeks();  </code></div>
+			<div class="line number22 index21 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<pre>Output:
+			Elements of the array are: 5 10 20
+			</pre>
+			If pointer ptr is sent to a function as an argument, the array val can be accessed in a similar fashion.</p>
+			<p>Pointer vs Array</p>
+			<p><strong>Pointer Expressions and Pointer Arithmetic</strong></p>
+			<p>A limited set of arithmetic operations can be performed on pointers which are:</p>
+			<ul>
+			<li>incremented ( ++ )</li>
+			<li>decremented ( — )</li>
+			<li>an integer may be added to a pointer ( + or += )</li>
+			<li>an integer may be subtracted from a pointer ( – or -= )</li>
+			<li>difference between two pointers (p1-p2)</li>
+			</ul>
+			<p>(Note: Pointer arithmetic is meaningless unless performed on an array.)</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_854414" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to illustrate Pointer Arithmetic in C++ </code></div>
+			<div class="line number2 index1 alt1"><code class="preprocessor">#include &lt;bits/stdc++.h&gt; </code></div>
+			<div class="line number3 index2 alt2"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">void</code> <code class="plain">geeks()  </code></div>
+			<div class="line number5 index4 alt2"><code class="plain">{ </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="comments">//Declare an array </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">v[3] = {10, 100, 200}; </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="comments">//declare pointer variable  </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">*ptr; </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="comments">//Assign the address of v[0] to ptr </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="plain">ptr = v; </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; 3; i++) </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">            </code><code class="plain">cout &lt;&lt; </code><code class="string">"Value at ptr = "</code> <code class="plain">&lt;&lt; ptr &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">            </code><code class="plain">cout &lt;&lt; </code><code class="string">"Value at *ptr = "</code> <code class="plain">&lt;&lt; *ptr &lt;&lt; </code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">             </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">            </code><code class="comments">// Increment pointer ptr by 1  </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">            </code><code class="plain">ptr++; </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number23 index22 alt2"><code class="plain">} </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number25 index24 alt2"><code class="comments">//Driver program </code></div>
+			<div class="line number26 index25 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number27 index26 alt2"><code class="plain">{ </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces">    </code><code class="plain">geeks(); </code></div>
+			<div class="line number29 index28 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<pre>Output:
+			Value at ptr = 0x7fff9a9e7920
+			Value at *ptr = 10
+			Value at ptr = 0x7fff9a9e7924
+			Value at *ptr = 100
+			Value at ptr = 0x7fff9a9e7928
+			Value at *ptr = 200
+			</pre>
+			<strong>Advanced Pointer Notation</strong></p>
+			<p>Consider pointer notation for the two-dimensional numeric arrays. consider the following declaration</p>
+			<pre>int nums[2][3]  =  { { 16, 18, 20 }, { 25, 26, 27 } };</pre>
+			<p><strong>In general, nums[ i ][ j ] is equivalent to *(*(nums+i)+j)</strong></p>
+			<p><strong>Pointers and String literals</strong></p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_6"></div>
+			<p>&nbsp;</p>
+			<p>String literals are arrays containing null-terminated character sequences. String literals are arrays of type character plus terminating null-character, with each of the elements being of type const char (as characters of string can’t be modified).</p>
+			<pre><code>const char * ptr = "geek";</code></pre>
+			<p>This declares an array with the literal representation for “geek”, and then a pointer to its first element is assigned to ptr. If we imagine that “geek” is stored at the memory locations that start at address 1800, we can represent the previous declaration as:</p>
+			<p>As pointers and arrays behave in the same way in expressions, ptr can be used to access the characters of string literal. For example:</p>
+			<pre><code>char x = *(ptr+3);
+			char y = ptr[3];</code></pre>
+			<p>Here, both x and y contain k stored at 1803 (1800+3).</p>
+			<p><strong>Pointers to pointers</strong></p>
+			<p>In C++, we can create a pointer to a pointer that in turn may point to data or other pointer. The syntax simply requires the unary operator (*) for each level of indirection while declaring the pointer.</p>
+			<pre><code>char a;
+			char *b;
+			char ** c;
+			a = ’g’;
+			b = &amp;a;
+			c = &amp;b;</code></pre>
+			<p>Here b points to a char that stores ‘g’ and c points to the pointer b.</p>
+			<p><strong>Void Pointers</strong></p>
+			<p>This is a special type of pointer available in C++ which represents absence of type. void pointers are pointers that point to a value that has no type (and thus also an undetermined length and undetermined dereferencing properties).<br />
+			This means that void pointers have great flexibility as it can point to any data type. There is payoff for this flexibility. These pointers cannot be directly dereferenced. They have to be first transformed into some other pointer type that points to a concrete data type before being dereferenced.</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_6"></div>
+			<p>&nbsp;</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_135353" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to illustrate Void Pointer in C++ </code></div>
+			<div class="line number2 index1 alt1"><code class="preprocessor">#include &lt;bits/stdc++.h&gt; </code></div>
+			<div class="line number3 index2 alt2"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">void</code> <code class="plain">increase(</code><code class="keyword bold">void</code> <code class="plain">*data,</code><code class="color1 bold">int</code> <code class="plain">ptrsize) </code></div>
+			<div class="line number5 index4 alt2"><code class="plain">{ </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="keyword bold">if</code><code class="plain">(ptrsize == </code><code class="keyword bold">sizeof</code><code class="plain">(</code><code class="color1 bold">char</code><code class="plain">)) </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">        </code><code class="color1 bold">char</code> <code class="plain">*ptrchar; </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">         </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">        </code><code class="comments">//Typecast data to a char pointer </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">        </code><code class="plain">ptrchar = (</code><code class="color1 bold">char</code><code class="plain">*)data; </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">         </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">        </code><code class="comments">//Increase the char stored at *ptrchar by 1 </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">        </code><code class="plain">(*ptrchar)++; </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"*data points to a char"</code><code class="plain">&lt;&lt;</code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">    </code><code class="keyword bold">else</code> <code class="keyword bold">if</code><code class="plain">(ptrsize == </code><code class="keyword bold">sizeof</code><code class="plain">(</code><code class="color1 bold">int</code><code class="plain">)) </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">        </code><code class="color1 bold">int</code> <code class="plain">*ptrint; </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">         </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">        </code><code class="comments">//Typecast data to a int pointer </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">        </code><code class="plain">ptrint = (</code><code class="color1 bold">int</code><code class="plain">*)data; </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">         </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">        </code><code class="comments">//Increase the int stored at *ptrchar by 1 </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">        </code><code class="plain">(*ptrint)++; </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"*data points to an int"</code><code class="plain">&lt;&lt;</code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number28 index27 alt1"><code class="plain">} </code></div>
+			<div class="line number29 index28 alt2"><code class="keyword bold">void</code> <code class="plain">geek() </code></div>
+			<div class="line number30 index29 alt1"><code class="plain">{ </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">    </code><code class="comments">// Declare a character  </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces">    </code><code class="color1 bold">char</code> <code class="plain">c=</code><code class="string">'x'</code><code class="plain">; </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">     </code></div>
+			<div class="line number34 index33 alt1"><code class="undefined spaces">    </code><code class="comments">// Declare an integer </code></div>
+			<div class="line number35 index34 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">i=10; </code></div>
+			<div class="line number36 index35 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number37 index36 alt2"><code class="undefined spaces">    </code><code class="comments">//Call increase function using a char and int address respectively </code></div>
+			<div class="line number38 index37 alt1"><code class="undefined spaces">    </code><code class="plain">increase(&amp;c,</code><code class="keyword bold">sizeof</code><code class="plain">(c)); </code></div>
+			<div class="line number39 index38 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"The new value of c is: "</code> <code class="plain">&lt;&lt; c &lt;&lt;</code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number40 index39 alt1"><code class="undefined spaces">    </code><code class="plain">increase(&amp;i,</code><code class="keyword bold">sizeof</code><code class="plain">(i)); </code></div>
+			<div class="line number41 index40 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"The new value of i is: "</code> <code class="plain">&lt;&lt; i &lt;&lt;</code><code class="string">"\n"</code><code class="plain">; </code></div>
+			<div class="line number42 index41 alt1"><code class="undefined spaces">     </code></div>
+			<div class="line number43 index42 alt2"><code class="plain">} </code></div>
+			<div class="line number44 index43 alt1"><code class="comments">//Driver program </code></div>
+			<div class="line number45 index44 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number46 index45 alt1"><code class="plain">{ </code></div>
+			<div class="line number47 index46 alt2"><code class="undefined spaces">    </code><code class="plain">geek(); </code></div>
+			<div class="line number48 index47 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<pre>Output:
+			*data points to a char
+			The new value of c is: y
+			*data points to an int
+			The new value of i is: 11
+			</pre>
+			<p><strong>Invalid pointers</strong></p>
+			<p>A pointer should point to a valid address but not necessarily to valid elements (like for arrays). These are called invalid pointers. Uninitialized pointers are also invalid pointers.</p>
+			<pre><code>int *ptr1;
+			int arr[10];
+			int *ptr2 = arr+20;</code></pre>
+			<p>Here, ptr1 is uninitialized so it becomes an invalid pointer and ptr2 is out of bounds of arr so it also becomes an invalid pointer.<br />
+			(Note: invalid pointers do not necessarily raise compile errors)</p>
+			<p><strong>NULL Pointers</strong></p>
+			<p>Null pointer is a pointer which point nowhere and not just an invalid address.<br />
+			Following are 2 methods to assign a pointer as NULL;</p>
+			<pre><code>int *ptr1 = 0;
+			int *ptr2 = NULL;</code></pre>
+			
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
+			
 			
 			
 			<!-- footer -->

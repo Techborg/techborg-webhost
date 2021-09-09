@@ -61,6 +61,144 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-535" class="post-535 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">Strings in C++ and How to Create them?</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p><strong>Strings in C++</strong> are used to store text or sequence of characters. In C++ strings can be stored in one of the two following ways:</p>
+			<ul>
+			<li>C style string (using characters)</li>
+			<li>String class</li>
+			</ul>
+			Each of the above methods is discussed below:</p>
+			<ol>
+			<li><strong>C style string:</strong> In C, strings are defined as an array of characters. The difference between a character array and a string is the string is terminated with a special character ‘\0’. In C, the string is actually represented as an array of characters terminated by a null string. Therefore the size of the character array is always one more than that of the number of characters in the actual string. This thing continues to be supported in C++ too. The C++ compiler automatically sets “\0” at the end of the string, during initialization of the array.<strong>Initializing a String in C++:</strong>
+			<div id="AP_G4GR_5"></div>
+			<pre>1. char str[] = "Tech";
+			2. char str[6] = "Borg";
+			3. char str[] = {'G', 'e', 'e', 'k', 's', '\0'};
+			4. char str[6] = {'G', 'e', 'e', 'k', 's', '\0'};
+			</pre>
+			<p>Below is the memory representation of a string “TechBorg” in C++.<br />
+			
+			<p>Let’s look at some examples to better understand the string representation in C++, using C style:</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_708249" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to demonstrate </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// Strings using C style </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number7 index6 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number8 index7 alt1"><code class="plain">{ </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="comments">// Declare and initialize string </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="color1 bold">char</code> <code class="plain">str[] = </code><code class="string">"TechBorg"</code><code class="plain">; </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="comments">// Print string </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; str; </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number17 index16 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<div class="outputDiv"><b>Output:</b></p>
+			<pre>TechBorg
+			</pre>
+			</div>
+			</li>
+			<li><strong>Standard String representation and String Class:</strong> In C++, one can directly store the collection of characters or text in a string variable, surrounded by double-quotes. C++ provides <strong>string class</strong>, which supports various operations like copying strings, concatenating strings etc.<strong>Initializing string in C++:</strong>
+			<pre>1. string str1 = "TechBorg";
+			2. string str2 = "Welcome to TechBorg!";
+			</pre>
+			<p><strong>Example:</strong></p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_305282" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to demonstrate String </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// using Standard String representation </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="preprocessor">#include &lt;string&gt; </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number8 index7 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number9 index8 alt2"><code class="plain">{ </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="comments">// Declare and initialize the string </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="plain">string str1 = </code><code class="string">"Welcome to TechBorg!"</code><code class="plain">; </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="comments">// Initialization by raw string </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="plain">string str2(</code><code class="string">"A Computer Science Portal"</code><code class="plain">); </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">    </code><code class="comments">// Print string </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; str1 &lt;&lt; endl &lt;&lt; str2; </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number21 index20 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<div class="outputDiv"><b>Output:</b></p>
+			<pre>Welcome to TechBorg!
+			A Computer Science Portal</pre>
+			</div>
+			</li>
+			</ol>
+			
+						
+						
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 			
 			<!-- footer -->
