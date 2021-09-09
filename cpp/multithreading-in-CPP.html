@@ -61,6 +61,349 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-569" class="post-569 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">Multithreading in C++</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>Multithreading support was introduced in C+11. Prior to C++11, we had to use POSIX threads or p threads library in C. While this library did the job the lack of any standard language provided feature-set caused serious portability issues. C++ 11 did away with all that and gave us <strong>std::thread</strong>. The thread classes and related functions are defined in the <strong>thread</strong> header file.</p>
+			<p><strong>std::thread</strong> is the thread class that represents a single thread in C++. To start a thread we simply need to create a new thread object and pass the executing code to be called (i.e, a callable object) into the constructor of the object. Once the object is created a new thread is launched which will execute the code specified in callable.</p>
+			<p>A callable can be either of the three</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>&nbsp;</p>
+			<ul>
+			<li style="list-style-type:none;">
+			<ul>
+			<li>A function pointer</li>
+			<li>A function object</li>
+			<li>A lambda expression</li>
+			</ul>
+			</li>
+			</ul>
+			<p>After defining callable, pass it to the constructor.</p>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_869318" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="plain">import&lt;</code><code class="keyword bold">thread</code><code class="plain">&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="plain">std::</code><code class="keyword bold">thread</code> <code class="plain">thread_object(callable) </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Launching thread using function pointer</strong><br />
+			The following code snippet demonstrates how this is done</p>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_847381" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="keyword bold">void</code> <code class="plain">foo(param) </code></div>
+			<div class="line number2 index1 alt1"><code class="plain">{ </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces">    </code><code class="comments">// Do something </code></div>
+			<div class="line number4 index3 alt1"><code class="plain">} </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="comments">// The parameters to the function are put after the comma </code></div>
+			<div class="line number7 index6 alt2"><code class="plain">std::</code><code class="keyword bold">thread</code> <code class="plain">thread_obj(foo, params); </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Launching thread using lambda expression</strong></p>
+			<p>The following code snippet demonstrates how this is done</p>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_635125" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// Define a lamda expression </code></div>
+			<div class="line number2 index1 alt1"><code class="keyword bold">auto</code> <code class="plain">f = [](params) { </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces">    </code><code class="comments">// Do Something </code></div>
+			<div class="line number4 index3 alt1"><code class="plain">}; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="comments">// Pass f and its parameters to thread  </code></div>
+			<div class="line number7 index6 alt2"><code class="comments">// object constructor as </code></div>
+			<div class="line number8 index7 alt1"><code class="plain">std::</code><code class="keyword bold">thread</code> <code class="plain">thread_object(f, params); </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>We can also pass lambda functions directly to the constructor.</p>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_67593" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="plain">std::</code><code class="keyword bold">thread</code> <code class="plain">thread_object([](params) { </code></div>
+			<div class="line number2 index1 alt1"><code class="undefined spaces">    </code><code class="comments">// Do Something </code></div>
+			<div class="line number3 index2 alt2"><code class="plain">};, params); </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Launching threads using function objects</strong></p>
+			<p>The following code snippet demonstrates how this is done</p>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_442293" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// Define the class of function object </code></div>
+			<div class="line number2 index1 alt1"><code class="keyword bold">class</code> <code class="plain">fn_object_class { </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces">    </code><code class="comments">// Overload () operator </code></div>
+			<div class="line number4 index3 alt1"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">operator()(params) </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">        </code><code class="comments">// Do Something </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number8 index7 alt1"><code class="plain">} </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number10 index9 alt1"><code class="comments">// Create thread object </code></div>
+			<div class="line number11 index10 alt2"><code class="plain">std::</code><code class="keyword bold">thread</code> <code class="plain">thread_object(fn_class_object(), params) </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Waiting for threads to finish</strong></p>
+			<p>Once a thread has started we may need to wait for the thread to finish before we can take some action. For instance, if we allocate the task of initializing the GUI of an application to a thread, we need to wait for the thread to finish to ensure that the GUI has loaded properly.</p>
+			<p>To wait for a thread use the <strong>std::thread::join()</strong> function. This function makes the current thread wait until the thread identified by <strong>*this</strong> has finished executing.<br />
+			For instance, to block the main thread until thread t1 has finished we would do</p>
+			<div id="AP_G4GR_6"></div>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_741739" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number2 index1 alt1"><code class="plain">{ </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces">    </code><code class="comments">// Start thread t1 </code></div>
+			<div class="line number4 index3 alt1"><code class="undefined spaces">    </code><code class="plain">std::</code><code class="keyword bold">thread</code> <code class="plain">t1(callable); </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="comments">// Wait for t1 to finish </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">t1.join(); </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="comments">// t1 has finished do other stuff </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="plain">... </code></div>
+			<div class="line number12 index11 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>A Complete C++ Program</strong></p>
+			<p>A C++ program is given below. It launches three thread from the main function. Each thread is called using one of the callable objects specified above.</p>
+			<div class="noIdeBtnDiv">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_122962" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// CPP program to demonstrate multithreading </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// using three different callables. </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#include &lt;thread&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number7 index6 alt2"><code class="comments">// A dummy function </code></div>
+			<div class="line number8 index7 alt1"><code class="keyword bold">void</code> <code class="plain">foo(</code><code class="color1 bold">int</code> <code class="plain">Z) </code></div>
+			<div class="line number9 index8 alt2"><code class="plain">{ </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; Z; i++) { </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"Thread using function"</code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">               </code><code class="string">" pointer as callable\n"</code><code class="plain">; </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number14 index13 alt1"><code class="plain">} </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number16 index15 alt1"><code class="comments">// A callable object </code></div>
+			<div class="line number17 index16 alt2"><code class="keyword bold">class</code> <code class="plain">thread_obj { </code></div>
+			<div class="line number18 index17 alt1"><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">operator()(</code><code class="color1 bold">int</code> <code class="plain">x) </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">        </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; x; i++) </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">            </code><code class="plain">cout &lt;&lt; </code><code class="string">"Thread using function"</code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">                  </code><code class="string">" object as  callable\n"</code><code class="plain">; </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number25 index24 alt2"><code class="plain">}; </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number27 index26 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number28 index27 alt1"><code class="plain">{ </code></div>
+			<div class="line number29 index28 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Threads 1 and 2 and 3 "</code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">         </code><code class="string">"operating independently"</code> <code class="plain">&lt;&lt; endl; </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces">    </code><code class="comments">// This thread is launched by using  </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">    </code><code class="comments">// function pointer as callable </code></div>
+			<div class="line number34 index33 alt1"><code class="undefined spaces">    </code><code class="keyword bold">thread</code> <code class="plain">th1(foo, 3); </code></div>
+			<div class="line number35 index34 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number36 index35 alt1"><code class="undefined spaces">    </code><code class="comments">// This thread is launched by using </code></div>
+			<div class="line number37 index36 alt2"><code class="undefined spaces">    </code><code class="comments">// function object as callable </code></div>
+			<div class="line number38 index37 alt1"><code class="undefined spaces">    </code><code class="keyword bold">thread</code> <code class="plain">th2(thread_obj(), 3); </code></div>
+			<div class="line number39 index38 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number40 index39 alt1"><code class="undefined spaces">    </code><code class="comments">// Define a Lambda Expression </code></div>
+			<div class="line number41 index40 alt2"><code class="undefined spaces">    </code><code class="keyword bold">auto</code> <code class="plain">f = [](</code><code class="color1 bold">int</code> <code class="plain">x) { </code></div>
+			<div class="line number42 index41 alt1"><code class="undefined spaces">        </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; x; i++) </code></div>
+			<div class="line number43 index42 alt2"><code class="undefined spaces">            </code><code class="plain">cout &lt;&lt; </code><code class="string">"Thread using lambda"</code></div>
+			<div class="line number44 index43 alt1"><code class="undefined spaces">             </code><code class="string">" expression as callable\n"</code><code class="plain">; </code></div>
+			<div class="line number45 index44 alt2"><code class="undefined spaces">    </code><code class="plain">}; </code></div>
+			<div class="line number46 index45 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number47 index46 alt2"><code class="undefined spaces">    </code><code class="comments">// This thread is launched by using  </code></div>
+			<div class="line number48 index47 alt1"><code class="undefined spaces">    </code><code class="comments">// lamda expression as callable </code></div>
+			<div class="line number49 index48 alt2"><code class="undefined spaces">    </code><code class="keyword bold">thread</code> <code class="plain">th3(f, 3); </code></div>
+			<div class="line number50 index49 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number51 index50 alt2"><code class="undefined spaces">    </code><code class="comments">// Wait for the threads to finish </code></div>
+			<div class="line number52 index51 alt1"><code class="undefined spaces">    </code><code class="comments">// Wait for thread t1 to finish </code></div>
+			<div class="line number53 index52 alt2"><code class="undefined spaces">    </code><code class="plain">th1.join(); </code></div>
+			<div class="line number54 index53 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number55 index54 alt2"><code class="undefined spaces">    </code><code class="comments">// Wait for thread t2 to finish </code></div>
+			<div class="line number56 index55 alt1"><code class="undefined spaces">    </code><code class="plain">th2.join(); </code></div>
+			<div class="line number57 index56 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number58 index57 alt1"><code class="undefined spaces">    </code><code class="comments">// Wait for thread t3 to finish </code></div>
+			<div class="line number59 index58 alt2"><code class="undefined spaces">    </code><code class="plain">th3.join(); </code></div>
+			<div class="line number60 index59 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number61 index60 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number62 index61 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output (Machine Dependent)</p>
+			<pre>Threads 1 and 2 and 3 operating independently                                                       
+			Thread using function pointer as callable                                                           
+			Thread using lambda expression as callable                                                          
+			Thread using function pointer as callable                                                           
+			Thread using lambda expression as callable                                                          
+			Thread using function object as  callable                                                          
+			Thread using lambda expression as callable                                                          
+			Thread using function pointer as callable                                                          
+			Thread using function object as  callable                                                           
+			Thread using function object as  callable
+			</pre>
+			<p>Note:<br />
+			To compile programs with std::thread support use</p>
+			<pre>g++ -std=c++11 -pthread</pre>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 			
 			<!-- footer -->

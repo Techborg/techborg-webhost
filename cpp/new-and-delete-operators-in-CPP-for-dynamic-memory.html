@@ -61,6 +61,184 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-563" class="post-563 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">new and delete operators in C++ for dynamic memory</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>Dynamic memory allocation in C/C++ refers to performing memory allocation manually by programmer. Dynamically allocated memory is allocated on <strong>Heap</strong> and non-static and local variables get memory allocated on <strong>Stack</strong> (Refer Memory Layout C Programs for details).</p>
+			<p><strong>What are applications?</strong></p>
+			<ul>
+			<li>One use of dynamically allocated memory is to allocate memory of variable size which is not possible with compiler allocated memory except variable length arrays.</li>
+			<li>The most important use is flexibility provided to programmers. We are free to allocate and deallocate memory whenever we need and whenever we don’t need anymore. There are many cases where this flexibility helps. Examples of such cases are Linked List, Tree, etc.</li>
+			</ul>
+			<p><strong>How is it different from memory allocated to normal variables?</strong><br />
+			For normal variables like “int a”, “char str[10]”, etc, memory is automatically allocated and deallocated. For dynamically allocated memory like “int *p = new int[10]”, it is programmers responsibility to deallocate memory when no longer needed. If programmer doesn’t deallocate memory, it causes memory leak (memory is not deallocated until program terminates).</p>
+			<p><strong>How is memory allocated/deallocated in C++?</strong><br />
+			C uses malloc() and calloc() function to allocate memory dynamically at run time and uses free() function to free dynamically allocated memory. C++ supports these functions and also has two operators <strong>new</strong> and <strong>delete</strong> that perform the task of allocating and freeing the memory in a better and easier way.</p>
+			<p>This article is all about new and delete operators.</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>&nbsp;</p>
+			<p align="center"><strong>new operator</strong></p>
+			<p>The new operator denotes a request for memory allocation on the Heap. If sufficient memory is available, new operator initializes the memory and returns the address of the newly allocated and initialized memory to the pointer variable.</p>
+			<ul>
+			<li><strong>Syntax to use new operator</strong>: To allocate memory of any data type, the syntax is:
+			<pre>pointer-variable = <strong>new</strong> data-type;
+			</pre>
+			<p>Here, pointer-variable is the pointer of type data-type. Data-type could be any built-in data type including array or any user defined data types including structure and class.<br />
+			Example:</p>
+			<pre>// Pointer initialized with NULL
+			// Then request memory for the variable
+			int *p = NULL; 
+			p = new int;   
+			
+						OR
+			
+			// Combine declaration of pointer 
+			// and their assignment
+			int *p = new int; 
+			</pre>
+			</li>
+			<li><strong>Initialize memory:</strong> We can also initialize the memory using new operator:
+			<pre>pointer-variable = <strong>new</strong> data-type(value);
+			<strong>Example:</strong>
+			int *p = new int(25);
+			float *q = new float(75.25);
+			</pre>
+			</li>
+			<li><strong>Allocate block of memory:</strong> new operator is also used to allocate a block(an array) of memory of type <em>data-type</em>.
+			<pre>pointer-variable = <strong>new</strong> data-type[size];
+			</pre>
+			<p>where size(a variable) specifies the number of elements in an array.</p>
+			<pre>Example:
+					int *p = new int[10]
+			</pre>
+			<p>Dynamically allocates memory for 10 integers continuously of type int and returns pointer to the first element of the sequence, which is assigned to p(a pointer). p[0] refers to first element, p[1] refers to second element and so on.<br />
+			
+			</ul>
+			<p><strong>Normal Array Declaration vs Using new</strong><br />
+			There is a difference between declaring a normal array and allocating a block of memory using new. The most important difference is, normal arrays are deallocated by compiler (If array is local, then deallocated when function returns or completes). However, dynamically allocated arrays always remain there until either they are deallocated by programmer or program terminates.</p>
+			<p><strong>What if enough memory is not available during runtime?</strong><br />
+			If enough memory is not available in the heap to allocate, the new request indicates failure by throwing an exception of type std::bad_alloc, unless “nothrow” is used with the new operator, in which case it returns a NULL pointer (scroll to section “Exception handling of new operator” in <a href="https://aticleworld.com/dynamic-memory-and-new-operator-c/">this</a> article). Therefore, it may be good idea to check for the pointer variable produced by new before using it program.</p>
+			<pre>int *p = new(nothrow) int;
+			if (!p)
+			{
+			   cout &lt;&lt; "Memory allocation failed\n";
+			}
+			</pre>
+			<p align="center"><strong>delete operator</strong></p>
+			<p>Since it is programmer’s responsibility to deallocate dynamically allocated memory, programmers are provided delete operator by C++ language.<br />
+			<strong>Syntax:</strong></p>
+			<pre>// Release memory pointed by pointer-variable
+			<strong>delete</strong> pointer-variable;  
+			</pre>
+			<p>Here, pointer-variable is the pointer that points to the data object created by <em>new</em>.<br />
+			Examples:</p>
+			<pre>  delete p;
+			  delete q;
+			</pre>
+			<p>To free the dynamically allocated array pointed by pointer-variable, use following form of <em>delete</em>:</p>
+			<pre>// Release block of memory 
+			// pointed by pointer-variable
+			delete[] pointer-variable;  
+			
+			Example:
+			   // It will free the entire array
+			   // pointed by p.
+			   delete[] p;
+			</pre>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_615041" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// C++ program to illustrate dynamic allocation </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// and deallocation of memory using new and delete </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="color1 bold">int</code> <code class="plain">main () </code></div>
+			<div class="line number7 index6 alt2"><code class="plain">{ </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="comments">// Pointer initialization to null </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code><code class="plain">* p = NULL; </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="comments">// Request memory for the variable </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="comments">// using new operator </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="plain">p = </code><code class="keyword bold">new</code><code class="plain">(</code><code class="keyword bold">nothrow</code><code class="plain">) </code><code class="color1 bold">int</code><code class="plain">; </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="keyword bold">if</code> <code class="plain">(!p) </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"allocation of memory failed\n"</code><code class="plain">; </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="keyword bold">else</code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">        </code><code class="comments">// Store value at allocated address </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">        </code><code class="plain">*p = 29; </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"Value of p: "</code> <code class="plain">&lt;&lt; *p &lt;&lt; endl; </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="comments">// Request block of memory </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="comments">// using new operator </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="color1 bold">float</code> <code class="plain">*r = </code><code class="keyword bold">new</code> <code class="color1 bold">float</code><code class="plain">(75.25); </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"Value of r: "</code> <code class="plain">&lt;&lt; *r &lt;&lt; endl; </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number29 index28 alt2"><code class="undefined spaces">    </code><code class="comments">// Request block of memory of size n </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">n = 5; </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">*q = </code><code class="keyword bold">new</code><code class="plain">(</code><code class="keyword bold">nothrow</code><code class="plain">) </code><code class="color1 bold">int</code><code class="plain">[n]; </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">    </code><code class="keyword bold">if</code> <code class="plain">(!q) </code></div>
+			<div class="line number34 index33 alt1"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"allocation of memory failed\n"</code><code class="plain">; </code></div>
+			<div class="line number35 index34 alt2"><code class="undefined spaces">    </code><code class="keyword bold">else</code></div>
+			<div class="line number36 index35 alt1"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number37 index36 alt2"><code class="undefined spaces">        </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; n; i++) </code></div>
+			<div class="line number38 index37 alt1"><code class="undefined spaces">            </code><code class="plain">q[i] = i+1; </code></div>
+			<div class="line number39 index38 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number40 index39 alt1"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"Value store in block of memory: "</code><code class="plain">; </code></div>
+			<div class="line number41 index40 alt2"><code class="undefined spaces">        </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; n; i++) </code></div>
+			<div class="line number42 index41 alt1"><code class="undefined spaces">            </code><code class="plain">cout &lt;&lt; q[i] &lt;&lt; </code><code class="string">" "</code><code class="plain">; </code></div>
+			<div class="line number43 index42 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number44 index43 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number45 index44 alt2"><code class="undefined spaces">    </code><code class="comments">// freed the allocated memory </code></div>
+			<div class="line number46 index45 alt1"><code class="undefined spaces">    </code><code class="keyword bold">delete</code> <code class="plain">p; </code></div>
+			<div class="line number47 index46 alt2"><code class="undefined spaces">    </code><code class="keyword bold">delete</code> <code class="plain">r; </code></div>
+			<div class="line number48 index47 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number49 index48 alt2"><code class="undefined spaces">    </code><code class="comments">// freed the block of allocated memory </code></div>
+			<div class="line number50 index49 alt1"><code class="undefined spaces">    </code><code class="keyword bold">delete</code><code class="plain">[] q; </code></div>
+			<div class="line number51 index50 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number52 index51 alt1"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number53 index52 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>Value of p: 29
+			Value of r: 75.25
+			Value store in block of memory: 1 2 3 4 5</pre>
+			
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 			
 			<!-- footer -->
