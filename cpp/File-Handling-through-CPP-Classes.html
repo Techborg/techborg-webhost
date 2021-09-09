@@ -61,6 +61,298 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-560" class="post-560 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">File Handling through C++ Classes</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>In C++, files are mainly dealt by using three classes fstream, ifstream, ofstream available in fstream headerfile.<br />
+			<strong>ofstream:</strong> Stream class to write on files<br />
+			<strong>ifstream:</strong> Stream class to read from files<br />
+			<strong>fstream:</strong> Stream class to both read and write from/to files.<br />
+			
+			Now the first step to open the particular file for read or write operation. We can open file by<br />
+			1. passing file name in constructor at the time of object creation<br />
+			2. using the open method<br />
+			<strong>For e.g.</strong></p>
+			<blockquote><p><strong>Open File by using constructor</strong><br />
+			ifstream (const char* filename, ios_base::openmode mode = ios_base::in);<br />
+			ifstream fin(filename, openmode) by default openmode = ios::in<br />
+			ifstream fin(“filename”);</p>
+			<p><strong>Open File by using open method</strong><br />
+			Calling of default constructor<br />
+			ifstream fin;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>fin.open(filename, openmode)<br />
+			fin.open(“filename”);</p></blockquote>
+			<p><b>Modes :</b></p>
+			<table border="1">
+			<tbody>
+			<tr>
+			<th>MEMBER CONSTANT</th>
+			<th>STANDS FOR</th>
+			<th>ACCESS</th>
+			</tr>
+			<tr>
+			<td>in *</td>
+			<td>input</td>
+			<td>File open for reading: the internal stream buffer supports input operations.</td>
+			</tr>
+			<tr>
+			<td>out</td>
+			<td>output</td>
+			<td>File open for writing: the internal stream buffer supports output operations.</td>
+			</tr>
+			<tr>
+			<td>binary</td>
+			<td>binary</td>
+			<td>Operations are performed in binary mode rather than text.</td>
+			</tr>
+			<tr>
+			<td>ate</td>
+			<td>at end</td>
+			<td>The output position starts at the end of the file.</td>
+			</tr>
+			<tr>
+			<td>app</td>
+			<td>append</td>
+			<td>All output operations happen at the end of the file, appending to its existing contents.</td>
+			</tr>
+			<tr>
+			<td>trunc</td>
+			<td>truncate</td>
+			<td>Any contents that existed in the file before it is open are discarded.</td>
+			</tr>
+			</tbody>
+			</table>
+			<p><b>Default Open Modes :</b></p>
+			<table border="0">
+			<tbody>
+			<tr>
+			<td>ifstream</td>
+			<td>ios::in</td>
+			</tr>
+			<tr>
+			<td>ofstream</td>
+			<td>ios::out</td>
+			</tr>
+			<tr>
+			<td>fstream</td>
+			<td>ios::in | ios::out</td>
+			</tr>
+			</tbody>
+			</table>
+			<p><strong>Problem Statement</strong> : To read and write a File in C++.<br />
+			<strong>Examples:</strong></p>
+			<pre>Input : 
+			Welcome in TechBorg. Best way to learn things.
+			-1
+			Output : 
+			Welcome in TechBorg. Best way to learn things.
+			</pre>
+			<div id="practiceLinkDiv">
+			<h2>Recommended: Please try your approach on <b><i><u>{IDE}</u></i></b> first, before moving on to the solution.</h2>
+			</div>
+			<p>Below is the implementation by using <strong>ifsream &amp; ofstream classes</strong>.</p>
+			<div class="responsive-tabs-wrapper">
+			<div class="responsive-tabs responsive-tabs--enabled">
+			<ul class="responsive-tabs__list" role="tablist">
+			<li id="tablist1-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C++</li>
+			</ul>
+			<div id="tablist1-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist1-tab1">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_16220" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">/* File Handling with C++ using ifstream &amp; ofstream class object*/</code></div>
+			<div class="line number2 index1 alt1"><code class="comments">/* To write the Content in File*/</code></div>
+			<div class="line number3 index2 alt2"><code class="comments">/* Then to read the content of file*/</code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="comments">/* fstream header file for ifstream, ofstream,  </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">  </code><code class="comments">fstream classes */</code></div>
+			<div class="line number8 index7 alt1"><code class="preprocessor">#include &lt;fstream&gt; </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number10 index9 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number12 index11 alt1"><code class="comments">// Driver Code </code></div>
+			<div class="line number13 index12 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number14 index13 alt1"><code class="plain">{ </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="comments">// Creation of ofstream class object </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="plain">ofstream fout; </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">    </code><code class="plain">string line; </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="comments">// by default ios::out mode, automatically deletes </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="comments">// the content of file. To append the content, open in ios:app </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="comments">// fout.open("sample.txt", ios::app) </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="plain">fout.open(</code><code class="string">"sample.txt"</code><code class="plain">); </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="comments">// Execute a loop If file successfully opened </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces">    </code><code class="keyword bold">while</code> <code class="plain">(fout) { </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces">        </code><code class="comments">// Read a Line from standard input </code></div>
+			<div class="line number29 index28 alt2"><code class="undefined spaces">        </code><code class="plain">getline(cin, line); </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">        </code><code class="comments">// Press -1 to exit </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces">        </code><code class="keyword bold">if</code> <code class="plain">(line == </code><code class="string">"-1"</code><code class="plain">) </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">            </code><code class="keyword bold">break</code><code class="plain">; </code></div>
+			<div class="line number34 index33 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number35 index34 alt2"><code class="undefined spaces">        </code><code class="comments">// Write line in file </code></div>
+			<div class="line number36 index35 alt1"><code class="undefined spaces">        </code><code class="plain">fout &lt;&lt; line &lt;&lt; endl; </code></div>
+			<div class="line number37 index36 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number38 index37 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number39 index38 alt2"><code class="undefined spaces">    </code><code class="comments">// Close the File </code></div>
+			<div class="line number40 index39 alt1"><code class="undefined spaces">    </code><code class="plain">fout.close(); </code></div>
+			<div class="line number41 index40 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number42 index41 alt1"><code class="undefined spaces">    </code><code class="comments">// Creation of ifstream class object to read the file </code></div>
+			<div class="line number43 index42 alt2"><code class="undefined spaces">    </code><code class="plain">ifstream fin; </code></div>
+			<div class="line number44 index43 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number45 index44 alt2"><code class="undefined spaces">    </code><code class="comments">// by default open mode = ios::in mode </code></div>
+			<div class="line number46 index45 alt1"><code class="undefined spaces">    </code><code class="plain">fin.open(</code><code class="string">"sample.txt"</code><code class="plain">); </code></div>
+			<div class="line number47 index46 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number48 index47 alt1"><code class="undefined spaces">    </code><code class="comments">// Execute a loop until EOF (End of File) </code></div>
+			<div class="line number49 index48 alt2"><code class="undefined spaces">    </code><code class="keyword bold">while</code> <code class="plain">(fin) { </code></div>
+			<div class="line number50 index49 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number51 index50 alt2"><code class="undefined spaces">        </code><code class="comments">// Read a Line from File </code></div>
+			<div class="line number52 index51 alt1"><code class="undefined spaces">        </code><code class="plain">getline(fin, line); </code></div>
+			<div class="line number53 index52 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number54 index53 alt1"><code class="undefined spaces">        </code><code class="comments">// Print line in Console </code></div>
+			<div class="line number55 index54 alt2"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; line &lt;&lt; endl; </code></div>
+			<div class="line number56 index55 alt1"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number57 index56 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number58 index57 alt1"><code class="undefined spaces">    </code><code class="comments">// Close the file </code></div>
+			<div class="line number59 index58 alt2"><code class="undefined spaces">    </code><code class="plain">fin.close(); </code></div>
+			<div class="line number60 index59 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number61 index60 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number62 index61 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<p>Below is the implementation by using <strong>fstream class</strong>.</p>
+			<div class="responsive-tabs-wrapper">
+			<div class="responsive-tabs responsive-tabs--enabled">
+			<ul class="responsive-tabs__list" role="tablist">
+			<li id="tablist2-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C++</li>
+			</ul>
+			<div id="tablist2-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist2-tab1">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_170676" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">/* File Handling with C++ using fstream class object */</code></div>
+			<div class="line number2 index1 alt1"><code class="comments">/* To write the Content in File */</code></div>
+			<div class="line number3 index2 alt2"><code class="comments">/* Then to read the content of file*/</code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="comments">/* fstream header file for ifstream, ofstream,  </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">   </code><code class="comments">fstream classes */</code></div>
+			<div class="line number8 index7 alt1"><code class="preprocessor">#include &lt;fstream&gt; </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number10 index9 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number12 index11 alt1"><code class="comments">// Driver Code </code></div>
+			<div class="line number13 index12 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number14 index13 alt1"><code class="plain">{ </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">    </code><code class="comments">// Creation of fstream class object </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="plain">fstream fio; </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">    </code><code class="plain">string line; </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="comments">// by default openmode = ios::in|ios::out mode </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="comments">// Automatically overwrites the content of file, To append </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="comments">// the content, open in ios:app </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="comments">// fio.open("sample.txt", ios::in|ios::out|ios::app) </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="comments">// ios::trunc mode delete all conetent before open </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="plain">fio.open(</code><code class="string">"sample.txt"</code><code class="plain">, ios::trunc | ios::out | ios::in); </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">    </code><code class="comments">// Execute a loop If file successfully Opened </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces">    </code><code class="keyword bold">while</code> <code class="plain">(fio) { </code></div>
+			<div class="line number29 index28 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">        </code><code class="comments">// Read a Line from standard input </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">        </code><code class="plain">getline(cin, line); </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">        </code><code class="comments">// Press -1 to exit </code></div>
+			<div class="line number34 index33 alt1"><code class="undefined spaces">        </code><code class="keyword bold">if</code> <code class="plain">(line == </code><code class="string">"-1"</code><code class="plain">) </code></div>
+			<div class="line number35 index34 alt2"><code class="undefined spaces">            </code><code class="keyword bold">break</code><code class="plain">; </code></div>
+			<div class="line number36 index35 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number37 index36 alt2"><code class="undefined spaces">        </code><code class="comments">// Write line in file </code></div>
+			<div class="line number38 index37 alt1"><code class="undefined spaces">        </code><code class="plain">fio &lt;&lt; line &lt;&lt; endl; </code></div>
+			<div class="line number39 index38 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number40 index39 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number41 index40 alt2"><code class="undefined spaces">    </code><code class="comments">// Execute a loop untill EOF (End of File) </code></div>
+			<div class="line number42 index41 alt1"><code class="undefined spaces">    </code><code class="comments">// point read pointer at beginning of file </code></div>
+			<div class="line number43 index42 alt2"><code class="undefined spaces">    </code><code class="plain">fio.seekg(0, ios::beg); </code></div>
+			<div class="line number44 index43 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number45 index44 alt2"><code class="undefined spaces">    </code><code class="keyword bold">while</code> <code class="plain">(fio) { </code></div>
+			<div class="line number46 index45 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number47 index46 alt2"><code class="undefined spaces">        </code><code class="comments">// Read a Line from File </code></div>
+			<div class="line number48 index47 alt1"><code class="undefined spaces">        </code><code class="plain">getline(fio, line); </code></div>
+			<div class="line number49 index48 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number50 index49 alt1"><code class="undefined spaces">        </code><code class="comments">// Print line in Console </code></div>
+			<div class="line number51 index50 alt2"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; line &lt;&lt; endl; </code></div>
+			<div class="line number52 index51 alt1"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number53 index52 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number54 index53 alt1"><code class="undefined spaces">    </code><code class="comments">// Close the file </code></div>
+			<div class="line number55 index54 alt2"><code class="undefined spaces">    </code><code class="plain">fio.close(); </code></div>
+			<div class="line number56 index55 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number57 index56 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number58 index57 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 			
 			<!-- footer -->

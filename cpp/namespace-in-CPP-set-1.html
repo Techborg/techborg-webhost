@@ -61,6 +61,379 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-541" class="post-541 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">Namespace in C++ | Set 1 (Introduction)</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>Consider following C++ program.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_826340" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// A program to demonstrate need of namespace </code></div>
+			<div class="line number2 index1 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number3 index2 alt2"><code class="plain">{ </code></div>
+			<div class="line number4 index3 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">value; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces">    </code><code class="plain">value = 0; </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="color1 bold">double</code> <code class="plain">value; </code><code class="comments">// Error here </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">value = 0.0; </code></div>
+			<div class="line number8 index7 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output :</p>
+			<pre>Compiler Error:
+			'value' has a previous declaration as 'int value'</pre>
+			<p>In each scope, a name can only represent one entity. So, there cannot be two variables with the same name in the same scope. Using namespaces, we can create two variables or member functions having the same name.</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>&nbsp;</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_586700" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// Here we can see that more than one variables  </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// are being used without reporting any error. </code></div>
+			<div class="line number3 index2 alt2"><code class="comments">// That is because they are declared in the  </code></div>
+			<div class="line number4 index3 alt1"><code class="comments">// different namespaces and scopes. </code></div>
+			<div class="line number5 index4 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number8 index7 alt1"><code class="comments">// Variable created inside namespace </code></div>
+			<div class="line number9 index8 alt2"><code class="keyword bold">namespace</code> <code class="plain">first </code></div>
+			<div class="line number10 index9 alt1"><code class="plain">{ </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">val = 500; </code></div>
+			<div class="line number12 index11 alt1"><code class="plain">} </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1"><code class="comments">// Global variable </code></div>
+			<div class="line number15 index14 alt2"><code class="color1 bold">int</code> <code class="plain">val = 100; </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number17 index16 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number18 index17 alt1"><code class="plain">{ </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">    </code><code class="comments">// Local variable </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">val = 200; </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="comments">// These variables can be accessed from </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="comments">// outside the namespace using the scope </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="comments">// operator :: </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; first::val &lt;&lt; </code><code class="string">'\n'</code><code class="plain">;  </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number28 index27 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output:</strong></p>
+			<pre>500</pre>
+			<p>&nbsp;</p>
+			<p><strong>Definition and Creation:</strong><br />
+			Namespaces allow us to group named entities that otherwise would have <i>global scope</i> into narrower scopes, giving them <i>namespace scope</i>. This allows organizing the elements of programs into different logical scopes referred to by names.</p>
+			<ul>
+			<li>Namespace is a feature added in C++ and not present in C.</li>
+			<li>A namespace is a declarative region that provides a scope to the identifiers (names of the types, function, variables etc) inside it.</li>
+			<li>Multiple namespace blocks with the same name are allowed. All declarations within those blocks are declared in the named scope.</li>
+			</ul>
+			<p>A namespace definition begins with the keyword <strong>namespace</strong> followed by the namespace name as follows:</p>
+			<pre>namespace namespace_name 
+			{
+			   int x, y; // code declarations where 
+						 // x and y are declared in 
+						 // namespace_name's scope
+			}
+			</pre>
+			<ul>
+			<li>Namespace declarations appear only at global scope.</li>
+			<li>Namespace declarations can be nested within another namespace.</li>
+			<li>Namespace declarations don’t have access specifiers. (Public or private)</li>
+			<li>No need to give semicolon after the closing brace of definition of namespace.</li>
+			<li>We can split the definition of namespace over several units.</li>
+			</ul>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_774532" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// Creating namespaces </code></div>
+			<div class="line number2 index1 alt1"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number3 index2 alt2"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">namespace</code> <code class="plain">ns1 </code></div>
+			<div class="line number5 index4 alt2"><code class="plain">{ </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">value()    { </code><code class="keyword bold">return</code> <code class="plain">5; } </code></div>
+			<div class="line number7 index6 alt2"><code class="plain">} </code></div>
+			<div class="line number8 index7 alt1"><code class="keyword bold">namespace</code> <code class="plain">ns2  </code></div>
+			<div class="line number9 index8 alt2"><code class="plain">{ </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="keyword bold">const</code> <code class="color1 bold">double</code> <code class="plain">x = 100; </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="color1 bold">double</code> <code class="plain">value() {  </code><code class="keyword bold">return</code> <code class="plain">2*x; } </code></div>
+			<div class="line number12 index11 alt1"><code class="plain">} </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">{ </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="comments">// Access value function within ns1 </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; ns1::value() &lt;&lt; </code><code class="string">'\n'</code><code class="plain">;  </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">    </code><code class="comments">// Access value function within ns2 </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; ns2::value() &lt;&lt; </code><code class="string">'\n'</code><code class="plain">;  </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="comments">// Access variable x directly </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; ns2::x &lt;&lt; </code><code class="string">'\n'</code><code class="plain">;        </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number26 index25 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output:</strong></p>
+			<pre>5
+			200
+			100</pre>
+			<p>&nbsp;</p>
+			<p><strong>Classes and Namespace:</strong><br />
+			Following is a simple way to create classes in a name space</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_700272" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// A C++ program to demonstrate use of class </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// in a namespace </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">namespace</code> <code class="plain">ns </code></div>
+			<div class="line number7 index6 alt2"><code class="plain">{ </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="comments">// A Class in a namespace </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="keyword bold">class</code> <code class="plain">geek </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">        </code><code class="keyword bold">void</code> <code class="plain">display() </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">        </code><code class="plain">{ </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">            </code><code class="plain">cout &lt;&lt; </code><code class="string">"ns::geek::display()\n"</code><code class="plain">; </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">        </code><code class="plain">} </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="plain">}; </code></div>
+			<div class="line number17 index16 alt2"><code class="plain">} </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number19 index18 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number20 index19 alt1"><code class="plain">{ </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="comments">// Creating Object of geek Class </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="plain">ns::geek obj; </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="plain">obj.display(); </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number27 index26 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>ns::tech::display()</pre>
+			<p><strong>Class can also be declared inside namespace and defined outside namespace</strong> using following syntax</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_611052" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// A C++ program to demonstrate use of class </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// in a namespace </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">namespace</code> <code class="plain">ns </code></div>
+			<div class="line number7 index6 alt2"><code class="plain">{ </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="comments">// Only declaring class here </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="keyword bold">class</code> <code class="plain">geek; </code></div>
+			<div class="line number10 index9 alt1"><code class="plain">} </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number12 index11 alt1"><code class="comments">// Defining class outside </code></div>
+			<div class="line number13 index12 alt2"><code class="keyword bold">class</code> <code class="plain">ns::geek </code></div>
+			<div class="line number14 index13 alt1"><code class="plain">{ </code></div>
+			<div class="line number15 index14 alt2"><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">display() </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; </code><code class="string">"ns::geek::display()\n"</code><code class="plain">; </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number20 index19 alt1"><code class="plain">}; </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number22 index21 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number23 index22 alt2"><code class="plain">{ </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="comments">//Creating Object of geek Class </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="plain">ns::geek obj; </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces">    </code><code class="plain">obj.display(); </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number28 index27 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_6"></div>
+			<p>&nbsp;</p>
+			<pre>ns::tech::display()</pre>
+			<p>We can <strong>define methods also outside the namespace</strong>. Following is an example code.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_774261" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// A C++ code to demonstrate that we can define  </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// methods outside namespace. </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="comments">// Creating a namespace </code></div>
+			<div class="line number7 index6 alt2"><code class="keyword bold">namespace</code> <code class="plain">ns </code></div>
+			<div class="line number8 index7 alt1"><code class="plain">{ </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">display(); </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">    </code><code class="keyword bold">class</code> <code class="plain">geek </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="plain">{ </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">    </code><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">       </code><code class="keyword bold">void</code> <code class="plain">display(); </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">    </code><code class="plain">}; </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">} </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number17 index16 alt2"><code class="comments">// Defining methods of namespace </code></div>
+			<div class="line number18 index17 alt1"><code class="keyword bold">void</code> <code class="plain">ns::geek::display() </code></div>
+			<div class="line number19 index18 alt2"><code class="plain">{ </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"ns::geek::display()\n"</code><code class="plain">; </code></div>
+			<div class="line number21 index20 alt2"><code class="plain">} </code></div>
+			<div class="line number22 index21 alt1"><code class="keyword bold">void</code> <code class="plain">ns::display() </code></div>
+			<div class="line number23 index22 alt2"><code class="plain">{ </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">"ns::display()\n"</code><code class="plain">; </code></div>
+			<div class="line number25 index24 alt2"><code class="plain">} </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number27 index26 alt2"><code class="comments">// Driver code </code></div>
+			<div class="line number28 index27 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number29 index28 alt2"><code class="plain">{ </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">    </code><code class="plain">ns::geek obj; </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">    </code><code class="plain">ns::display(); </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces">    </code><code class="plain">obj.display(); </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number34 index33 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output:</strong></p>
+			<pre>ns::display()
+			ns::tech::display()</pre>
+	
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
+			
 			
 			
 			<!-- footer -->

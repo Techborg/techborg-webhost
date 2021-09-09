@@ -61,6 +61,365 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-547" class="post-547 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">Templates in C++</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>A template is a simple and yet very powerful tool in C++. The simple idea is to pass data type as a parameter so that we don’t need to write the same code for different data types. For example, a software company may need sort() for different data types. Rather than writing and maintaining the multiple codes, we can write one sort() and pass data type as a parameter.</p>
+			<p>C++ adds two new keywords to support templates: <em>‘template’ </em>and <em>‘typename’</em>. The second keyword can always be replaced by keyword ‘class’.</p>
+			<p><strong>How templates work?</strong><br />
+			Templates are expanded at compiler time. This is like macros. The difference is, compiler does type checking before template expansion. The idea is simple, source code contains only function/class, but compiled code may contain multiple copies of same function/class.<br />
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<p><strong>Function Templates</strong> We write a generic function that can be used for different data types. Examples of function templates are sort(), max(), min(), printArray().<br />
+			Know more on Generics in C++</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_882875" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1 highlighted"><code class="comments">// One function works for all data types.  This would work </code></div>
+			<div class="line number5 index4 alt2 highlighted"><code class="comments">// even for user defined types if operator '&gt;' is overloaded </code></div>
+			<div class="line number6 index5 alt1 highlighted"><code class="keyword bold">template</code> <code class="plain">&lt;</code><code class="keyword bold">typename</code> <code class="plain">T&gt; </code></div>
+			<div class="line number7 index6 alt2 highlighted"><code class="plain">T myMax(T x, T y) </code></div>
+			<div class="line number8 index7 alt1 highlighted"><code class="plain">{ </code></div>
+			<div class="line number9 index8 alt2 highlighted"><code class="undefined spaces">   </code><code class="keyword bold">return</code> <code class="plain">(x &gt; y)? x: y; </code></div>
+			<div class="line number10 index9 alt1 highlighted"><code class="plain">} </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number12 index11 alt1"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number13 index12 alt2"><code class="plain">{ </code></div>
+			<div class="line number14 index13 alt1 highlighted"><code class="undefined spaces">  </code><code class="plain">cout &lt;&lt; myMax&lt;</code><code class="color1 bold">int</code><code class="plain">&gt;(3, 7) &lt;&lt; endl;  </code><code class="comments">// Call myMax for int </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">  </code><code class="plain">cout &lt;&lt; myMax&lt;</code><code class="color1 bold">double</code><code class="plain">&gt;(3.0, 7.0) &lt;&lt; endl; </code><code class="comments">// call myMax for double </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">  </code><code class="plain">cout &lt;&lt; myMax&lt;</code><code class="color1 bold">char</code><code class="plain">&gt;(</code><code class="string">'g'</code><code class="plain">, </code><code class="string">'e'</code><code class="plain">) &lt;&lt; endl;   </code><code class="comments">// call myMax for char </code></div>
+			<div class="line number17 index16 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces">  </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number19 index18 alt2"><code class="plain">}</code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>7
+			7
+			g</pre>
+			<p>Below is the program to implement Bubble Sort using templates in C++:</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_871263" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// CPP code for bubble sort </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// using template function </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces">  </code></div>
+			<div class="line number6 index5 alt1"><code class="comments">// A template function to implement bubble sort. </code></div>
+			<div class="line number7 index6 alt2"><code class="comments">// We can use this for any data type that supports </code></div>
+			<div class="line number8 index7 alt1"><code class="comments">// comparison operator &lt; and swap works for it. </code></div>
+			<div class="line number9 index8 alt2"><code class="keyword bold">template</code> <code class="plain">&lt;</code><code class="keyword bold">class</code> <code class="plain">T&gt; </code></div>
+			<div class="line number10 index9 alt1"><code class="keyword bold">void</code> <code class="plain">bubbleSort(T a[], </code><code class="color1 bold">int</code> <code class="plain">n) { </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; n - 1; i++) </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">        </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">j = n - 1; i &lt; j; j--) </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">            </code><code class="keyword bold">if</code> <code class="plain">(a[j] &lt; a[j - 1]) </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">              </code><code class="plain">swap(a[j], a[j - 1]); </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">} </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">  </code></div>
+			<div class="line number17 index16 alt2"><code class="comments">// Driver Code </code></div>
+			<div class="line number18 index17 alt1"><code class="color1 bold">int</code> <code class="plain">main() { </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">a[5] = {10, 50, 30, 40, 20}; </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">n = </code><code class="keyword bold">sizeof</code><code class="plain">(a) / </code><code class="keyword bold">sizeof</code><code class="plain">(a[0]); </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">  </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="comments">// calls template function  </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="plain">bubbleSort(a, 5); </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">  </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; </code><code class="string">" Sorted array : "</code><code class="plain">; </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; n; i++) </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">        </code><code class="plain">cout &lt;&lt; a[i] &lt;&lt; </code><code class="string">" "</code><code class="plain">; </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces">    </code><code class="plain">cout &lt;&lt; endl; </code></div>
+			<div class="line number29 index28 alt2"><code class="undefined spaces">  </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">  </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number31 index30 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output</strong>:</p>
+			<pre>Sorted array : 10 20 30 40 50
+			</pre>
+			<p><strong>Class Templates</strong> Like function templates, class templates are useful when a class defines something that is independent of the data type. Can be useful for classes like LinkedList, BinaryTree, Stack, Queue, Array, etc.</p>
+			<p>Following is a simple example of template Array class.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_268045" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1 highlighted"><code class="keyword bold">template</code> <code class="plain">&lt;</code><code class="keyword bold">typename</code> <code class="plain">T&gt; </code></div>
+			<div class="line number5 index4 alt2 highlighted"><code class="keyword bold">class</code> <code class="plain">Array { </code></div>
+			<div class="line number6 index5 alt1 highlighted"><code class="keyword bold">private</code><code class="plain">: </code></div>
+			<div class="line number7 index6 alt2 highlighted"><code class="undefined spaces">    </code><code class="plain">T *ptr; </code></div>
+			<div class="line number8 index7 alt1 highlighted"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">size; </code></div>
+			<div class="line number9 index8 alt2 highlighted"><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number10 index9 alt1 highlighted"><code class="undefined spaces">    </code><code class="plain">Array(T arr[], </code><code class="color1 bold">int</code> <code class="plain">s); </code></div>
+			<div class="line number11 index10 alt2 highlighted"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">print(); </code></div>
+			<div class="line number12 index11 alt1 highlighted"><code class="plain">}; </code></div>
+			<div class="line number13 index12 alt2 highlighted"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1 highlighted"><code class="keyword bold">template</code> <code class="plain">&lt;</code><code class="keyword bold">typename</code> <code class="plain">T&gt; </code></div>
+			<div class="line number15 index14 alt2 highlighted"><code class="plain">Array&lt;T&gt;::Array(T arr[], </code><code class="color1 bold">int</code> <code class="plain">s) { </code></div>
+			<div class="line number16 index15 alt1 highlighted"><code class="undefined spaces">    </code><code class="plain">ptr = </code><code class="keyword bold">new</code> <code class="plain">T[s]; </code></div>
+			<div class="line number17 index16 alt2 highlighted"><code class="undefined spaces">    </code><code class="plain">size = s; </code></div>
+			<div class="line number18 index17 alt1 highlighted"><code class="undefined spaces">    </code><code class="keyword bold">for</code><code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; size; i++) </code></div>
+			<div class="line number19 index18 alt2 highlighted"><code class="undefined spaces">        </code><code class="plain">ptr[i] = arr[i]; </code></div>
+			<div class="line number20 index19 alt1 highlighted"><code class="plain">} </code></div>
+			<div class="line number21 index20 alt2 highlighted"><code class="undefined spaces"> </code></div>
+			<div class="line number22 index21 alt1 highlighted"><code class="keyword bold">template</code> <code class="plain">&lt;</code><code class="keyword bold">typename</code> <code class="plain">T&gt; </code></div>
+			<div class="line number23 index22 alt2 highlighted"><code class="keyword bold">void</code> <code class="plain">Array&lt;T&gt;::print() { </code></div>
+			<div class="line number24 index23 alt1 highlighted"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; size; i++) </code></div>
+			<div class="line number25 index24 alt2 highlighted"><code class="undefined spaces">        </code><code class="plain">cout&lt;&lt;</code><code class="string">" "</code><code class="plain">&lt;&lt;*(ptr + i); </code></div>
+			<div class="line number26 index25 alt1 highlighted"><code class="undefined spaces">    </code><code class="plain">cout&lt;&lt;endl; </code></div>
+			<div class="line number27 index26 alt2 highlighted"><code class="plain">} </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number29 index28 alt2"><code class="color1 bold">int</code> <code class="plain">main() { </code></div>
+			<div class="line number30 index29 alt1"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">arr[5] = {1, 2, 3, 4, 5}; </code></div>
+			<div class="line number31 index30 alt2"><code class="undefined spaces">    </code><code class="plain">Array&lt;</code><code class="color1 bold">int</code><code class="plain">&gt; a(arr, 5); </code></div>
+			<div class="line number32 index31 alt1"><code class="undefined spaces">    </code><code class="plain">a.print(); </code></div>
+			<div class="line number33 index32 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number34 index33 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre> 1 2 3 4 5</pre>
+			<p><strong>Can there be more than one arguments to templates?</strong><br />
+			Yes, like normal parameters, we can pass more than one data types as arguments to templates. The following example demonstrates the same.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_488111" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include&lt;iostream&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">template</code><code class="plain">&lt;</code><code class="keyword bold">class</code> <code class="plain">T, </code><code class="keyword bold">class</code> <code class="plain">U&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="keyword bold">class</code> <code class="plain">A  { </code></div>
+			<div class="line number6 index5 alt1"><code class="undefined spaces">    </code><code class="plain">T x; </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">U y; </code></div>
+			<div class="line number8 index7 alt1"><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="plain">A() {    cout&lt;&lt;</code><code class="string">"Constructor Called"</code><code class="plain">&lt;&lt;endl;   } </code></div>
+			<div class="line number10 index9 alt1"><code class="plain">}; </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number12 index11 alt1"><code class="color1 bold">int</code> <code class="plain">main()  { </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">   </code><code class="plain">A&lt;</code><code class="color1 bold">char</code><code class="plain">, </code><code class="color1 bold">char</code><code class="plain">&gt; a; </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">   </code><code class="plain">A&lt;</code><code class="color1 bold">int</code><code class="plain">, </code><code class="color1 bold">double</code><code class="plain">&gt; b; </code></div>
+			<div class="line number15 index14 alt2"><code class="undefined spaces">   </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number16 index15 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_6"></div>
+			<p>&nbsp;</p>
+			<pre>Constructor Called
+			Constructor Called</pre>
+			<p><strong>Can we specify default value for template arguments?</strong><br />
+			Yes, like normal parameters, we can specify default arguments to templates. The following example demonstrates the same.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_949307" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include&lt;iostream&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number3 index2 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">template</code><code class="plain">&lt;</code><code class="keyword bold">class</code> <code class="plain">T, </code><code class="keyword bold">class</code> <code class="plain">U = </code><code class="color1 bold">char</code><code class="plain">&gt; </code></div>
+			<div class="line number5 index4 alt2"><code class="keyword bold">class</code> <code class="plain">A  { </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">public</code><code class="plain">: </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="plain">T x; </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">    </code><code class="plain">U y; </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="plain">A() {   cout&lt;&lt;</code><code class="string">"Constructor Called"</code><code class="plain">&lt;&lt;endl;   } </code></div>
+			<div class="line number10 index9 alt1"><code class="plain">}; </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number12 index11 alt1"><code class="color1 bold">int</code> <code class="plain">main()  { </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">   </code><code class="plain">A&lt;</code><code class="color1 bold">char</code><code class="plain">&gt; a;  </code><code class="comments">// This will call A&lt;char, char&gt;    </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">   </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>Constructor Called</pre>
+			<p><strong>What is the difference between function overloading and templates?</strong><br />
+			Both function overloading and templates are examples of polymorphism feature of OOP. Function overloading is used when multiple functions do similar operations, templates are used when multiple functions do identical operations.</p>
+			<p><strong>What happens when there is static member in a template class/function?</strong><br />
+			Each instance of a template contains its own static variable. See Templates and Static variables for more details.</p>
+			<p><strong>What is template specialization?</strong><br />
+			Template specialization allows us to have different code for a particular data type. See Template Specialization for more details.</p>
+			<p><strong>Can we pass nontype parameters to templates?</strong><br />
+			We can pass non-type arguments to templates. Non-type parameters are mainly used for specifying max or min values or any other constant value for a particular instance of a template. The important thing to note about non-type parameters is, they must be const. The compiler must know the value of non-type parameters at compile time. Because compiler needs to create functions/classes for a specified non-type value at compile time. In below program, if we replace 10000 or 25 with a variable, we get a compiler error. Please see this.</p>
+			<p>Below is a C++ program.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_881806" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="comments">// A C++ program to demonstrate working of non-type </code></div>
+			<div class="line number2 index1 alt1"><code class="comments">// parameters to templates in C++. </code></div>
+			<div class="line number3 index2 alt2"><code class="preprocessor">#include &lt;iostream&gt; </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">using</code> <code class="keyword bold">namespace</code> <code class="plain">std; </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces">  </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">template</code> <code class="plain">&lt;</code><code class="keyword bold">class</code> <code class="plain">T, </code><code class="color1 bold">int</code> <code class="plain">max&gt; </code></div>
+			<div class="line number7 index6 alt2"><code class="color1 bold">int</code> <code class="plain">arrMin(T arr[], </code><code class="color1 bold">int</code> <code class="plain">n) </code></div>
+			<div class="line number8 index7 alt1"><code class="plain">{ </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">   </code><code class="color1 bold">int</code> <code class="plain">m = max; </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces">   </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; n; i++) </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">      </code><code class="keyword bold">if</code> <code class="plain">(arr[i] &lt; m) </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces">         </code><code class="plain">m = arr[i]; </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">  </code></div>
+			<div class="line number14 index13 alt1"><code class="undefined spaces">   </code><code class="keyword bold">return</code> <code class="plain">m; </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">} </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">  </code></div>
+			<div class="line number17 index16 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number18 index17 alt1"><code class="plain">{ </code></div>
+			<div class="line number19 index18 alt2"><code class="undefined spaces">   </code><code class="color1 bold">int</code> <code class="plain">arr1[]  = {10, 20, 15, 12}; </code></div>
+			<div class="line number20 index19 alt1"><code class="undefined spaces">   </code><code class="color1 bold">int</code> <code class="plain">n1 = </code><code class="keyword bold">sizeof</code><code class="plain">(arr1)/</code><code class="keyword bold">sizeof</code><code class="plain">(arr1[0]); </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">  </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">   </code><code class="color1 bold">char</code> <code class="plain">arr2[] = {1, 2, 3}; </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">   </code><code class="color1 bold">int</code> <code class="plain">n2 = </code><code class="keyword bold">sizeof</code><code class="plain">(arr2)/</code><code class="keyword bold">sizeof</code><code class="plain">(arr2[0]); </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces">  </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">   </code><code class="comments">// Second template parameter to arrMin must be a constant </code></div>
+			<div class="line number26 index25 alt1"><code class="undefined spaces">   </code><code class="plain">cout &lt;&lt; arrMin&lt;</code><code class="color1 bold">int</code><code class="plain">, 10000&gt;(arr1, n1) &lt;&lt; endl; </code></div>
+			<div class="line number27 index26 alt2"><code class="undefined spaces">   </code><code class="plain">cout &lt;&lt; arrMin&lt;</code><code class="color1 bold">char</code><code class="plain">, 256&gt;(arr2, n2); </code></div>
+			<div class="line number28 index27 alt1"><code class="undefined spaces">   </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number29 index28 alt2"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>10
+			1</pre>
+			
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 			
 			<!-- footer -->

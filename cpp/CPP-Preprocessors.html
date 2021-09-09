@@ -61,6 +61,310 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-544" class="post-544 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title">C/C++ Preprocessors</h1>					</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>As the name suggests Preprocessors are programs that process our source code before compilation. There are a number of steps involved between writing a program and executing a program in C / C++. Let us have a look at these steps before we actually start learning about Preprocessors.</p>
+						<p>You can see the intermediate steps in the above diagram. The source code written by programmers is stored in the file program.c. This file is then processed by preprocessors and an expanded source code file is generated named program. This expanded file is compiled by the compiler and an object code file is generated named program .obj. Finally, the linker links this object code file to the object code of the library functions to generate the executable file program.exe.</p>
+			<p>&nbsp;</p>
+			<div id="AP_G4GR_5"></div>
+			<p>&nbsp;</p>
+			<p>Preprocessor programs provide preprocessors directives which tell the compiler to preprocess the source code before compiling. All of these preprocessor directives begin with a ‘#’ (hash) symbol. This (‘#’) symbol at the beginning of a statement in a C/C++ program indicates that it is a pre-processor directive. We can place these preprocessor directives anywhere in our program. Examples of some preprocessor directives are: <em>#include</em>, <em>#define</em>, <em>#ifndef</em> etc.</p>
+			<p><strong>There are 4 main types of preprocessor directives:</strong></p>
+			<ol>
+			<li>Macros</li>
+			<li>File Inclusion</li>
+			<li>Conditional Compilation</li>
+			<li>Other directives</li>
+			</ol>
+			<p>Let us now learn about each of these directives in details.</p>
+			<ul>
+			<li><strong>Macros</strong>: Macros are a piece of code in a program which is given some name. Whenever this name is encountered by the compiler the compiler replaces the name with the actual piece of code. The ‘#define’ directive is used to define a macro. Let us now understand the macro definition with the help of a program:
+			<div class="responsive-tabs-wrapper">
+			<div class="responsive-tabs responsive-tabs--enabled">
+			<ul class="responsive-tabs__list" role="tablist">
+			<li id="tablist1-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+			<li id="tablist1-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+			</ul>
+			<div id="tablist1-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist1-tab1">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_684185" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number3 index2 alt2"><code class="comments">// macro definition </code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#define LIMIT 5 </code></div>
+			<div class="line number5 index4 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number6 index5 alt1"><code class="plain">{ </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="keyword bold">for</code> <code class="plain">(</code><code class="color1 bold">int</code> <code class="plain">i = 0; i &lt; LIMIT; i++) { </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces">        </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"%d \n"</code><code class="plain">,i); </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="plain">} </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number12 index11 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output:</strong></p>
+			<pre>0
+			1
+			2
+			3
+			4
+			</pre>
+			<p>In the above program, when the compiler executes the word LIMIT it replaces it with 5. The word ‘LIMIT’ in the macro definition is called a macro template and ‘5’ is macro expansion.<br />
+			<strong>Note</strong>: There is no semi-colon(‘;’) at the end of macro definition. Macro definitions do not need a semi-colon to end.</p>
+			<p><strong>Macros with arguments</strong>: We can also pass arguments to macros. Macros defined with arguments works similarly as functions. Let us understand this with a program:</p>
+			<div class="responsive-tabs-wrapper">
+			<div class="responsive-tabs responsive-tabs--enabled">
+			<ul class="responsive-tabs__list" role="tablist">
+			<li id="tablist2-tab1" class="responsive-tabs__list__item responsive-tabs__list__item--active" role="tab">C</li>
+			<li id="tablist2-tab2" class="responsive-tabs__list__item" role="tab">C++</li>
+			</ul>
+			<div id="tablist2-panel1" class="tabcontent responsive-tabs__panel responsive-tabs__panel--active" role="tabpanel" aria-hidden="false" aria-labelledby="tablist2-tab1">
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_907859" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number3 index2 alt2"><code class="comments">// macro with parameter </code></div>
+			<div class="line number4 index3 alt1"><code class="preprocessor">#define AREA(l, b) (l * b) </code></div>
+			<div class="line number5 index4 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number6 index5 alt1"><code class="plain">{ </code></div>
+			<div class="line number7 index6 alt2"><code class="undefined spaces">    </code><code class="color1 bold">int</code> <code class="plain">l1 = 10, l2 = 5, area; </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number9 index8 alt2"><code class="undefined spaces">    </code><code class="plain">area = AREA(l1, l2); </code></div>
+			<div class="line number10 index9 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Area of rectangle is: %d"</code><code class="plain">, area); </code></div>
+			<div class="line number12 index11 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number14 index13 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			</div>
+			<p><strong>Output:</strong></p>
+			<pre>Area of rectangle is: 50
+			</pre>
+			<p>We can see from the above program that whenever the compiler finds AREA(l, b) in the program it replaces it with the statement (l*b) . Not only this, the values passed to the macro template AREA(l, b) will also be replaced in the statement (l*b). Therefore AREA(10, 5) will be equal to 10*5.</li>
+			<li><strong>File Inclusion</strong>: This type of preprocessor directive tells the compiler to include a file in the source code program. There are two types of files which can be included by the user in the program:
+			<ol>
+			<li><strong>Header File or Standard files</strong>: These files contains definition of pre-defined functions like printf(), scanf() etc. These files must be included for working with these functions. Different function are declared in different header files. For example standard I/O funuctions are in ‘iostream’ file whereas functions which perform string operations are in ‘string’ file.<br />
+			<strong>Syntax</strong>:</p>
+			<div id="AP_G4GR_6"></div>
+			<pre>#include&lt; <em>file_name </em>&gt;
+			</pre>
+			<p>where <em>file_name</em> is the name of file to be included. The ‘&lt;‘ and ‘&gt;’ brackets tells the compiler to look for the file in standard directory.</li>
+			<li><strong>user defined files</strong>: When a program becomes very large, it is good practice to divide it into smaller files and include whenever needed. These types of files are user defined files. These files can be included as:
+			<pre>#include"<em>filename</em>"
+			</pre>
+			</li>
+			</ol>
+			</li>
+			<li><strong>Conditional Compilation</strong>: Conditional Compilation directives are type of directives which helps to compile a specific portion of the program or to skip compilation of some specific part of the program based on some conditions. This can be done with the help of two preprocessing commands ‘<strong>ifdef</strong>‘ and ‘<strong>endif</strong>‘.<br />
+			<strong>Syntax</strong>:</p>
+			<pre>#ifdef macro_name
+				statement1;
+				statement2;
+				statement3;
+				.
+				.
+				.
+				statementN;
+			#endif
+			</pre>
+			<p>If the macro with name as ‘<em>macroname</em>‘ is defined then the block of statements will execute normally but if it is not defined, the compiler will simply skip this block of statements.</li>
+			<li><strong>Other directives</strong>: Apart from the above directives there are two more directives which are not commonly used. These are:
+			<ol>
+			<li><strong>#undef Directive</strong>: The #undef directive is used to undefine an existing macro. This directive works as:
+			<pre>#undef LIMIT
+			</pre>
+			<p>Using this statement will undefine the existing macro LIMIT. After this statement every “#ifdef LIMIT” statement will evaluate to false.</li>
+			<li><strong>#pragma Directive</strong>: This directive is a special purpose directive and is used to turn on or off some features. This type of directives are compiler-specific i.e., they vary from compiler to compiler. Some of the #pragma directives are discussed below:
+			<ul>
+			<li><strong>#pragma startup</strong> and <strong>#pragma exit</strong>: These directives helps us to specify the functions that are needed to run before program startup( before the control passes to main()) and just before program exit (just before the control returns from main()).<br />
+			<strong>Note:</strong> Below program will not work with GCC compilers.<br />
+			Look at the below program:</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_499323" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number3 index2 alt2"><code class="keyword bold">void</code> <code class="plain">func1(); </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">void</code> <code class="plain">func2(); </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="preprocessor">#pragma startup func1 </code></div>
+			<div class="line number7 index6 alt2"><code class="preprocessor">#pragma exit func2 </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number9 index8 alt2"><code class="keyword bold">void</code> <code class="plain">func1() </code></div>
+			<div class="line number10 index9 alt1"><code class="plain">{ </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Inside func1()\n"</code><code class="plain">); </code></div>
+			<div class="line number12 index11 alt1"><code class="plain">} </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1"><code class="keyword bold">void</code> <code class="plain">func2() </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">{ </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Inside func2()\n"</code><code class="plain">); </code></div>
+			<div class="line number17 index16 alt2"><code class="plain">} </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number19 index18 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number20 index19 alt1"><code class="plain">{ </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">func1(); </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces">    </code><code class="keyword bold">void</code> <code class="plain">func2(); </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Inside main()\n"</code><code class="plain">); </code></div>
+			<div class="line number24 index23 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number25 index24 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number26 index25 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			<p>Output:</p>
+			<pre>Inside func1()
+			Inside main()
+			Inside func2()
+			</pre>
+			<p>The above code will produce the output as given below when run on GCC compilers:</p>
+			<pre>Inside main()
+			</pre>
+			<p>This happens because GCC does not supports #pragma startup or exit. However you can use the below code for a similar output on GCC compilers.</p>
+			<div class="code-block">
+			<div class="code-gutter">
+			<div class="editor-buttons-container">
+			<div class="editor-buttons">
+			<div class="editor-buttons-div" title="Run and Edit"><i id="copy-code-button" class="material-icons code-sidebar-button copy-code-button" title="Copy Code">filter_none</i><i id="run-and-edit-button" class="material-icons code-sidebar-button" title="Edit Code">edit</i></p>
+			<p><i id="run-code-button" class="material-icons code-sidebar-button" title="Run Code and See Output">play_arrow</i></p>
+			<p><i class="material-icons code-sidebar-button dark-editor-button" title="Dark Mode">brightness_4</i></p>
+			</div>
+			</div>
+			</div>
+			</div>
+			<div class="code-container">
+			<div id="highlighter_259035" class="syntaxhighlighter nogutter  ">
+			<table border="0" cellspacing="0" cellpadding="0">
+			<tbody>
+			<tr>
+			<td class="code">
+			<div class="container">
+			<div class="line number1 index0 alt2"><code class="preprocessor">#include &lt;stdio.h&gt; </code></div>
+			<div class="line number2 index1 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number3 index2 alt2"><code class="keyword bold">void</code> <code class="plain">func1(); </code></div>
+			<div class="line number4 index3 alt1"><code class="keyword bold">void</code> <code class="plain">func2(); </code></div>
+			<div class="line number5 index4 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number6 index5 alt1"><code class="keyword bold">void</code> <code class="plain">__attribute__((constructor)) func1(); </code></div>
+			<div class="line number7 index6 alt2"><code class="keyword bold">void</code> <code class="plain">__attribute__((destructor)) func2(); </code></div>
+			<div class="line number8 index7 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number9 index8 alt2"><code class="keyword bold">void</code> <code class="plain">func1() </code></div>
+			<div class="line number10 index9 alt1"><code class="plain">{ </code></div>
+			<div class="line number11 index10 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Inside func1()\n"</code><code class="plain">); </code></div>
+			<div class="line number12 index11 alt1"><code class="plain">} </code></div>
+			<div class="line number13 index12 alt2"><code class="undefined spaces"> </code></div>
+			<div class="line number14 index13 alt1"><code class="keyword bold">void</code> <code class="plain">func2() </code></div>
+			<div class="line number15 index14 alt2"><code class="plain">{ </code></div>
+			<div class="line number16 index15 alt1"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Inside func2()\n"</code><code class="plain">); </code></div>
+			<div class="line number17 index16 alt2"><code class="plain">} </code></div>
+			<div class="line number18 index17 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number19 index18 alt2"><code class="color1 bold">int</code> <code class="plain">main() </code></div>
+			<div class="line number20 index19 alt1"><code class="plain">{ </code></div>
+			<div class="line number21 index20 alt2"><code class="undefined spaces">    </code><code class="functions bold">printf</code><code class="plain">(</code><code class="string">"Inside main()\n"</code><code class="plain">); </code></div>
+			<div class="line number22 index21 alt1"><code class="undefined spaces"> </code></div>
+			<div class="line number23 index22 alt2"><code class="undefined spaces">    </code><code class="keyword bold">return</code> <code class="plain">0; </code></div>
+			<div class="line number24 index23 alt1"><code class="plain">} </code></div>
+			</div>
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</div>
+			</div>
+			</div>
+			</li>
+			<li><strong>#pragma warn Directive:</strong> This directive is used to hide the warning message which are displayed during compilation.<br />
+			We can hide the warnings as shown below:</p>
+			<ul>
+			<li><strong>#pragma warn -rvl</strong>: This directive hides those warning which are raised when a function which is supposed to return a value does not returns a value.</li>
+			<li><strong>#pragma warn -par</strong>: This directive hides those warning which are raised when a function does not uses the parameters passed to it.</li>
+			<li><strong>#pragma warn -rch</strong>: This directive hides those warning which are raised when a code is unreachable. For example: any code written after the <em>return</em> statement in a function is unreachable.</li>
+			</ul>
+			</li>
+			</ul>
+			</li>
+			</ol>
+			</li>
+			</ul>
+			
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 			
 			<!-- footer -->
