@@ -63,7 +63,380 @@
 				</div>
 			</div>
 			<!-- banner end -->
+			<article id="post-364" class="post-364 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
 			
+					<header class="entry-header">
+						<h1 class="entry-title"></h1>			<div class="edit-link"><a class="post-edit-link" href="https://wordpress.com/page/technologyborg.wordpress.com/364">Edit</a></div>		</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p>JavaScript is a dymanic computer programming language. it is a lightweight and most commonly used as a part of web pages, who&#8217;s implenation allows client side script to interact with user and make dynamic pages.it is an interrupted programming language with object oriented capabilities.JavaScript was first know as line script but netscape.changed in javascript possiably because of the extienment beam genrated by java.</p>
+			<p>JavaScript is maintanced by W3C</p>
+			<p><span style="text-decoration:underline;">Advanages of JavaScript</span></p>
+			<ul>
+			<li>Less server interaction &#8211; we can valiadate user input before senting the page of to the server. this saves server traffic, which means less load on our server.</li>
+			<li>Immediate feedback to the visitors &#8211; they do not have to wait for a page reload if they have forgotten to enter something.</li>
+			<li>Incerased interactivity &#8211; we can create interfaces that react when the user hovers. overthem with a mouse or actives them via the keyboard.</li>
+			<li>Richer interfaces &#8211; we can use javascript to include such item, drag and drop compoment &amp; slide to give rich interface to our site visitor.</li>
+			</ul>
+			<p>JavaScript can be implimented using javascript statements that are placed with in &lt;script&gt;&#8230;&lt;/script&gt;.In a webpage we can placed &lt;script&gt; anywhere with in our page,but it is highly recommanded to use it inside &lt;head&gt;</p>
+			<p>eg:</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;script type="text/javascript"&gt;
+			&lt;/script&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</pre>
+			<p>eg:</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;script type="text/javascript"&gt;
+			document.write("Hello");
+			&lt;/script&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</pre>
+			<p><span style="text-decoration:underline;">Document Object Model (DOM)</span></p>
+			<p>Inorder to make a document more interactive, script need to be able to access the contents of the document.The script does this by interacting with the browser by using property,methods events setout in the interface called document object model (DOM)</p>
+			<p>Dom represents webpage using an series of objects.main object is the Document oblect, which in turn contents serveal other child object.</p>
+			<p>eg:</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;script type = "text/javascript"&gt;
+			&lt;/script&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;h1&gt;JavaScript&lt;h1&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</pre>
+			<p><span style="text-decoration:underline;">Propertys of Document Object</span></p>
+			<p><span style="text-decoration:underline;">Starting program with JavaScript</span></p>
+			<p><span style="text-decoration:underline;">Variables</span></p>
+			<p>variables are used to store values in JavaScript.variables are declared using keyword &#8220;Var&#8221;</p>
+			<p>eg: var user name;</p>
+			<p>here type of variable is not explicitly given so inorder to understand type of variable we should assign that particular type implicity into the variable</p>
+			<p>username = &#8220;Hello&#8221;</p>
+			<p><span style="text-decoration:underline;">Operators</span></p>
+			<p>operator is a symbol that does something to a value when used in a expression different type of operators are:-</p>
+			<p>1.Arithemtic operator (+,-,*,/,%,++,&#8211;)</p>
+			<p>2.Assigment operator (=)</p>
+			<p>3.Relational operator (&lt;,&gt;,&lt;=,&gt;=,=|,==)</p>
+			<p>4.logical operator (AND,OR,NOT,&amp;&amp;,??,!)</p>
+			<p>5.string operator (+)</p>
+			<p><span style="text-decoration:underline;">Functions</span></p>
+			<p>A function is made up of related code that perform paripalur task function are usally define as in head tag</p>
+			<p><span style="text-decoration:underline;">define a function</span></p>
+			<ul>
+			<li>define a name for it</li>
+			<li>incaitade any value that might be required (arrgument)</li>
+			<li>add statement to the body of functions</li>
+			<li>always use keyword function before function name</li>
+			</ul>
+			<p>eg:</p>
+			<pre>function calculate (height,width)
+			{
+			area= height*width;
+			return area;
+			}</pre>
+			<p><span style="text-decoration:underline;">Call a function</span></p>
+			<p>function are called in events inside a web page.</p>
+			<pre>&lt;body&gt;
+			&lt;form name="formname"&gt;
+			height&lt;input type="text" name="height"/&gt;
+			width&lt;input type="text" name="width"/&gt;
+			&lt;input type="button" value="area"&gt;
+			on click="calculate(document.formname.height.value,document.formname.width.value)"/&gt;
+			&lt;/form&gt;
+			&lt;/body&gt;</pre>
+			<p>eg: write a javascript to add two numbers</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;script type ="text/javascript"&gt;
+			function calculate(number1,number2)
+			var sum;
+			sum=number1+number2;
+			return sum;
+			}
+			&lt;/script&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;form name="form name"&gt;
+			number1&lt;input type="text" name="txtnumber1"/&gt;
+			&lt;br /&gt;
+			number2&lt;input type="text" name="txtnumber2"/&gt;
+			&lt;br /&gt;
+			&lt;input type="button" value="calcutate"
+			onclick="calculate(document.formname.txtnumber1.value1.document.form.txtnumber2.value)"/&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</pre>
+			<p><span style="text-decoration:underline;">Condional Statements</span></p>
+			<p>Condional statements are used to make dicision out of a condition. The major condional statement are:-</p>
+			<p>1.if statement</p>
+			<p>2.if else statement</p>
+			<p>3.switch statement</p>
+			<p>1.<span style="text-decoration:underline;">if statement</span></p>
+			<p><span style="text-decoration:underline;">Syntax:-</span></p>
+			<pre>if(condition)
+			{
+			code to be execuated.if the condition is true
+			}</pre>
+			<p>eg:</p>
+			<pre>if(a&gt;b)
+			{
+			document.write("a is greater");
+			}</pre>
+			<p>2.<span style="text-decoration:underline;">if else statement</span></p>
+			<p><span style="text-decoration:underline;">Syntax:-</span></p>
+			<pre>if(condition)
+			{
+			code to be execuated if the condition is true
+			}
+			else
+			{
+			code to be executed "if the condition is false"
+			}</pre>
+			<p>eg:</p>
+			<pre>if(a&gt;b)
+			{
+			document.write("a is greater");
+			}
+			else
+			{
+			document.write("b is greater");
+			}</pre>
+			<p>3.<span style="text-decoration:underline;">Switch statement</span></p>
+			<p><span style="text-decoration:underline;">Syntax:-</span></p>
+			<pre>switch(expression)
+			{
+			case option1:
+			code to be executed
+			case option2:
+			code to be executed
+			.
+			.
+			.
+			.
+			case option n:
+			code to be executed
+			default:
+			code to be executed
+			}</pre>
+			<p>eg:</p>
+			<pre>&lt;script type = "text/javascript"&gt;
+			function check animal(){
+			switch(document.formname.txtanimal.value)
+			case"rabbit":
+			alert("eats carrot");
+			break;
+			case"lion":
+			alert("eats flesh");
+			break;
+			case"cow":
+			alert("eats grass");
+			break;
+			default:
+			alert("wrong animal");
+			}
+			}
+			&lt;/script&gt;</pre>
+			<p><span style="text-decoration:underline;">Loop</span></p>
+			<p>loops are used to execute a single statement mulitiple time.There are 3 different types of loops in javascript</p>
+			<p>There are :-</p>
+			<p>1.whileloop</p>
+			<p>2.Do while loop</p>
+			<p>3.for loop</p>
+			<p>1.<span style="text-decoration:underline;">while loop</span></p>
+			<p><span style="text-decoration:underline;">Syntax:-</span></p>
+			<pre>while(condition)
+			{
+			code to be executed
+			}</pre>
+			<p>eg:</p>
+			<pre>&lt;script type = "text/javascript"&gt;
+			var i=1;
+			while(i&lt;11){
+			document.write(i+"x3 ="+(i*3)+"&lt;br /&gt;");
+			i++;
+			}
+			&lt;/script&gt;</pre>
+			<p><span style="text-decoration:underline;">Output</span></p>
+			<pre>1x3=3
+			2x3=6
+			3x3=9
+			.
+			.
+			.
+			.
+			10x3=30</pre>
+			<p><span style="text-decoration:underline;">Do while</span></p>
+			<p><span style="text-decoration:underline;">Syntax:-</span></p>
+			<pre>do
+			{
+			code to be executed
+			}
+			while(condition);</pre>
+			<p>eg:</p>
+			<pre>&lt;script type = "text/javascript"&gt;
+			i=12
+			do
+			{
+			document write(i+"x3"+(i*3)+"&lt;br /&gt;");
+			}
+			while(i&lt;11);</pre>
+			<p><span style="text-decoration:underline;">For loop</span></p>
+			<p><span style="text-decoration:underline;">Syntax:-</span></p>
+			<pre>for(intialization;test condition; increment/decrement)
+			{
+			code to be executed
+			}</pre>
+			<p>eg:</p>
+			<pre>for(i=1;i&lt;11;i++)
+			{
+			document.write(i+"x3"+(i*3)+&lt;br /&gt;);
+			}</pre>
+			<p><span style="text-decoration:underline;">Event Handleing</span></p>
+			<p>All browser are expected to support a set of events known as intrinsic events. such as <span style="text-decoration:underline;">onload</span> event, which happens when a page as finished loading <span style="text-decoration:underline;">onclick</span> for when a user clicks on an element, and <span style="text-decoration:underline;">onsubmit</span> for when a form is submit there events can be used to trigger a script.</p>
+			<p>There are two types of events that can be used to trigger scripts</p>
+			<p>1.Window event :- occurs when something happens to window</p>
+			<p>eg: a page loads or unloads, or focus is moved to or away from a window.</p>
+			<p>2.user event :- occurs when user interacts with elements in the page using mouse or keyboard</p>
+			<p>eg: placing mouse pointer on an element, clicking on an element etc&#8230;</p>
+			<p>below showns some examples common events used in javascript</p>
+			<p><span style="text-decoration:underline;">Data Validation</span></p>
+			<p>Data validation is one of the most common task performed using javascript.we have likely come actors forms on the web than have shown as a prompt when we have not entered a value into a field that requires one or when we have entered wrong kind of value.This is because the form has been validated.That is a script has checked to see weather the text we have entered or choices we have made match some rules that the programmer has written in the page.</p>
+			<p>for eg: if we are expected to enter n email address, these validation</p>
+			<p>rule may check what we entered to ensure that it contains an @ symbol and atleast one period (.) symbol</p>
+			<p>validation can happen in two places- client side (javascript) and server side (php)</p>
+			<p>validation means checking wheather, rather than checking wheather the data is current</p>
+			<p><span style="text-decoration:underline;">Checking text fields</span></p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;title&gt;register&lt;/title&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;form&gt;
+			username:&lt;input type = "text" name = "username"/&gt;
+			&lt;br /&gt;
+			password:&lt;input type = "text" name = "password" /&gt;
+			&lt;br /&gt;
+			confirm password:&lt;input type = "text" name = "confirm password" /&gt;
+			&lt;br /&gt;
+			&lt;input type = "button" name = "login" value = "login" onclick = "validate()" /&gt;
+			
+			function validate()
+			{
+			var return value = true;
+			var username = document.getElementByid("txtvar").value;
+			var password = document.getElementByid("txtpassword").value;
+			if(username.length&lt;6)
+			{
+			return value false
+			alert("username should be atleast 6 characters");
+			form register.txtusername.focus();
+			}
+			if(password.length&lt;6)
+			{
+			returnvalue = false
+			alert("password.should be atleast 6 characters);
+			form register.txtpassword1.value="";
+			form register.txtpassword2.focus();
+			}
+			if(password1!=password2)
+			{
+			return value = false;
+			alert("password do not match");
+			form register.txtpassword1.focus();
+			}</pre>
+			<p><span style="text-decoration:underline;">Dynamic Documents</span></p>
+			<p>Dynamic document mean that content of webpage can be customized (change) according to the user input ie, a page that is interactive with user in eariler times html was used to static page exibited various dynamism like improved style background color &amp; other programming abitilies</p>
+			<p>1.<span style="text-decoration:underline;">Positioning Elements</span></p>
+			<p>Postion of any element can be dectated by three style propertys</p>
+			<p>1.Position</p>
+			<p>2.Top</p>
+			<p>3.Left</p>
+			<p>The possible value of porition are absolute and releactive &amp; static</p>
+			<p><span style="text-decoration:underline;">Absolute Postiting</span></p>
+			<p>The absolute value is specificed for porition when element is to be placed at specific place in the document without regard to the porition of other elements one use is to super impose. special text over a paragraph of ordinary text to create an effect similar to a water mark on paper</p>
+			<p>eg:</p>
+			<pre>&lt;head&gt;
+			&lt;style type ="text/css"
+			p{
+			portion:absolute
+			left:50px;
+			top:100px;
+			}
+			&lt;/style&gt;
+			&lt;/head&gt;</pre>
+			<p><span style="text-decoration:underline;">Relative poritioning</span></p>
+			<p>Relative value is specified for porition is to be placed depending upon the position of other element</p>
+			<p>eg:</p>
+			<pre>&lt;head&gt;
+			&lt;style type ="text/css"&gt;
+			p{
+			position:relative;
+			left:50px;
+			top:100px
+			}
+			&lt;/style&gt;
+			&lt;/head&gt;</pre>
+			<p><span style="text-decoration:underline;">Static poritioning</span></p>
+			<p>default value for position is static. a statically placed element can&#8217;t be displaced its normal porition.</p>
+			<p>2.<span style="text-decoration:underline;">Moving element</span></p>
+			<p>if porition is set to either absolute or relative, Their can be moved for dynamicism it can be done by just changing top and left property manger with help of javascript</p>
+			<p>eg:</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;script type = "text/javascript"&gt;
+			function moving(move,new top,new left)
+			{
+			dom = document.getElementById("move").style
+			dom.top = newtop+"px";
+			dom.left = newleft+"px";
+			}
+			&lt;/script&gt;
+			&lt;/head&gt;</pre>
+			<p>3.<span style="text-decoration:underline;">Element visiabitily</span></p>
+			<p>visiabitily property of an element controls wheather it is display or not values are visiable and hidden</p>
+			<p>eg:</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;script type = "text/javascript"&gt;
+			function flip image()
+			{
+			dom = document.getElementById("volvo").style
+			if(dom.visiabity == "visible")
+			dom.visiabity == "hidden";
+			else
+			dom.visiabity == "visible";
+			}
+			&lt;/script&gt;
+			&lt;/head&gt;
+			&lt;/html&gt;</pre>
+			<p>4.<span style="text-decoration:underline;">Changing colours and forms</span></p>
+			<p>Background color is controled by background property. forground color is controled by colour property</p>
+			<pre>&lt;scrtipt type = "text/javascript"&gt;
+			function set color (where,newcolor){
+			if(where == "background")
+			document.body.style.background color = new color;
+			else
+			document.body.style.color = new color;
+			}
+			&lt;/script&gt;</pre>
+			<p>5.<span style="text-decoration:underline;">Changing fonts</span></p>
+			<pre>onmouseover = this.style.color ="blue";
+						  this.style.font ="italics,16pt";
+			onmouseout = this.style.color ="blade"
+						 this.style.color ="normal,16pt";</pre>
+			<p>&nbsp;</p>
+								</div><!-- .entry-content -->
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 			
 		
 		
