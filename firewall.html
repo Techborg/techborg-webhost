@@ -1,0 +1,157 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TechBorg - firewall</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="E-leraning platform that focused on computer related programming articles and troubleshooting">
+		<meta name="keywords" content="TechBorg">
+		<meta name="author" content="shaun sebastian">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/logo.png">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6306201853171537"
+     crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+	
+		<div class="wrapper">
+		
+			<!-- header -->
+			<header>
+				<!-- navigation -->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							
+							<a class="navbar-brand" href="index.html"><h1>TECHBORG</h1></a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="registration.html">Signup</a></li>
+								<li><a href="login.html">Login</a></li>
+								<li><a href="index.html">Home</a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</header>
+			
+			<!-- banner -->
+			<div class="banner">
+				<div class="container">
+					<!-- heading -->
+					<h2>firewall</h2>
+					<!-- paragraph -->
+					<p></p>
+				</div>
+			</div>
+			<!-- bannear end -->
+			
+			<article id="post-75" class="post-75 page type-page status-publish hentry">
+
+	
+                <div class="entry-inner">
+            
+                    <header class="entry-header">
+                        <h1 class="entry-title"></h1>			
+            		</header><!-- .entry-header -->
+            
+                    <div class="entry-content">
+                        <p>In computing, a firewall is software or firmware that enforces a set of rules about what data packets will be allowed to enter or leave a network. Firewalls are incorporated into a wide variety of networked devices to filter traffic and lower the risk that malicious packets traveling over the public internet can impact the security of a private network. Firewalls may also be purchased as stand-alone software applications.</p>
+            <p>The term <em>firewall</em> is a metaphor that compares a type of physical barrier that&#8217;s put in place to limit the damage a fire can cause, with a virtual barrier that&#8217;s put in place to limit damage from an external or internal cyberattack. When located at the perimeter of a network, firewalls provide low-level network protection, as well as important logging and auditing functions.</p>
+            <p>While the two main types of firewalls are host-based and network-based, there are many different types that can be found in different places and controlling different activities. A host-based firewall is installed on individual servers and monitors incoming and outgoing signals. A network-based firewall can be built into the cloud&#8217;s infrastructure, or it can be a virtual firewall service.</p>
+            <section class="section main-article-chapter">
+            <h3 class="section-title">Types of firewalls</h3>
+            <p>Other types of firewalls include packet-filtering firewalls, stateful inspection firewalls, proxy firewalls and next-generation firewalls (NGFWs).</p>
+            <ul class="default-list">
+            <li>A packet-filtering firewall examines packets in isolation and does not know the packet&#8217;s context.</li>
+            <li>A stateful inspection firewall examines network traffic to determine whether one packet is related to another packet.</li>
+            <li>A proxy firewall inspects packets at the application layer of the Open Systems Interconnection (OSI) reference model.</li>
+            <li>An NGFW uses a multilayered approach to integrate enterprise firewall capabilities with an intrusion prevention system (IPS) and application control.</li>
+            </ul>
+            <p>When organizations began moving from mainframe computers and dumb clients to the client-server model, the ability to control access to the server became a priority. Before the first firewalls emerged based on work done in the late 1980s, the only real form of network security was enforced through access control lists (ACLs) residing on routers. ACLs specified which Internet Protocol (IP) addresses were granted or denied access to the network.</p>
+            <p>The exponential growth of the internet and the resulting increase in connectivity of networks, however, meant that filtering network traffic by IP address alone was no longer enough. Static packet-filtering firewalls, which examine packet headers and use rules to make decisions about what traffic to let through, arguably became the most important part of every network security initiative by the end of the last century.</p>
+            </section>
+            <section class="section main-article-chapter">
+            <h3 class="section-title">How packet-filtering firewalls work</h3>
+            <p>When a packet passes through a packet-filtering firewall, its source and destination address, protocol and destination port number are checked. The packet is dropped &#8212; it&#8217;s not forwarded to its destination &#8212; if it does not comply with the firewall&#8217;s rule set. For example, if a firewall is configured with a rule to block Telnet access, then the firewall will drop packets destined for Transmission Control Protocol (TCP) port number 23, the port where a Telnet server application would be listening.</p>
+            <p>Packet-filtering firewalls work mainly on the network layer of the OSI reference model, although the transport layer is used to obtain the source and destination port numbers. They examine each packet independently and do not know whether any given packet is part of an existing stream of traffic. Packet-filtering firewalls are effective, but because they process each packet in isolation, they can be vulnerable to IP spoofing attacks and have largely been replaced by stateful inspection firewalls.</p>
+            </section>
+            <section class="section main-article-chapter">
+            <h3 class="section-title">How stateful inspection firewalls work</h3>
+            <p>Stateful inspection firewalls &#8212; also known as <em>dynamic packet-filtering</em> <em>firewalls</em> &#8212; maintain a table that keeps track of all open connections. When new packets arrive, the firewall compares information in the packet header to the state table and determines whether it is part of an established connection. If it is part of an existing connection, then the packet is allowed through without further analysis. If the packet doesn&#8217;t match an existing connection, it is evaluated according to the rule set for new connections.</p>
+            <p>Stateful inspection firewalls monitor communication packets over a period of time and examine both incoming and outgoing packets. Outgoing packets that are requests for specific types of incoming packets are tracked, and only those incoming packets constituting a proper response are allowed through the firewall. Although stateful inspection firewalls are quite effective, they can be vulnerable to denial-of-service (DoS) attacks.</p>
+            </section>
+            <section class="section main-article-chapter">
+            <h3 class="section-title">How application layer and proxy firewalls work</h3>
+            <p>As attacks against web servers became more common, it became apparent that there was a need for firewalls to protect networks from attacks at the application layer. Packet filtering and stateful inspection firewalls can&#8217;t distinguish among valid application layer protocol requests, data and malicious traffic encapsulated within apparently valid protocol traffic.</p>
+            <p>Firewalls that provide application layer filtering can examine the payload of a packet and distinguish among valid requests, data and malicious code disguised as a valid request or data. Since this type of firewall makes a decision based on the payload&#8217;s content, it gives security engineers more granular control over network traffic and sets rules to permit or deny specific application requests or commands. For example, it can allow or deny a specific incoming Telnet command from a particular user, whereas other firewalls can only control general incoming requests from a particular host.</p>
+            <p>If this type of firewall could also prevent an attacker from connecting directly to the network, it would be even better. Putting the firewall on a proxy server would make it harder for an attacker to discover where the network actually is and create yet another layer of security.</p>
+            <p>When there is a proxy firewall in place, both the client and the server are forced to conduct the session through an intermediary &#8212; a proxy server that hosts an application layer firewall. Now, each time an external client requests a connection with an internal server (or vice versa), the client will open a connection with the proxy instead. If the connection meets the criteria in the firewall rule base, the proxy will open a connection to the requested server. Because the firewall is placed in the middle of the logical connection, it can watch traffic for any signs of malicious activity at the application layer.</p>
+            <p>The key benefit of application layer filtering is the ability to block specific content, such as known malware or certain websites, and recognize when certain applications and protocols, such as Hypertext Transfer Protocol (HTTP), File Transfer Protocol (FTP) and domain name system(DNS), are being misused. Application layer firewall rules can also be used to control the execution of files or the handling of data by specific applications.</p>
+            <h3 class="section-title">The future of the firewall</h3>
+            <p>In the early days of the internet, when AT&amp;T&#8217;s Steven M. Bellovin first used the firewall metaphor, network traffic primarily flowed north-south. This simply means that most of the traffic in a data center flowed from client-to-server and server-to-client. In the past few years, however, virtualization and trends such as converged infrastructure have created more east-west traffic, which means that sometimes the largest volume of traffic in a data center is moving from server-to-server. To deal with this change, some enterprise organizations have migrated from the traditional three-layer data center architectures to various forms of leaf-spine architectures.</p>
+            <p>This change in architecture has caused some security experts to warn that, while firewalls still have an important role to play in keeping a network secure, modern network perimeters have so many entry points and different types of users that stronger access control and security at the host are required. The need for an even greater multilayer approach has led to the emergence of what vendors are calling <em>next-generation firewalls</em>.</p>
+            <p>An NGFW integrates three key assets: traditional firewall capabilities, application awareness and an IPS. Like the introduction of stateful inspection to first-generation firewalls, NGFWs bring additional context to the firewall&#8217;s decision-making process.</p>
+            <p>NGFWs combine the capabilities of traditional enterprise firewalls &#8212; including network address translation (NAT), Uniform Resource Locator (URL) blocking and virtual private networks (VPNs) &#8212; with quality of service (QoS) functionality and features not traditionally found in firewall products. These products support intent-based networking by including Secure Sockets Layer (SSL) and Secure Shell (SSH) inspection, deep packet inspection (DPI) and reputation-based malware detection, as well as application awareness.</p>
+            </section>
+                                </div><!-- .entry-content -->
+            
+                </div><!-- .entry-inner -->
+            </article><!-- #post-## -->
+		
+		
+			
+			
+			
+			
+			
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<p><a href="index.html">Home</a> | <a href="works.html">works</a> | <a href="team.html">Team</a> | <a href="contact.html">Contact</a></p>
+					<div class="social">
+						<a href="https://www.facebook.com/techborgfb/"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/tech_borg/"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/techborg_/"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/company/techborglearning/"><i class="fa fa-linkedin"></i></a>
+						<a href="https://www.youtube.com/c/TechBorg"><i class="fa fa-youtube"></i></a>
+					</div>
+					
+					<p class="copy-right">Copyright &copy; 2018-2021 |  All rights reserved. </p>
+				</div>
+			</footer>
+
+		</div>
+		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+	</body>	
+</html>
