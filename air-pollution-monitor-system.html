@@ -1,0 +1,391 @@
+
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>TechBorg - Air pollution monitor system</title>
+		<!-- Description, Keywords and Author -->
+		<meta name="description" content="E-leraning platform that focused on computer related programming articles and troubleshooting">
+		<meta name="keywords" content="TechBorg">
+		<meta name="author" content="shaun sebastian">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Styles -->
+		<!-- Bootstrap CSS -->
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<!-- Font awesome CSS -->
+		<link href="css/font-awesome.min.css" rel="stylesheet">		
+		<!-- Custom CSS -->
+		<link href="css/style.css" rel="stylesheet">
+		
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/logo.png">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6306201853171537"
+     crossorigin="anonymous"></script>
+	</head>
+	
+	<body>
+	
+		<div class="wrapper">
+		
+			<!-- header -->
+			<header>
+				<!-- navigation -->
+				<nav class="navbar navbar-default" role="navigation">
+					<div class="container">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							
+							<a class="navbar-brand" href="index.html"><h1>TECHBORG</h1></a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav navbar-right">
+								<li><a href="registration.html">Signup</a></li>
+								<li><a href="login.html">Login</a></li>
+								<li><a href="index.html">Home</a></li>
+							</ul>
+						</div><!-- /.navbar-collapse -->
+					</div><!-- /.container-fluid -->
+				</nav>
+			</header>
+			
+			<!-- banner -->
+			<div class="banner">
+				<div class="container">
+					<!-- heading -->
+					<h2>Air Pollution Monitor System</h2>
+					<!-- paragraph -->
+					<p></p>
+				</div>
+			</div>
+			<!-- banner end -->
+			<article id="post-278" class="post-278 page type-page status-publish hentry">
+
+	
+                <div class="entry-inner">
+            
+                    <header class="entry-header">
+                        <h1 class="entry-title">Air pollution monitor system</h1>			<div class="edit-link"><a class="post-edit-link" href="https://wordpress.com/page/technologyborg.wordpress.com/278">Edit</a></div>		</header><!-- .entry-header -->
+            
+                    <div class="entry-content">
+                        <p>In this project we are going to make an <strong>IoT Based Air Pollution Monitoring System</strong> in which we will <strong>monitor the Air Quality over a webserver using internet</strong> and will trigger a alarm when the air quality goes down beyond a certain level, means when there are sufficient amount of harmful gases are present in the air like CO2, smoke, alcohol, benzene and NH3. It will show the air quality in PPM on the LCD and as well as on webpage so that we can monitor it very easily.</p>
+            <p>&nbsp;</p>
+            <p>Previously we have built the LPG detector using MQ6 sensor and Smoke detector using MQ2 sensor but this time we have used MQ135 sensor which is the best choice for monitoring Air Quality as it can detects most harmful gases and can measure their amount accurately. In this IOT project, you can monitor the pollution level from anywhere using your computer or mobile. We can install this system anywhere and can also trigger some device when pollution goes beyond some level, like we can switch on the Exhaust fan or can send alert SMS/mail to the user.</p>
+            <h3 class="rtejustify">Required Components:</h3>
+            <ul>
+            <li class="rtejustify">MQ135 Gas sensor</li>
+            <li class="rtejustify">Arduino Uno</li>
+            <li class="rtejustify">Wi-Fi module ESP8266</li>
+            <li class="rtejustify">16X2 LCD</li>
+            <li class="rtejustify">Breadboard</li>
+            <li class="rtejustify">10K potentiometer</li>
+            <li class="rtejustify">1K ohm resistors</li>
+            <li class="rtejustify">220 ohm resistor</li>
+            <li class="rtejustify">Buzzer</li>
+            </ul>
+            <h3 class="rtejustify">Circuit Diagram and Explanation:</h3>
+            <p class="rtejustify">First of all we will connect the <strong>ESP8266 with the Arduino</strong>. ESP8266 runs on 3.3V and if you will give it 5V from the Arduino then it won’t work properly and it may get damage. Connect the VCC and the CH_PD to the 3.3V pin of Arduino. The RX pin of ESP8266 works on 3.3V and it will not communicate with the Arduino when we will connect it directly to the Arduino. So, we will have to make a voltage divider for it which will convert the 5V into 3.3V. This can be done by connecting three resistors in series like we did in the circuit. Connect the TX pin of the ESP8266 to the pin 10 of the Arduino and the RX pin of the esp8266 to the pin 9 of Arduino through the resistors.</p>
+            <p class="rtejustify">ESP8266 Wi-Fi module gives your projects <strong>access to Wi-Fi or internet</strong>. It is a very cheap device and make your projects very powerful. It can communicate with any microcontroller and it is the most leading devices in the IOT platform. Learn more about using ESP8266 with Arduino here.</p>
+            <p class="rtejustify">Then we will connect the <strong>MQ135 sensor with the Arduino</strong>. Connect the VCC and the ground pin of the sensor to the 5V and ground of the Arduino and the Analog pin of sensor to the A0 of the Arduino.</p>
+            <p class="rtejustify">Connect a buzzer to the pin 8 of the Arduino which will start to beep when the condition becomes true.</p>
+            <p class="rtejustify">In last, we will connect LCD with the Arduino. The connections of the LCD are as follows</p>
+            <ul>
+            <li class="rtejustify">Connect pin 1 (VEE) to the ground.</li>
+            <li class="rtejustify">Connect pin 2 (VDD or VCC) to the 5V.</li>
+            <li class="rtejustify">Connect pin 3 (V0) to the middle pin of the 10K potentiometer and connect the other two ends of the potentiometer to the VCC and the GND. The potentiometer is used to control the screen contrast of the LCD. Potentiometer of values other than 10K will work too.</li>
+            <li class="rtejustify">Connect pin 4 (RS) to the pin 12 of the Arduino.</li>
+            <li class="rtejustify">Connect pin 5 (Read/Write) to the ground of Arduino. This pin is not often used so we will connect it to the ground.</li>
+            <li class="rtejustify">Connect pin 6 (E) to the pin 11 of the Arduino. The RS and E pin are the control pins which are used to send data and characters.</li>
+            <li class="rtejustify">The following four pins are data pins which are used to communicate with the Arduino.</li>
+            </ul>
+            <p class="rtejustify">Connect pin 11 (D4) to pin 5 of Arduino.</p>
+            <p class="rtejustify">Connect pin 12 (D5) to pin 4 of Arduino.</p>
+            <p class="rtejustify">Connect pin 13 (D6) to pin 3 of Arduino.</p>
+            <p class="rtejustify">Connect pin 14 (D7) to pin 2 of Arduino.</p>
+            <ul>
+            <li class="rtejustify">Connect pin 15 to the VCC through the 220 ohm resistor. The resistor will be used to set the back light brightness. Larger values will make the back light much more darker.</li>
+            <li class="rtejustify">Connect pin 16 to the Ground.</li>
+            </ul>
+            <p><img data-attachment-id="298" data-permalink="img/iot-air-quality-monitoring-system-using-arduino-circuit/" data-orig-file="img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg" data-orig-size="1229,853" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Iot-air-quality-monitoring-system-using-arduino-circuit" data-image-description="" data-image-caption="" data-medium-file="img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=300" data-large-file="img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=1000" class="alignnone size-full wp-image-298" src="img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=1000" alt="Iot-air-quality-monitoring-system-using-arduino-circuit" srcset="img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=1000 1000w, img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=150 150w, img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=300 300w, img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=768 768w, img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg?w=1024 1024w, img/iot-air-quality-monitoring-system-using-arduino-circuit.jpg 1229w" sizes="(max-width: 1000px) 100vw, 1000px"   /></p>
+            <h3 class="rtejustify">Working Explanation:</h3>
+            <p class="rtejustify">The MQ135 sensor can sense NH3, NOx, alcohol, Benzene, smoke, CO2 and some other gases, so it is perfect gas sensor for our <strong>Air Quality Monitoring Project</strong>. When we will connect it to Arduino then it will sense the gases, and we will get the Pollution level in PPM (parts per million). MQ135 gas sensor gives the output in form of voltage levels and we need to convert it into PPM. So for converting the output in PPM, here we have used a library for MQ135 sensor, it is explained in detail in “Code Explanation” section below.</p>
+            <p class="rtejustify">Sensor was giving us value of 90 when there was no gas near it and the safe level of air quality is 350 PPM and it should not exceed 1000 PPM. When it exceeds the limit of 1000 PPM, then it starts cause Headaches, sleepiness and stagnant, stale, stuffy air and if exceeds beyond 2000 PPM then it can cause increased heart rate and many other diseases.</p>
+            <p class="rtejustify">When the value will be less than 1000 PPM, then the LCD and webpage will display “Fresh Air”.  Whenever the value will increase 1000 PPM, then the buzzer will start beeping and the LCD and webpage will display “Poor Air, Open Windows”. If it will increase 2000 then the buzzer will keep beeping and the LCD and webpage will display “Danger! Move to fresh Air”.</p>
+            <h3 class="rtejustify">Code Explanation:</h3>
+            <p class="rtejustify">Before beginning the coding for this project, we need to first Calibrate the MQ135 Gas sensor. There are lots of calculations involved in converting the output of sensor into PPM value, we have done this calculation before in our previous <a href="http://circuitdigest.com/microcontroller-projects/arduino-smoke-detector-on-pcb-using-mq2-gas-sensor">Smoke Detector project</a>. But here we are using the Library for MQ135, you can download and install this MQ135 library from here: <a href="https://github.com/GeorgK/MQ135" target="_blank" rel="nofollow noopener">https://github.com/GeorgK/MQ135</a>.</p>
+            <p class="rtejustify">Using this library you can directly get the PPM values, by just using the below two lines:</p>
+            <pre class="rtejustify">MQ135 gasSensor = MQ135(A0);
+            float air_quality = gasSensor.getPPM();</pre>
+            <p class="rtejustify">But before that we need to <strong>calibrate the MQ135 sensor</strong>, for calibrating the sensor upload the below given code and let it run for 12 to 24 hours and then get the <em>RZERO</em> value.</p>
+            <pre class="rtejustify">#include "MQ135.h"
+            void setup (){
+            Serial.begin (9600);
+            }
+            void loop() {
+            MQ135 gasSensor = MQ135(A0); // Attach sensor to pin A0
+            float rzero = gasSensor.getRZero();
+            Serial.println (rzero);
+            delay(1000);
+            }</pre>
+            <p class="rtejustify">After getting the <em>RZERO</em> value. <strong>Put the RZERO value in the library file</strong> you downloaded &#8220;MQ135.h&#8221;: <em>#define RZERO 494.63</em></p>
+            <p class="rtejustify">Now we can begin the actual code for our Air quality monitoring project.</p>
+            <p class="rtejustify">In the code, first of all we have defined the libraries and the variables for the Gas sensor and the LCD. By using the Software Serial Library, we can make any digital pin as TX and RX pin. In this code, we have made Pin 9 as the RX pin and the pin 10 as the TX pin for the ESP8266. Then we have included the library for the LCD and have defined the pins for the same. We have also defined two more variables: one for the sensor analog pin and other for storing <em>air_quality</em> value.</p>
+            <pre class="rtejustify">#include &lt;SoftwareSerial.h&gt;
+            #define DEBUG true
+            SoftwareSerial esp8266(9,10); 
+            #include &lt;LiquidCrystal.h&gt; 
+            LiquidCrystal lcd(12,11, 5, 4, 3, 2);
+            const int sensorPin= 0;
+            int air_quality;</pre>
+            <p class="rtejustify">Then we will declare the pin 8 as the output pin where we have connected the buzzer. l<em>cd.begin(16,2)</em> command will start the LCD to receive data and then we will set the cursor to first line and will print the <em>‘circuitdigest’</em>. Then we will set the cursor on the second line and will print <em>‘Sensor Warming’</em>.</p>
+            <pre class="rtejustify">pinMode(8, OUTPUT);
+            lcd.begin(16,2);
+            lcd.setCursor (0,0);
+            lcd.print ("circuitdigest ");
+            lcd.setCursor (0,1);
+            lcd.print ("Sensor Warming ");
+            delay(1000);</pre>
+            <p class="rtejustify">Then we will set the baud rate for the serial communication. Different ESP’s have different baud rates so write it according to your ESP’s baud rate. Then we will send the commands to set the ESP to communicate with the Arduino and show the IP address on the serial monitor.</p>
+            <pre class="rtejustify">Serial.begin(115200);
+            esp8266.begin(115200);
+              sendData("AT+RST\r\n",2000,DEBUG);
+              sendData("AT+CWMODE=2\r\n",1000,DEBUG);
+              sendData("AT+CIFSR\r\n",1000,DEBUG);
+              sendData("AT+CIPMUair_quality=1\r\n",1000,DEBUG);
+              sendData("AT+CIPSERVER=1,80\r\n",1000,DEBUG);
+            pinMode(sensorPin, INPUT);
+            lcd.clear();</pre>
+            <p class="rtejustify">For <a href="http://circuitdigest.com/microcontroller-projects/sending-arduino-data-to-webpage">printing the output on the webpage</a> in web browser, we will have to use <strong>HTML programming</strong>. So, we have created a string named <em>webpage</em> and stored the output in it. We are subtracting 48 from the output because the <em>read() </em>function returns the ASCII decimal value and the first decimal number which is 0 starts at 48.</p>
+            <pre class="rtejustify">if(esp8266.available())
+              {
+                if(esp8266.find("+IPD,"))
+                {
+                 delay(1000);
+                 int connectionId = esp8266.read()-48;  
+                 String webpage = "&lt;h1&gt;IOT Air Pollution Monitoring System&lt;/h1&gt;";
+                   webpage += "&lt;p&gt;&lt;h2&gt;";   
+                   webpage+= " Air Quality is ";
+                   webpage+= air_quality;
+                   webpage+=" PPM";
+                   webpage += "&lt;p&gt;";</pre>
+            <p class="rtejustify">The following code will call a function named<em> sendData</em> and will send the data &amp; message strings to the webpage to show.</p>
+            <pre class="rtejustify">     sendData(cipSend,1000,DEBUG);
+                 sendData(webpage,1000,DEBUG);
+                 
+                 cipSend = "AT+CIPSEND=";
+                 cipSend += connectionId;
+                 cipSend += ",";
+                 cipSend +=webpage.length();
+                 cipSend +="\r\n";</pre>
+            <p class="rtejustify">The following code will print the data on the LCD. We have applied various conditions for checking air quality, and LCD will print the messages according to conditions and buzzer will also beep if the pollution goes beyond 1000 PPM.</p>
+            <pre class="rtejustify">lcd.setCursor (0, 0);
+            lcd.print ("Air Quality is ");
+            lcd.print (air_quality);
+            lcd.print (" PPM ");
+            lcd.setCursor (0,1);
+            if (air_quality&lt;=1000)
+            {
+            lcd.print("Fresh Air");
+            digitalWrite(8, LOW);</pre>
+            <p class="rtejustify">Finally the below function will send and show the data on the webpage. The data we stored in string named <em>‘webpage’</em> will be saved in string named <em>‘command’</em>. The ESP will then read the character one by one from the <em>‘command’</em> and will print it on the webpage.</p>
+            <pre class="rtejustify">String sendData(String command, const int timeout, boolean debug)
+            {
+                String response = ""; 
+                esp8266.print(command); // send the read character to the esp8266
+                long int time = millis();
+                while( (time+timeout) &gt; millis())
+                {
+                  while(esp8266.available())
+                  {
+                    // The esp has data so display its output to the serial window 
+                    char c = esp8266.read(); // read the next character.
+                    response+=c;
+                  }  
+                }
+                if(debug)
+                {
+                  Serial.print(response);
+                }
+                return response;
+            }</pre>
+            <h3 class="rtejustify">Testing and Output of the Project:</h3>
+            <p class="rtejustify">Before uploading the code, make sure that you are connected to the Wi-Fi of your ESP8266 device. After uploading, open the serial monitor and it will show the IP address like shown below.</p>
+            <p><img data-attachment-id="303" data-permalink="img/iot-garbage-monitoring-system-ip-webserver/" data-orig-file="img/iot-garbage-monitoring-system-ip-webserver.png" data-orig-size="656,373" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="IOT-garbage-monitoring-system-IP-webserver" data-image-description="" data-image-caption="" data-medium-file="img/iot-garbage-monitoring-system-ip-webserver.png?w=300" data-large-file="img/iot-garbage-monitoring-system-ip-webserver.png?w=656" class="alignnone size-full wp-image-303" src="img/iot-garbage-monitoring-system-ip-webserver.png?w=1000" alt="IOT-garbage-monitoring-system-IP-webserver" srcset="img/iot-garbage-monitoring-system-ip-webserver.png 656w, img/iot-garbage-monitoring-system-ip-webserver.png?w=150 150w, img/iot-garbage-monitoring-system-ip-webserver.png?w=300 300w" sizes="(max-width: 656px) 100vw, 656px"   /></p>
+            <p>Type this IP address in your browser, it will show you the output as shown below. You will have to refresh the page again if you want to see the current Air Quality Value in PPM.</p>
+            <p><img data-attachment-id="304" data-permalink="img/iot-air-quality-monitoring-system-output/" data-orig-file="img/iot-air-quality-monitoring-system-output.gif" data-orig-size="597,322" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Iot-air-quality-monitoring-system-output" data-image-description="" data-image-caption="" data-medium-file="img/iot-air-quality-monitoring-system-output.gif?w=300" data-large-file="img/iot-air-quality-monitoring-system-output.gif?w=597" class="alignnone size-full wp-image-304" src="img/iot-air-quality-monitoring-system-output.gif?w=1000" alt="Iot-air-quality-monitoring-system-output"   /></p>
+            <p>We have setup a local server to demonstrate its working, you can check the <strong>Video</strong> below. But to monitor the air quality from anywhere in the world, you need to <strong>forward the port 80 (used for HTTP or internet) to your local or private IP address</strong> (192.168*) of you device. After port forwarding all the incoming connections will be forwarded to this local address and you can open above shown webpage by just entering the public IP address of your internet from anywhere. You can forward the port by logging into your router (192.168.1.1) and find the option to setup the port forwarding.</p>
+            <p>Code</p>
+            <pre>#include "MQ135.h"
+            #include &lt;SoftwareSerial.h&gt;
+            #define DEBUG true
+            SoftwareSerial esp8266(9,10); // This makes pin 9 of Arduino as RX pin and pin 10 of Arduino as the TX pin
+            const int sensorPin= 0;
+            int air_quality;
+            #include &lt;LiquidCrystal.h&gt; 
+            LiquidCrystal lcd(12,11, 5, 4, 3, 2);
+            
+            void setup() {
+            pinMode(8, OUTPUT);
+            lcd.begin(16,2);
+            lcd.setCursor (0,0);
+            lcd.print ("circuitdigest ");
+            lcd.setCursor (0,1);
+            lcd.print ("Sensor Warming ");
+            delay(1000);
+            Serial.begin(115200);
+            esp8266.begin(115200); // your esp's baud rate might be different
+              sendData("AT+RST\r\n",2000,DEBUG); // reset module
+              sendData("AT+CWMODE=2\r\n",1000,DEBUG); // configure as access point
+              sendData("AT+CIFSR\r\n",1000,DEBUG); // get ip address
+              sendData("AT+CIPMUair_quality=1\r\n",1000,DEBUG); // configure for multiple connections
+              sendData("AT+CIPSERVER=1,80\r\n",1000,DEBUG); // turn on server on port 80
+            pinMode(sensorPin, INPUT);        //Gas sensor will be an input to the arduino
+            lcd.clear();
+            }
+            
+            void loop() {
+            
+            MQ135 gasSensor = MQ135(A0);
+            float air_quality = gasSensor.getPPM();
+            
+            if(esp8266.available()) // check if the esp is sending a message 
+              {
+                if(esp8266.find("+IPD,"))
+                {
+                 delay(1000);
+                 int connectionId = esp8266.read()-48; /* We are subtracting 48 from the output because the read() function returns the ASCII decimal value and the first decimal number which is 0 starts at 48*/ 
+                 String webpage = "&lt;h1&gt;IOT Air Pollution Monitoring System&lt;/h1&gt;";
+                   webpage += "&lt;p&gt;&lt;h2&gt;";   
+                   webpage+= " Air Quality is ";
+                   webpage+= air_quality;
+                   webpage+=" PPM";
+                   webpage += "&lt;p&gt;";
+                 if (air_quality&lt;=1000)
+            {
+              webpage+= "Fresh Air";
+            }
+            else if(air_quality&lt;=2000 &amp;&amp; air_quality&gt;=1000)
+            {
+              webpage+= "Poor Air";
+            }
+            
+            else if (air_quality&gt;=2000 )
+            {
+            webpage+= "Danger! Move to Fresh Air";
+            }
+            
+            webpage += "&lt;/h2&gt;&lt;/p&gt;&lt;/body&gt;"; 
+                 String cipSend = "AT+CIPSEND=";
+                 cipSend += connectionId;
+                 cipSend += ",";
+                 cipSend +=webpage.length();
+                 cipSend +="\r\n";
+                 
+                 sendData(cipSend,1000,DEBUG);
+                 sendData(webpage,1000,DEBUG);
+                 
+                 cipSend = "AT+CIPSEND=";
+                 cipSend += connectionId;
+                 cipSend += ",";
+                 cipSend +=webpage.length();
+                 cipSend +="\r\n";
+                 
+                 String closeCommand = "AT+CIPCLOSE="; 
+                 closeCommand+=connectionId; // append connection id
+                 closeCommand+="\r\n";
+                 
+                 sendData(closeCommand,3000,DEBUG);
+                }
+              }
+            
+            lcd.setCursor (0, 0);
+            lcd.print ("Air Quality is ");
+            lcd.print (air_quality);
+            lcd.print (" PPM ");
+            lcd.setCursor (0,1);
+            if (air_quality&lt;=1000)
+            {
+            lcd.print("Fresh Air");
+            digitalWrite(8, LOW);
+            }
+            else if( air_quality&gt;=1000 &amp;&amp; air_quality&lt;=2000 )
+            {
+            lcd.print("Poor Air, Open Windows");
+            digitalWrite(8, HIGH );
+            }
+            else if (air_quality&gt;=2000 )
+            {
+            lcd.print("Danger! Move to Fresh Air");
+            digitalWrite(8, HIGH);   // turn the LED on
+            }
+            lcd.scrollDisplayLeft();
+            delay(1000);
+            }
+            String sendData(String command, const int timeout, boolean debug)
+            {
+                String response = ""; 
+                esp8266.print(command); // send the read character to the esp8266
+                long int time = millis();
+                while( (time+timeout) &gt; millis())
+                {
+                  while(esp8266.available())
+                  {
+                    // The esp has data so display its output to the serial window 
+                    char c = esp8266.read(); // read the next character.
+                    response+=c;
+                  }  
+                }
+                if(debug)
+                {
+                  Serial.print(response);
+                }
+                return response;
+            }</pre>
+                                </div><!-- .entry-content -->
+            
+                </div><!-- .entry-inner -->
+            </article><!-- #post-## -->
+			
+		
+		
+			
+			
+			
+			
+			
+			<!-- footer -->
+			<footer>
+				<div class="container">
+					<p><a href="index.html">Home</a> | <a href="works.html">works</a> | <a href="team.html">Team</a> | <a href="contact.html">Contact</a></p>
+					<div class="social">
+						<a href="https://www.facebook.com/techborgfb/"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com/tech_borg/"><i class="fa fa-twitter"></i></a>
+						<a href="https://www.instagram.com/techborg_/"><i class="fa fa-instagram"></i></a>
+						<a href="https://www.linkedin.com/company/techborglearning/"><i class="fa fa-linkedin"></i></a>
+						<a href="https://www.youtube.com/c/TechBorg"><i class="fa fa-youtube"></i></a>
+					</div>
+					
+					<p class="copy-right">Copyright &copy; 2018-2021 |  All rights reserved. </p>
+				</div>
+			</footer>
+
+		</div>
+		
+		
+		<!-- Javascript files -->
+		<!-- jQuery -->
+		<script src="js/jquery.js"></script>
+		<!-- Bootstrap JS -->
+		<script src="js/bootstrap.min.js"></script>
+		<!-- Respond JS for IE8 -->
+		<script src="js/respond.min.js"></script>
+		<!-- HTML5 Support for IE -->
+		<script src="js/html5shiv.js"></script>
+		<!-- Custom JS -->
+		<script src="js/custom.js"></script>
+	</body>	
+</html>
