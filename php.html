@@ -666,6 +666,150 @@
 
 			</div>
 			</div>
+
+			<article id="post-370" class="post-370 page type-page status-publish hentry">
+
+	
+				<div class="entry-inner">
+			
+					<header class="entry-header">
+						<h1 class="entry-title"></h1>			<div class="edit-link"><a class="post-edit-link" href="https://wordpress.com/page/technologyborg.wordpress.com/370">Edit</a></div>		</header><!-- .entry-header -->
+			
+					<div class="entry-content">
+						<p><span style="text-decoration:underline;">Form handling</span></p>
+			<p>one common way form a broswer to interact with through forms. A form is presented through the user who is intived to fill in the text and click button of the form. The contents of the form are encoded and transmitted through the server. which must use a program to decode the content produces the output.</p>
+			<p>PHP uses super global $_get $_port to collect data from a form.</p>
+			<p>eg:</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;form&gt; action = "welcome.php" method = "post"&gt;
+			Name&lt;input type = "text" Name = "name" /&gt;
+			&lt;br /&gt;
+			Email&lt;input type = "button" value= "submit"/&gt;
+			&lt;/form&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</pre>
+			<p>when user fills out the form and click the submit button the form data is sent for processing to a php file named welcome.php and form data is sent to http post method</p>
+			<pre>&lt;html&gt;
+			&lt;head&gt;
+			&lt;/head&gt;
+			&lt;body&gt;
+			&lt;/body&gt;
+			welcome&lt;?php
+			echo$_POST["name"];
+			?&gt;&lt;br /&gt;
+			your email address is:&lt;?php
+			echo$_POST["email"];
+			?&gt;
+			&lt;/body&gt;
+			&lt;/html&gt;</pre>
+			<p>There are two ways the browser client can send information to the web server.</p>
+			<ul class="list">
+			<li>The GET Method</li>
+			<li>The POST Method</li>
+			</ul>
+			<p>Before the browser sends the information, it encodes it using a scheme called URL encoding. In this scheme, name/value pairs are joined with equal signs and different pairs are separated by the ampersand.</p>
+			<pre class="result notranslate">name1=value1&amp;name2=value2&amp;name3=value3
+			</pre>
+			<p>Spaces are removed and replaced with the <i>+</i> character and any other nonalphanumeric characters are replaced with a hexadecimal values. After the information is encoded it is sent to the server.</p>
+			<h2>The GET Method</h2>
+			<p>The GET method sends the encoded user information appended to the page request. The page and the encoded information are separated by the <b>?</b> character.</p>
+			<pre class="result notranslate">http://www.test.com/index.htm?name1=value1&amp;name2=value2
+			</pre>
+			<ul class="list">
+			<li>The GET method produces a long string that appears in your server logs, in the browser&#8217;s Location: box.</li>
+			<li>The GET method is restricted to send upto 1024 characters only.</li>
+			<li>Never use GET method if you have password or other sensitive information to be sent to the server.</li>
+			<li>GET can&#8217;t be used to send binary data, like images or word documents, to the server.</li>
+			<li>The data sent by GET method can be accessed using QUERY_STRING environment variable.</li>
+			<li>The PHP provides <b>$_GET</b> associative array to access all the sent information using GET method.</li>
+			</ul>
+			<p>Try out following example by putting the source code in test.php script.</p>
+			<pre class="prettyprint notranslate prettyprinted"><span class="pun">&lt;?</span><span class="pln">php
+			   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> $_GET</span><span class="pun">[</span><span class="str">"name"</span><span class="pun">]</span> <span class="pun">||</span><span class="pln"> $_GET</span><span class="pun">[</span><span class="str">"age"</span><span class="pun">]</span> <span class="pun">)</span> <span class="pun">{</span><span class="pln">
+				  echo </span><span class="str">"Welcome "</span><span class="pun">.</span><span class="pln"> $_GET</span><span class="pun">[</span><span class="str">'name'</span><span class="pun">].</span> <span class="str">"&lt;br /&gt;"</span><span class="pun">;</span><span class="pln">
+				  echo </span><span class="str">"You are "</span><span class="pun">.</span><span class="pln"> $_GET</span><span class="pun">[</span><span class="str">'age'</span><span class="pun">].</span> <span class="str">" years old."</span><span class="pun">;</span>
+				  
+				  <span class="kwd">exit</span><span class="pun">();</span>
+			   <span class="pun">}</span>
+			<span class="pun">?&gt;</span>
+			<span class="tag">&lt;html&gt;</span>
+			   <span class="tag">&lt;body&gt;</span><span class="pln">
+			   
+				  &lt;form action = "</span><span class="pun">&lt;?</span><span class="pln">php </span><b><span class="pln">$_PHP_SELF</span></b> <span class="pun">?&gt;</span><span class="pln">" method = "GET"&gt;
+					 Name: </span><span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"text"</span> <span class="atn">name</span> <span class="pun">=</span> <span class="atv">"name"</span> <span class="tag">/&gt;</span><span class="pln">
+					 Age: </span><span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"text"</span> <span class="atn">name</span> <span class="pun">=</span> <span class="atv">"age"</span> <span class="tag">/&gt;</span>
+					 <span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"submit"</span> <span class="tag">/&gt;</span>
+				  <span class="tag">&lt;/form&gt;</span>
+				  
+			   <span class="tag">&lt;/body&gt;</span>
+			<span class="tag">&lt;/html&gt;</span></pre>
+			<p>It will produce the following result −</p>
+			<p><img src="https://www.tutorialspoint.com/php/images/forms.jpg" alt="Forms" /></p>
+			<h2>The POST Method</h2>
+			<p>The POST method transfers information via HTTP headers. The information is encoded as described in case of GET method and put into a header called QUERY_STRING.</p>
+			<ul class="list">
+			<li>The POST method does not have any restriction on data size to be sent.</li>
+			<li>The POST method can be used to send ASCII as well as binary data.</li>
+			<li>The data sent by POST method goes through HTTP header so security depends on HTTP protocol. By using Secure HTTP you can make sure that your information is secure.</li>
+			<li>The PHP provides <b>$_POST</b> associative array to access all the sent information using POST method.</li>
+			</ul>
+			<p>Try out following example by putting the source code in test.php script.</p>
+			<pre class="prettyprint notranslate prettyprinted"><span class="pun">&lt;?</span><span class="pln">php
+			   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> $_POST</span><span class="pun">[</span><span class="str">"name"</span><span class="pun">]</span> <span class="pun">||</span><span class="pln"> $_POST</span><span class="pun">[</span><span class="str">"age"</span><span class="pun">]</span> <span class="pun">)</span> <span class="pun">{</span>
+				  <span class="kwd">if</span> <span class="pun">(</span><span class="pln">preg_match</span><span class="pun">(</span><span class="str">"/[^A-Za-z'-]/"</span><span class="pun">,</span><span class="pln">$_POST</span><span class="pun">[</span><span class="str">'name'</span><span class="pun">]</span> <span class="pun">))</span> <span class="pun">{</span>
+					 <span class="kwd">die</span> <span class="pun">(</span><span class="str">"invalid name and name should be alpha"</span><span class="pun">);</span>
+				  <span class="pun">}</span><span class="pln">
+				  echo </span><span class="str">"Welcome "</span><span class="pun">.</span><span class="pln"> $_POST</span><span class="pun">[</span><span class="str">'name'</span><span class="pun">].</span> <span class="str">"&lt;br /&gt;"</span><span class="pun">;</span><span class="pln">
+				  echo </span><span class="str">"You are "</span><span class="pun">.</span><span class="pln"> $_POST</span><span class="pun">[</span><span class="str">'age'</span><span class="pun">].</span> <span class="str">" years old."</span><span class="pun">;</span>
+				  
+				  <span class="kwd">exit</span><span class="pun">();</span>
+			   <span class="pun">}</span>
+			<span class="pun">?&gt;</span>
+			<span class="tag">&lt;html&gt;</span>
+			   <span class="tag">&lt;body&gt;</span><span class="pln">
+			   
+				  &lt;form action = "</span><span class="pun">&lt;?</span><span class="pln">php </span><b><span class="pln">$_PHP_SELF</span></b> <span class="pun">?&gt;</span><span class="pln">" method = "POST"&gt;
+					 Name: </span><span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"text"</span> <span class="atn">name</span> <span class="pun">=</span> <span class="atv">"name"</span> <span class="tag">/&gt;</span><span class="pln">
+					 Age: </span><span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"text"</span> <span class="atn">name</span> <span class="pun">=</span> <span class="atv">"age"</span> <span class="tag">/&gt;</span>
+					 <span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"submit"</span> <span class="tag">/&gt;</span>
+				  <span class="tag">&lt;/form&gt;</span>
+			   
+			   <span class="tag">&lt;/body&gt;</span>
+			<span class="tag">&lt;/html&gt;</span></pre>
+			<p>It will produce the following result −</p>
+			<p><img src="https://www.tutorialspoint.com/php/images/forms.jpg" alt="Forms" /></p>
+			<h2>The $_REQUEST variable</h2>
+			<p>The PHP $_REQUEST variable contains the contents of both $_GET, $_POST, and $_COOKIE. We will discuss $_COOKIE variable when we will explain about cookies.</p>
+			<p>The PHP $_REQUEST variable can be used to get the result from form data sent with both the GET and POST methods.</p>
+			<p>Try out following example by putting the source code in test.php script.</p>
+			<pre class="prettyprint notranslate prettyprinted"><span class="pun">&lt;?</span><span class="pln">php
+			   </span><span class="kwd">if</span><span class="pun">(</span><span class="pln"> $_REQUEST</span><span class="pun">[</span><span class="str">"name"</span><span class="pun">]</span> <span class="pun">||</span><span class="pln"> $_REQUEST</span><span class="pun">[</span><span class="str">"age"</span><span class="pun">]</span> <span class="pun">)</span> <span class="pun">{</span><span class="pln">
+				  echo </span><span class="str">"Welcome "</span><span class="pun">.</span><span class="pln"> $_REQUEST</span><span class="pun">[</span><span class="str">'name'</span><span class="pun">].</span> <span class="str">"&lt;br /&gt;"</span><span class="pun">;</span><span class="pln">
+				  echo </span><span class="str">"You are "</span><span class="pun">.</span><span class="pln"> $_REQUEST</span><span class="pun">[</span><span class="str">'age'</span><span class="pun">].</span> <span class="str">" years old."</span><span class="pun">;</span>
+				  <span class="kwd">exit</span><span class="pun">();</span>
+			   <span class="pun">}</span>
+			<span class="pun">?&gt;</span>
+			<span class="tag">&lt;html&gt;</span>
+			   <span class="tag">&lt;body&gt;</span><span class="pln">
+				  
+				  &lt;form action = "</span><span class="pun">&lt;?</span><span class="pln">php </span><b><span class="pln">$_PHP_SELF</span></b> <span class="pun">?&gt;</span><span class="pln">" method = "POST"&gt;
+					 Name: </span><span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"text"</span> <span class="atn">name</span> <span class="pun">=</span> <span class="atv">"name"</span> <span class="tag">/&gt;</span><span class="pln">
+					 Age: </span><span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"text"</span> <span class="atn">name</span> <span class="pun">=</span> <span class="atv">"age"</span> <span class="tag">/&gt;</span>
+					 <span class="tag">&lt;input</span> <span class="atn">type</span> <span class="pun">=</span> <span class="atv">"submit"</span> <span class="tag">/&gt;</span>
+				  <span class="tag">&lt;/form&gt;</span>
+				  
+			   <span class="tag">&lt;/body&gt;</span>
+			<span class="tag">&lt;/html&gt;</span></pre>
+			<p>Here $_PHP_SELF variable contains the name of self script in which it is being called.</p>
+			<p>It will produce the following result −</p>
+			<p><img data-attachment-id="434" data-permalink="https://technologyborg.wordpress.com/php/forms/" data-orig-file="https://technologyborg.files.wordpress.com/2020/04/forms.jpg" data-orig-size="600,56" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;1&quot;}" data-image-title="forms" data-image-description="" data-image-caption="" data-medium-file="https://technologyborg.files.wordpress.com/2020/04/forms.jpg?w=300" data-large-file="https://technologyborg.files.wordpress.com/2020/04/forms.jpg?w=600" class="alignnone size-full wp-image-434" src="https://technologyborg.files.wordpress.com/2020/04/forms.jpg?w=1000" alt="forms" srcset="https://technologyborg.files.wordpress.com/2020/04/forms.jpg 600w, https://technologyborg.files.wordpress.com/2020/04/forms.jpg?w=150 150w, https://technologyborg.files.wordpress.com/2020/04/forms.jpg?w=300 300w" sizes="(max-width: 600px) 100vw, 600px"   /></p>
+								</div><!-- .entry-content -->
+			
+				</div><!-- .entry-inner -->
+			</article><!-- #post-## -->
 		
 
 			
