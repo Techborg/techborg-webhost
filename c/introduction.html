@@ -62,13 +62,399 @@
 			</div>
 			<!-- banner end -->
 			
+			<h1>Chapter 1: Introduction</h1>
+			<br>
+			<p>C is (as K&R admit) a relatively small language, but one which (to its admirers, anyway) wears well.
+				C's small, unambitious feature set is a real advantage: there's less to learn; there isn't excess 
+				baggage in the way when you don't need it. It can also be a disadvantage: since it doesn't do everything
+				for you, there's a lot you have to do yourself. (Actually, this is viewed by many as an additional advantage:
+				anything the language doesn't do for you, it doesn't dictate to you, either, so you're free to do that something
+				however you want.)
+			</p>
+			<br>
+			<p>C is sometimes referred to as a "high-level assembly language." Some people think that's an insult, but it's actually
+				a deliberate and significant aspect of the language. If you have programmed in assembly language, you'll probably Find
+				C very natural and comfortable (although if you continue to focus too heavily on machine-level details, you'll probably
+				end up with unnecessarily nonprotable programs). If you haven't programmed in assembly language, you may be frustrated by
+				C's lack of certain higher-level features. In either case, you should understand why C was designed this way: so that seemingly
+				-simple constructions expressed in C would not expand to arbitrarily expensive (in time or space) machine language constructions
+				 when compiled. If you write a C program simply and succinctly, it is likely to result in a succinct, efficient machine language
+				 executable. If you find that the executable program resulting from a C program is not efficient, it's probably because of something
+				 silly you did, not because of something the compiler did behind your back which you have no control over. In any case, there's no point
+				 in complaining about C's low-level flavor: C is what it is.
+			</p>
+			<br>
+			<p>A programming language is a tool, and no tool can perform every task unaided.If you're building a house, and I'm teaching you how to use a hammer,
+				and you ask how to assemble rafters and trusses into gables, that's a legitimate question, but the answer has fallen out of the realm of "How do I use a hammer?"
+				and into "How do I build a house?". In the same way, we'll see that C does not have built-in features to perform every function that we might ever need to do while
+				programming.
+			</p>
+			<br>
+			<p>As mentioned above, C imposes relatively few built-in ways of doing things on the programmer. Some common tasks, such as manipulating strings, allocating memory, and doing
+				input/output (I/O), are performed by calling on library functions. Other tasks which you might want to do, such as creating or listing directories, or interacting with a mouse,
+				or displaying windows or other user-interface elements, or doing color graphics, are not defined by the C language at all. You can do these things from a C program, of course, 
+				but you will be calling on services which are peculiar to your programming environment (compiler, processor, and operating system) and which are not defined by the C standard.
+				Since this course is about portable C programming, it will also be steering clear of facilities not provided in all C environments.
+			</p>
+			<br>
+			<p>Another aspect of C that's worth mentioning here is that it is, to put it bluntly, a bit dangerous. C does not, in general, try hard to protect a programmer from mistakes. If 
+				you write a piece of code which will (through some oversight of yours) do something wildly different from what you intended it to do, up to and including deleting your data or
+				trashing your disk, and if it is possible for the compiler to compile it, it generally will. You won't get warnings of the form "Do you really mean to...?" or "Are you sure you
+				really want to...?". C is often compared to a sharp knife: it can do a surgically precise job on some exacting task you have in mind, but it can also do a surgically precise job
+				of cutting off your finger. It's up to use it carefully. 
+			</p>
+			<br>
+			<p>This aspect of C is very widely criticized; it is also used (justifiably) to argue that C is not a good teaching language. C aficionados love this aspect of C because it means That
+				C does not try to protect them from themselves: when they know what they're doing, even if it's risky or obscure, they can do it. Students of C hate this aspect of C because it often
+				seems as if the language is some kind of a conspiracy specifically designed to lead them into booby traps and "gotcha!"s.
+			</p>
+			<br>
+			<p>This is another aspect of the language which it's fairly pointless to complain about. If you take care and pay atttention, you can avoid many of the pitfalls. These notes will point out many
+				of the obvious (and not so obvious) troubles spots.
+			</p>
+			<br>
+			<p><u>A First Example</u></p>
+			<br>
+			<p><u>Second Example</u></p>
+			<br>
+			<p><u>Program Struture</u></p>
+			<br>
+			<h3>1.1 A First Example</h3>
+			<br>
+			<p>[This section corresponds to K&R Sec. 1.1]</p>
+			<br>
+			<p>The best way to learn programming is to dive right in and start writing real programs.
+				This way, concepts which would otherwise seem abstract make sense, and the positive 
+				feedback you get from getting even a small program to work gives you a great incentive 
+				to improve it or write the next one.
+			</p>
+			<br>
+			<p>
+				Diving in with "real" programs right away has another advantage, if only pragmatic: if you're
+				using a conventional compiler, you can't run a fragment of a program and see what it does; nothing
+				will run until you have a complete (if tiny or trivial) program. You can't learn everything you'd
+				need to write a complete program all at once, so you'll have to take some things"on faith" and parrot
+				them in your first programs before you begin to understand them. (You can't learn to program just one 
+				expression or statement at a time any more than you can learn to speak a foreign language one word at
+				a time.If all you know is handful of works,you can't actually say anything: you also need to know 
+				something about the language's word order and grammar and sentence structure and declension of articles
+				and verbs.)
+			</p>
+			<br>
+			<p>Besides the occasional necessity to take things on faith, there is a more serious potential drawback of this
+				"dive in and program" approach: it's a small step from learning-by-doing to learning-by-trial-and-error, and 
+				when you learn programming by trial-and-error, you can very easily learn many errors. When you're not sure what
+				you could use that might work, and you try something, and it does work, you do not have any guarantee that what you
+				tried worked for the right reason. You might just have "learned" something that works only by accident or only on your
+				compiler, and it may be very hard to un-learn it later, when it stops working. 
+			</p>
+			<br>
+			<p>Therefore, whenever you're not sure of something, be very careful before you go off and try it "just to see if it will work."
+				Of course, you can never be absolutely sure that something is going to work before you try it, otherwise we'd never have to try
+				things. But you should have an expection that something is going to work before you try it, otherwise we'd never have to try it,
+				and if you can't predict how to do something or whether something would work and find yourself having to determine it experimentally,
+				make a note in your mind that whatever you've just learned (based on the outcome of the experiment) is suspect.</p>
+			<br>
+			<p>The first example program in K&R is the first example program in any language: print or display a simple string, and exit.
+				Here is my version of K&R's "hello,world" program:</p>
+			<br>
+			<pre>
+			#include&lt;stdio.h&gt;
 			
-		
-		
+			main()
+			{
+			printf("Hello, world!\n");
+			return 0;
+			}
+			</pre>	
+		<br>
+		<p>If you have a C compiler, the first thing to do is figure out how to type this program in and compile it and run it and see where its output went.
+			(if you don't have a C compiler yet, the first thing to do is to find one.)
+		</p>
+		<br>
+		<p>The first line is practically boilerplate; it will appear in almost all programs we write. It asks that some definitions having to do with the 
+			"Standard I/O Library" be included in our program; there definitions are needed if we are to call the library function <mark>printf</mark> correctly.
+		</p>
+		<br>
+		<p>The second line says that we are defining a function named <mark>main</mark>. Most of the time, we can name our function that will be "called" first when
+		our program starts running. The empty pair of parentheses indicates that our <mark>main</mark> function accepts no <i>arguments</i>, that is, there isn't any
+		information which needs to be passed in when the function is called.</p>
+		<br>
+		<p>The braces { and } surround a list of statements in C. Here, they surround the list of statements making up the function <mark>main</mark>.</p>
+		<br>
+		<p>The line</p>
+		<br>
+		<pre>printf("Hello, world!\n");</pre>
+		<p>is the frist statement in the program. It asks that the function <mark>printf</mark> be called;<mark>printf</mark> is a library function which 
+			prints formatted output. The parentheses called;<mark>printf</mark> is a library function which prints formatted output. The parentheses surround
+			<mark>printf</mark>'s argument list: the information which is handed to it which it should act on. The semicolon at the end of the line terminates
+			the statement.
+		</p>
+		<br>
+		<p>(<marK>printf</marK>'s name reflects the fact that C was first developed when Teletypes and other printing terminals were still in widespread use.
+			Today, of course, video displays are far more common. <mark>printf's</mark> "prints" to the <i>standard output</i>, that is, to the default location
+			for program output to go. Nowadays, that's almost always a video screen or a window on that screen. If you do have a printer, you'll typically have 
+			to do something extra to get a program to print to it.)
+		</p>
+		<br>
+		<p><mark>printf</mark>'s first (and, in this case, only) argument is the string which it should print. The string, enclosed in double quotes "", consists
+		 of the words "Hello, world!" followed by a special sequence: \n. In strings, any two-character sequence beginning with the backslash \ represents a single
+		character. The sequence \n represents the "new line" character, which prints a carriage return or line feed or whatever it takes to end one line of output 
+		and move down to the next. (This program only prints one line of output, but it's still important to terminate it.)</p>
+		<br>
+		<p>The second line in the <mark>main</mark> function is</p>
+		<br>
+		<mark>return 0;</mark>
+		<br>
+		<p>In general, a function may return a value to its caller, and <mark>main</mark> is no exception. When <mark>main</mark> returns (that is, reaches its end and
+			stops functioning), the program is at its end, and the returns (that is, reaches its end and stops functioning), the program is at its end, and the return
+			value from <mark>main</mark> is the main function of) whether it succeeded or not. By convention, a return value of 0 indicates success.</p> 
+		<br>
+		<p>This program may look so absolutely trivial that it seems as if it's not even worth typing it in and trying to run it, but doing so may be a big (and is certainly
+			a vital) first hurdle. On an unfamiliar computer, it can be arbitrarily difficult to figure out how to enter a text file containing program source, or how to compile
+			and link it, or how to invoke it, or what happened after (if?) it ran. The most experienced C programmers immediately go back to this one, simple program whenever they're
+			trying out a new system or a new way of entering or building programs or a new way of printing output from within programs. As Kernighan and Ritchie say, everything else is
+			comparatively easy.</p>
+		<br>
+		<p>How <i>you</i> compile and run this (or any) program is a function of the compiler and operating system you're using. The first step is to type it in, exactly as shown; this 
+		   may involve using a text editor to create a file containing the program text. You'll have to give the file a name, and all C compilers (that I've ever heard of) require that
+		   files containing C source end with the extension .<mark>c</mark>. So you might place the program text in a file called <mark>hello</mark>.<mark>c</mark>.</p>
+		<br>
+		<p>The second step is to compile the program. (Strictly speaking, compilation consists of two steps, compilation proper followed by linking, but we can overlook this distinction
+			at first, especially because the compiler often takes care of initiating the linking step automatically.) On many Unix systems, the command to compile a C prpgram from a source
+			file <mark>hello</mark>.<mark>c</mark> is
+		</p>
+		<br>
+		<mark>cc -o hello hello.c</mark>
+		<br>
+		<p>You would type this command at the Unix shell prompt, and it requests that the <mark>cc</mark> (C compiler) program be run, placing its output (i.e. the new executable program it
+			creates) in the file <mark>hello</mark>, and taking its input (i.e. the source code to be compiled) from the file <mark>hello</mark>.<mark>c</mark>.	
+		</p>
+		<br>
+		<p>The third step is to run (execute, invoke) the newly-built <mark>hello</mark> program. Again on a Unix system, this is done simply by typing the program's name:</p>
+		<br>
+		<p><mark>hello</mark></p>
+		<br>
+		<p>Depending on how your system is set up (in particular, on whether the current directory is searched for executables, based on the PATH variable), you may have to type</p>
+		<br>
+		<p><mark>./hello</mark></p>
+		<br>
+		<p>to indicate that the <mark>hello</mark> program is in the current directory (as opposed to some "<mark>bin</mark>" directory full of executable programs, elsewhere).</p>
+		<br>
+		<p>You may also have your choice of C compilers. On many Unix machines, the <mark>cc</mark> command is an older compiler will accept the simple programs. If you find yourself
+			getting baffling compilation errors on programs which you're typed in exactly as they're shown, it probably indicates that you're using an older compiler. On many machines,
+			another compiler called <mark>acc</mark> or gcc is available, and you'll want to use it, instead. (Both <mark>acc</mark> and <mark>gcc</mark> are typically invoked the same
+			as <mark>cc</mark>; that is, the above <mark>cc</mark> command would instead be typed, say, <mark>gcc -o hello hello.c.</mark>)
+		</p>			
+		<br>
+		<p>(One final caveat about Unix systems: don't name your test programs <mark>test</mark>, because there's already a standard command called <mark>test</mark>, and you and the 
+		   command with your owm, not least because your own almost certainly does something completely different.)
+		</p>
+		<br>
+		<p>Under MS-DOS, the compilation procedure is quite similar. The name of the command you type will depend on your compiler (e.g. <mark>cl</mark> for the Microsoft C compiler,
+		  <mark>tc</mark> Or <mark>bcc</mark> for Borland's Turbo C, etc.). You may have to manually perform the second, linking step, perhaps with a command named <mark>link</mark>
+		   Or <mark>tlink</mark>. The executable file which the compiler/linker creates will have a name ending in .<mark>exe</mark> (or perhaps .<mark>com</mark>), but you can still
+		   invoke it by typing the base name (e.g. <mark>hello</mark>). See your compiler documentation for complete details; one of the manuals should contain a demonstration of how
+		   to enter, compile, and run a small program that prints some simple output, just as we're trying to describe here.
+		</p>	
+		<br>
+		<p>In an integrated or "visual" programming environment, such as those on the Macitosh or under various versions of Microsoft Windows, the steps you take to enter, compile, and
+			run a program are somewhat different (and, theoretically, simpler). Typically, there is a way to open a new source window, type source code into it, give it a file name, and
+			add it to the program (or "project") you're building. If necessity, there will be a way to specify what other source files (or "modules") make up the program. Then, there's a
+			button or menu selection which compiles and runs the program, all from within the programming environment. (There will also be a way to create a standalone executable file which
+			you can run from outside the environment.) In a PC-Compatible environment, you may have to choose between creating DOS programs or Windows programs. (If you have troubles pertaining
+			to the <mark>printf</mark> function, try specifying a target environment of MS-DOS. Supposedly, some compilers which are targeted at Windows environments won't let you call <mark>printf</mark>),
+			because until you call some fancier functions to request that a window be created, there's no window for <mark>printf</mark> to print to.) Again, check the introductory or tutorial manual that 
+			came with the programming package; it should walk you through the steps necessary to get your first program running.
+		</p>	
+		<br>
+		<h3>1.2 Second Example</h3>
+		<br>
+		<p>Our second example is of little more practical use them the first, but it introduces a few more programming language elements:</p>
+		<br>
+		<pre>
+			#include &lt;stdio.h&gt;
+
+			/* print a few numbers, to illustrate a simple loop */
+
+			main()
+			{
+			int i;
+
+			for(i = 0; i &lt; 10; i = i+1)
+				printf("i is %d\n", i);
 			
-			
-			
-			
+			return 0;
+			}
+		</pre>	
+		<br>
+		<p>As before, the line <mark>#include &lt;stdio.h&gt;</mark> is boilerplate which is necessary since we're calling the <mark>printf</mark>
+		function, and <mark>main()</mark> and the pair of braces {} indicate and delineate the function named <mark>main</mark> we're (again) writing.
+		</p>
+		<br>
+		<p>The first new line is the line</p>
+		<br>
+		<p>/* print a few numbers, to illustrate a simple loop */</p>
+		<p>which is a comment. Anything between the characters /* and */ is ignored by the compiler, but may be useful to a person trying to read and
+			understand the program. You can add comments anywhere you want to in the program, to document what the program is, what it does, who wrote it,
+			how it works, what the various functions are for and how<i>they</i> work, what the various variables are for, etc.
+		</p>
+		<br>
+		<p>The second new line, down within the function<mark>main</mark>, is</p>
+		<br>
+		<p><mark>int i;</mark></p>
+		<p>which <i>declares</i> that our function will use a variable named <mark>i</mark>. The variable's type is <mark>int</mark>, which is a plain integer.</p>
+		<br>
+		<p>Next, we set up a loop:</p>
+		<br>
+		<p><mark>for(i = 0; i &lt; 10; i = i + 1)</mark></p>
+		<p>The keyword <mark>for</mark> indicates that we are setting up a "<mark>for</mark>loop." A <mark>for</mark> loop is controlled by three expressions, enclosed
+			in parentheses and separated by semicolons. These expressions say that, in this case, the loop starts by setting <mark>i</mark> to 0, that it continues as long
+			as <mark>i</mark> is less than 10, and that after each iteration of the loop, <mark>i</mark> should be incremented by 1 (that is, have 1 added to its value).
+		 </p>
+		 <br>
+		 <p>Finally, we have a call to the <mark>printf</mark> function, as before, but with several differences. First, the call to <mark>printf</mark> is within the <i>body</i>
+			of the <mark>for</mark> loop. This means that control flow does not pass once through the <mark>printf</mark> call, but instead that the call is performed as many times
+			as are dictated by the <mark>for</mark> loop. In this case, <mark>printf</mark> will be called several times: once when <mark>i</mark> is 0, once when <mark>i</mark> is 1,
+			once when <mark>i</mark> is 2, and so on until <mark>i</mark> is 9, for a total of 10 times.
+		 </p>
+		 <br>
+		 <p>A second difference in the <mark>printf</mark> call is that the string to be printed, "<mark>i is %d</mark>", contains a percent sign. Whatever <mark>printf</mark> sees
+			a percent sign, it indicates that <mark>printf</mark> is not supposed to print the exact text of the string, but is instead supposed to read another one of its arguments
+			to decide what to print. The letter after the percent sign tells it what type of argument to expect and how to print. The letter after the percent sign tells it what type
+			of argument to expect and how to print it in decimal. Finally, we see that <mark>printf</mark> is in fact being called with another argument, for a total of two, separated
+			by commas. The second argument is the variable <mark>i</mark>, which is in fact an <mark>int</mark>, as required by %d. The effect of all of this is that is that each time
+			it is called, <mark>printf</mark> will print a line containing the current value of the variable <mark>i</mark>:
+			<mark>i is 0</mark>
+			<mark>i is 1</mark>
+			<mark>i is 2</mark>
+			<mark>...</mark>
+			</p>
+			<br>
+			<p>After several trips through the loop, <mark>i</mark> will eventually equal 9. After that trip through the loop, third control expression <mark>i = i + 1</mark> will increment
+			   its value to 10. The condition <mark>i &lt; 10</mark> is no longer true, so no more trips through the loop are taken. Instead, control flow jumps down to the statement following
+			   the <mark>for</mark> loop, which is the <mark>return</mark> statement. The <mark>main</mark> function returns, and the program is finished.
+			</p>
+			<br>
+			<h3>1.3 Program Structure</h3>
+			<br>
+			<p>We'll have more to say later about program structure, but for now let's observe a few basics. A program consists of one or more functions;
+				it may also contain global variables. (Our two example programs so far have contained one function apiece, and no global variables.) At the
+				top of a source file are typically a few boilerplate lines such as <mark>#include &lt;stdio.h&gt;</mark>, followed by definitions (i.e. code)
+				for the functions. (It's also possible to split up the several functions making up a larger program into several source files, as we'll see in
+				a later chapter.)
+			</p>
+			<br>
+			<p>
+				Each function is further composed of <i>declarations</i> and <i>statements</i>, in that order. When a sequence of statements should act as one 
+				(for example, when they should all serve together as the body of a loop) they can be enclosed in braces (just as for the outer body of the entire
+				function). The simplest kind of statement is an <i>expression statement</i>, which is an expression (presumably performing some useful operation)
+				followed by a semicolon. Expressions are further composed
+				of <i>operators</i>, objects (variables), and <i>constants</i>. 
+			</p>
+			<br>
+			<p>
+				C source code consists of several <i>lexical elements</i>. Some are words, such as <mark>for</mark>,<mark>return</mark>,<mark>main</mark>, and
+				<mark>i</mark>, which are either <i>keywords</i> of the language (<mark>for</mark>,<mark>return</mark>) or<i>identifiers</i> (names) we've chosen
+				for our own functions and variables (<mark>main</mark>,<mark>i</mark>).
+				There are <i>constants</i> such as 1 and 10 which introduce new values into the program.
+				There are<i>operators</i> such as =,+,and >, which manipulate variables and values. There are other punctuation characters (often called <i>delimiters</i>),
+				such as parentheses and squiggly braces {}, which indicate how the other elements of the program are grouped.
+				Finally, all of the preceding elements can be separated by <i>whitespace</i>: spaces, tabs, and the "carriage returns" between lines.
+			</p>
+			<br>
+			<p>
+				The source code for a C program is, for the most part, "free form." This means that the compiler does not care how the code is arranged: how it is broken into lines,
+				how the lines are indented, or whether whitespace is used between things like variable names and other punctuation. (Lines like <mark>#include&lt;stdio.h&gt;</mark>
+				are an exception; they must appear alone on their own lines, generally unbroken. Only lines beginning with # are affected by this rule; we'll see other examples later.)
+				You can use whitespace, indentation, and appropriate line breaks to make your programs more readable for yourself and other people (even through the compiler doesn't care).
+				You can place explanatory<i>comments</i> anywhere in your program--any text between the characters /* and */ is ignored by the compiler. (In fact, the compiler pretends that
+				all it saw was whitespace.) Through comments are ignored by the compiler, well-chosen comments can make a program <i>much</i> easier to read (for its author, as well as for 
+				others.)
+			</p>
+			<br>
+			<p>
+				The usage of whitespace is our first <i>style</i> issue. It's typical to leave a black line between different parts of the program, to leave a space on either side of operators
+				such as + and =, and to <i>indent</i> the bodies of loops and other control flow constructs. Typically, we arrange the indentation so that the subsidiary statements controlled by
+				a loop statement (the "loop body," such as the <mark>printf</mark> call in our second example program) are all aligned with each other and placed one tab stop (or some consistent
+				number of spaces) to the right of the controlling statement. This indentation (like all whitespace) is not required by the compiler, but it makes programs <i>much</i> easier to read
+				(for its author, as well as for others).
+			</p>
+			<br>
+			<p>
+				The usage of whitespace is our first <i>style</i> issue. It's typical to leave a black line between different parts of the program, to leave a space on either side of operators such as
+				+ and =, and to <i>indent</i> the bodies of loops and other control flow constructs. Typically, we arrange the indentation so that the subsidiary statements controlled by a loop statement
+				(the "loop body," such as the <mark>printf</mark> call in our second example program) are all aligned with each other and placed one tab stop (or some consistent numbers of spaces) to the
+				right of the controlling statement. This indentation (like all whitespace) is not required by the compiler, but it makes programs <i>much</i> easier to read. (However, it can also be misleading,
+				if used incorrectly or in the face of inadvertent mistakes. The compiler will decide what "the body of the loop" is based on its own rules, not the indentation, so if the indentation does not match
+				the compiler's interpretation, confusion is inevitable.)
+			</p>
+			<br>
+			<p>
+				To drive home the point that the compiler doesn't care about indentation, line breaks, or other whitespace, here are a few (extreme) examples: The fragments
+			</p>
+			<br>
+			<pre>
+					for(i = 0; i &lt; 10; i = i + 1)
+								printf("%d\n", i);
+			</pre>
+			<p>and</p>
+			<pre>
+					for(i = 0; i &lt; 10; i = i + 1) printf("%d\n", i);
+			</pre>
+			<p>and</p>
+			<pre>
+					for(i = 0;i&lt;10;i=i+1) printf("%d\n", i);
+			</pre>
+			<p>and</p>
+			<pre>
+						for(i = 0; i &lt; 10; i = i + 1)
+					printf("%d\n", i;)
+			</pre>
+			<p>and</p>
+			<pre>
+				for ( i
+				=   0  ;
+				i   &lt 10
+				;    i   =
+				i    +   1
+				)    printf (
+				"%d\n" ,    i	
+				)     ;
+			</pre>
+			<p>and</p>
+			<pre>
+				
+					for
+					(i=0;
+					i&lt;10;i=
+					i+1)printf
+					("%d\n", i);
+				
+			</pre>
+			<p>are all treated exactly the same way by the compiler.</p>
+			<br>
+			<p>Some programmers argue forever over the best set of "rules" for indentation and other aspects of programming style, calling to mind the old philosopher's debates
+				about the number of angels that could dance on the head of a pin. Style issues (such as how a program is laid out) <i>are</i> important, but they're not something
+				to be too dogmatic about, and there are also other, deeper style issues besides mere lsyout and typography. Kernighan and Ritchie take a fairly moderate stance:
+			</p>
+			<br>
+			<p>
+				Although C compiler do not care about how a program looks, proper indentation and spacing are critical in making programs easy for people to read. We recommend writing
+			<br>	
+				only one statement per line, and using blacks around operators to clarity grouping. The position of braces is less important, although people hold passionate beliefs.
+			<br>	
+				We have chosen one of several popular styles. Pick a style that suits you, then use it consistently.
+			</p>
+			<br>
+			<p>
+				There is some value in having a reasonably standard style (or a few standard styles) for code layout. Please don't take the above advice to "pick a style that suits you"
+				as an invitation to invent your own brand-new style. If (perhaps after you've been programming in C for a while) you have specific objections to specific facets of existing
+				styles, you're welcome to modify them, but if you don't have any particular leanings, you're probably best off copying an existing style at frist. (If you want to place your
+				own stamp of originality on the programs that you write, there are better avenues for your creativity than inventing a bizarre layout; you might instead try to make the logic
+				easier to follow, or the user interface easier to use, or the code freer of bugs.)
+			</p>
+			</div>
 			
 			<!-- footer -->
 			<footer>
