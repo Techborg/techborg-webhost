@@ -160,7 +160,7 @@
               sendData("AT+CIPSERVER=1,80\r\n",1000,DEBUG);
             pinMode(sensorPin, INPUT);
             lcd.clear();</pre>
-            <p class="rtejustify">For <a href="http://circuitdigest.com/microcontroller-projects/sending-arduino-data-to-webpage">printing the output on the webpage</a> in web browser, we will have to use <strong>HTML programming</strong>. So, we have created a string named <em>webpage</em> and stored the output in it. We are subtracting 48 from the output because the <em>read() </em>function returns the ASCII decimal value and the first decimal number which is 0 starts at 48.</p>
+            <p class="rtejustify">For <a href="">printing the output on the webpage</a> in web browser, we will have to use <strong>HTML programming</strong>. So, we have created a string named <em>webpage</em> and stored the output in it. We are subtracting 48 from the output because the <em>read() </em>function returns the ASCII decimal value and the first decimal number which is 0 starts at 48.</p>
             <pre class="rtejustify">if(esp8266.available())
               {
                 if(esp8266.find("+IPD,"))
